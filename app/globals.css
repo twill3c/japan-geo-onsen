@@ -1,0 +1,217 @@
+:root {
+  --bg: #f6f4ef;
+  --panel: #ffffff;
+  --ink: #22201c;
+  --muted: #6d675e;
+  --line: #ddd7cc;
+  --accent: #8a4b2a;
+  --onsen: #c2410c;
+  --volcano: #7f1d1d;
+  --footer-h: 34px;
+}
+
+* { box-sizing: border-box; }
+
+html { height: 100%; }
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100dvh;
+  /* 高さは足し算で決める。ヘッダや免責の高さを定数で書くと、文が一行増えただけで
+     地図がフッタに潜り込む(実測 2026-09-07: 92px と書いていたが実際は 81.6px で
+     13.6px 被っていた)。 */
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, system-ui, sans-serif;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+a { color: var(--accent); }
+
+.site-header {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--line);
+  background: var(--panel);
+}
+.site-header h1 { font-size: 16px; margin: 0; letter-spacing: .02em; }
+.site-header nav { display: flex; gap: 12px; font-size: 13px; }
+.site-header .sub { color: var(--muted); font-size: 12px; }
+
+.disclaimer {
+  margin: 0;
+  padding: 6px 16px;
+  background: #fff7ed;
+  border-bottom: 1px solid #f0d9c0;
+  color: #7c3a12;
+  font-size: 12px;
+}
+
+/* 地図ページだけは高さを確定させる。body が min-height のままだと、
+   中身(レイヤーパネル)の実高さまで伸びて地図がフッタを突き抜ける
+   —— 実測 2026-09-07: shell が 882.9px になり 98.4px 被った(HC-205)。
+   一覧・解説ページは従来どおり自然に流れてスクロールする。 */
+body.map-mode { height: 100dvh; overflow: hidden; }
+
+main {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: var(--footer-h);
+}
+
+.prose { max-width: 860px; margin: 0 auto; padding: 20px 16px; width: 100%; }
+.prose h2 { font-size: 15px; border-bottom: 1px solid var(--line); padding-bottom: 4px; margin-top: 28px; }
+.prose table { border-collapse: collapse; width: 100%; font-size: 13px; }
+.prose th, .prose td { border: 1px solid var(--line); padding: 5px 8px; text-align: left; vertical-align: top; }
+.prose th { background: #efece5; font-weight: 600; }
+.prose code { background: #efece5; padding: 1px 4px; border-radius: 3px; font-size: 12px; }
+.table-scroll { overflow-x: auto; }
+
+/* fleet: fixed footer */
+.fleet-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: var(--footer-h);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding: 0 12px;
+  background: var(--panel);
+  border-top: 1px solid var(--line);
+  font-size: 11.5px;
+  color: var(--muted);
+  z-index: 50;
+}
+.fleet-footer a { color: var(--muted); text-decoration: none; }
+.fleet-footer a:hover { text-decoration: underline; }
+
+/* ---- 地図画面 ---- */
+.map-shell {
+  display: grid;
+  grid-template-columns: 296px 1fr;
+  /* 高さは百分率で取らない。親が auto 高だと 100% は「中身の高さ」に解決され、
+     パネルの実高さ(実測 882.9px)まで伸びてフッタを突き抜ける(HC-205)。
+     残りを flex で埋め、grid の子には min-height: 0 を与えて縮めるようにする。 */
+  flex: 1 1 auto;
+  min-height: 0;
+}
+.map-shell > * { min-height: 0; }
+
+.layer-panel {
+  overflow-y: auto;
+  border-right: 1px solid var(--line);
+  background: var(--panel);
+  padding: 10px 12px;
+}
+.layer-panel section { margin-bottom: 16px; }
+.layer-panel h2 {
+  font-size: 12px;
+  letter-spacing: .08em;
+  color: var(--muted);
+  margin: 0 0 6px;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 3px;
+}
+.layer-panel .row { display: flex; align-items: center; gap: 6px; margin: 3px 0; font-size: 13px; }
+.layer-panel .row.indent { margin-left: 18px; font-size: 12px; color: var(--muted); }
+.layer-panel .layer-item { margin-bottom: 9px; }
+.layer-panel input[type="range"] { width: 100%; margin: 2px 0 0; }
+.layer-panel select { font: inherit; font-size: 12px; padding: 1px 4px; }
+.layer-panel .hint { font-size: 11px; color: var(--muted); margin: 3px 0 0; line-height: 1.5; }
+.layer-panel .status { font-size: 11px; color: var(--accent); margin: 4px 0 0; line-height: 1.5; }
+.layer-panel .sources ul { margin: 0; padding-left: 16px; font-size: 11.5px; }
+
+.dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; border: 1px solid #fff; vertical-align: -1px; }
+.dot.onsen { background: var(--onsen); }
+.dot.volcano { background: var(--volcano); }
+
+.map-area { position: relative; overflow: hidden; }
+/* MapLibre は構築時のコンテナ寸法を読む。高さが確定していないと既定の 400x300 で
+   固まる(実測 2026-09-07: 置き場 774px に対し canvas が 300px だった)。
+   絶対配置ではなく実寸の 100% を与え、あわせて読み込み後に resize() を呼ぶ。 */
+.map-canvas { width: 100%; height: 100%; }
+
+.map-toast {
+  position: absolute;
+  left: 12px;
+  top: 12px;
+  z-index: 5;
+  background: #fff7ed;
+  border: 1px solid #f0d9c0;
+  color: #7c3a12;
+  padding: 6px 10px;
+  font-size: 12px;
+  border-radius: 4px;
+  max-width: 70%;
+}
+
+.feature-panel {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  bottom: 12px;
+  width: 320px;
+  max-width: calc(100% - 24px);
+  overflow-y: auto;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  padding: 12px 14px 16px;
+  z-index: 6;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, .12);
+}
+.feature-panel h3 { margin: 0 6px 2px 0; font-size: 15px; }
+.feature-panel h4 { margin: 14px 0 4px; font-size: 12px; color: var(--muted); letter-spacing: .06em; }
+.feature-panel .where { margin: 0 0 8px; font-size: 12px; color: var(--muted); }
+.feature-panel table { border-collapse: collapse; width: 100%; font-size: 12.5px; }
+.feature-panel th, .feature-panel td { border-bottom: 1px solid var(--line); padding: 3px 4px; text-align: left; vertical-align: top; }
+.feature-panel th { width: 40%; font-weight: 500; color: var(--muted); }
+.feature-panel .none { color: #a09a90; }
+.feature-panel .hint { font-size: 11px; color: var(--muted); margin: 6px 0 0; line-height: 1.55; }
+.feature-panel .status { font-size: 12px; color: var(--accent); }
+.feature-panel .close {
+  position: absolute; right: 8px; top: 6px;
+  border: none; background: none; font-size: 18px; line-height: 1;
+  color: var(--muted); cursor: pointer;
+}
+
+@media (max-width: 760px) {
+  /* 画面が狭いときは縦に積んでページごとスクロールさせる */
+  body.map-mode { height: auto; overflow: visible; }
+  .map-shell { grid-template-columns: 1fr; grid-template-rows: auto 1fr; flex: 0 0 auto; }
+  .layer-panel { border-right: none; border-bottom: 1px solid var(--line); max-height: 38vh; }
+  .map-area { height: 55vh; min-height: 300px; }
+  .feature-panel { width: auto; left: 12px; }
+}
+
+/* ---- 図と統計 ---- */
+.prose h3 { font-size: 13.5px; margin: 18px 0 4px; }
+.prose .hint { font-size: 12px; color: var(--muted); margin: 4px 0; }
+.prose .caution {
+  background: #fff7ed; border-left: 3px solid #e2a06a;
+  padding: 6px 10px; font-size: 12.5px; color: #7c3a12;
+}
+.prose .stat-line { font-size: 12px; color: var(--muted); margin: 2px 0 8px; }
+.prose details { margin: 4px 0 8px; }
+.prose summary { font-size: 12px; color: var(--muted); cursor: pointer; }
+
+.viz { margin: 8px 0 4px; }
+.viz svg { width: 100%; height: auto; display: block; }
+.viz-legend { display: flex; gap: 16px; font-size: 11.5px; color: var(--muted); margin-bottom: 2px; }
+.viz-legend .swatch {
+  display: inline-block; width: 9px; height: 9px; border-radius: 50%;
+  vertical-align: -1px; margin-right: 3px;
+}

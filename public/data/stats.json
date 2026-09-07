@@ -1,0 +1,244 @@
+{
+ "generated_from": {
+  "onsen": 1320,
+  "control": 1320
+ },
+ "method": {
+  "control": "同じ P12 観光資源データの温泉以外の点。都道府県ごとに温泉と同数を無作為抽出",
+  "test": "ラベル置換検定 2000 回(seed=20260907)の χ²。p = (観測以上の回数 + 1) / (回数 + 1)",
+  "effect_size": "Cramér の V",
+  "caution": "これは共起の記述であって、温泉ができる原因を示すものではない"
+ },
+ "seed": 20260907,
+ "permutations": 2000,
+ "axes": [
+  {
+   "key": "geology_group",
+   "label": "地質(大区分)",
+   "note": "シームレス地質図V2 の大区分。地点の凡例をそのまま使う",
+   "onsen_n": 1296,
+   "control_n": 1270,
+   "onsen_missing": 24,
+   "control_missing": 50,
+   "rows": [
+    {
+     "category": "堆積岩",
+     "onsen": 804,
+     "control": 841,
+     "onsen_pct": 62.04,
+     "control_pct": 66.22,
+     "diff_pt": -4.18
+    },
+    {
+     "category": "火成岩",
+     "onsen": 344,
+     "control": 294,
+     "onsen_pct": 26.54,
+     "control_pct": 23.15,
+     "diff_pt": 3.39
+    },
+    {
+     "category": "付加体",
+     "onsen": 103,
+     "control": 74,
+     "onsen_pct": 7.95,
+     "control_pct": 5.83,
+     "diff_pt": 2.12
+    },
+    {
+     "category": "変成岩",
+     "onsen": 34,
+     "control": 41,
+     "onsen_pct": 2.62,
+     "control_pct": 3.23,
+     "diff_pt": -0.6
+    },
+    {
+     "category": "その他",
+     "onsen": 11,
+     "control": 20,
+     "onsen_pct": 0.85,
+     "control_pct": 1.57,
+     "diff_pt": -0.73
+    }
+   ],
+   "chi_square": 12.506,
+   "null_mean_chi_square": 4.015,
+   "p_permutation": 0.01599,
+   "cramers_v": 0.0698
+  },
+  {
+   "key": "elevation",
+   "label": "標高",
+   "note": "国土地理院の標高タイル(z14)を読んだ値",
+   "onsen_n": 1319,
+   "control_n": 1310,
+   "onsen_missing": 1,
+   "control_missing": 10,
+   "rows": [
+    {
+     "category": "〜200 m",
+     "onsen": 757,
+     "control": 910,
+     "onsen_pct": 57.39,
+     "control_pct": 69.47,
+     "diff_pt": -12.07
+    },
+    {
+     "category": "200〜500 m",
+     "onsen": 346,
+     "control": 226,
+     "onsen_pct": 26.23,
+     "control_pct": 17.25,
+     "diff_pt": 8.98
+    },
+    {
+     "category": "500〜800 m",
+     "onsen": 140,
+     "control": 92,
+     "onsen_pct": 10.61,
+     "control_pct": 7.02,
+     "diff_pt": 3.59
+    },
+    {
+     "category": "800〜1200 m",
+     "onsen": 69,
+     "control": 49,
+     "onsen_pct": 5.23,
+     "control_pct": 3.74,
+     "diff_pt": 1.49
+    },
+    {
+     "category": "1200 m 以上",
+     "onsen": 7,
+     "control": 33,
+     "onsen_pct": 0.53,
+     "control_pct": 2.52,
+     "diff_pt": -1.99
+    }
+   ],
+   "chi_square": 69.408,
+   "null_mean_chi_square": 3.979,
+   "p_permutation": 0.0005,
+   "cramers_v": 0.1625
+  },
+  {
+   "key": "slope",
+   "label": "傾斜",
+   "note": "標高タイルから Horn 法で求めた傾斜",
+   "onsen_n": 1318,
+   "control_n": 1302,
+   "onsen_missing": 2,
+   "control_missing": 18,
+   "rows": [
+    {
+     "category": "〜3 °",
+     "onsen": 497,
+     "control": 678,
+     "onsen_pct": 37.71,
+     "control_pct": 52.07,
+     "diff_pt": -14.37
+    },
+    {
+     "category": "3〜8 °",
+     "onsen": 450,
+     "control": 345,
+     "onsen_pct": 34.14,
+     "control_pct": 26.5,
+     "diff_pt": 7.64
+    },
+    {
+     "category": "8〜15 °",
+     "onsen": 244,
+     "control": 169,
+     "onsen_pct": 18.51,
+     "control_pct": 12.98,
+     "diff_pt": 5.53
+    },
+    {
+     "category": "15〜25 °",
+     "onsen": 81,
+     "control": 63,
+     "onsen_pct": 6.15,
+     "control_pct": 4.84,
+     "diff_pt": 1.31
+    },
+    {
+     "category": "25 ° 以上",
+     "onsen": 46,
+     "control": 47,
+     "onsen_pct": 3.49,
+     "control_pct": 3.61,
+     "diff_pt": -0.12
+    }
+   ],
+   "chi_square": 57.535,
+   "null_mean_chi_square": 4.047,
+   "p_permutation": 0.0005,
+   "cramers_v": 0.1482
+  },
+  {
+   "key": "volcano_distance",
+   "label": "最寄りの活火山までの距離",
+   "note": "気象庁の活火山 111 との球面距離。近いことは火山性であることを意味しない",
+   "onsen_n": 1320,
+   "control_n": 1320,
+   "onsen_missing": 0,
+   "control_missing": 0,
+   "rows": [
+    {
+     "category": "〜10 km",
+     "onsen": 81,
+     "control": 43,
+     "onsen_pct": 6.14,
+     "control_pct": 3.26,
+     "diff_pt": 2.88
+    },
+    {
+     "category": "10〜20 km",
+     "onsen": 163,
+     "control": 134,
+     "onsen_pct": 12.35,
+     "control_pct": 10.15,
+     "diff_pt": 2.2
+    },
+    {
+     "category": "20〜30 km",
+     "onsen": 146,
+     "control": 134,
+     "onsen_pct": 11.06,
+     "control_pct": 10.15,
+     "diff_pt": 0.91
+    },
+    {
+     "category": "30〜50 km",
+     "onsen": 326,
+     "control": 289,
+     "onsen_pct": 24.7,
+     "control_pct": 21.89,
+     "diff_pt": 2.8
+    },
+    {
+     "category": "50〜100 km",
+     "onsen": 266,
+     "control": 381,
+     "onsen_pct": 20.15,
+     "control_pct": 28.86,
+     "diff_pt": -8.71
+    },
+    {
+     "category": "100 km 以上",
+     "onsen": 338,
+     "control": 339,
+     "onsen_pct": 25.61,
+     "control_pct": 25.68,
+     "diff_pt": -0.08
+    }
+   ],
+   "chi_square": 37.659,
+   "null_mean_chi_square": 5.076,
+   "p_permutation": 0.0005,
+   "cramers_v": 0.1194
+  }
+ ]
+}

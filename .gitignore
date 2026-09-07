@@ -1,0 +1,14 @@
+node_modules/
+.next/
+out/
+.venv/
+__pycache__/
+*.pyc
+.vercel
+raw/gsi/
+raw/gsj/legend/
+raw/ksj/P12/
+
+# 検品のスクリーンショット(証跡だが再生成できる。1.6MB の地図画像を毎回積まない)
+harness/shots/
+tsconfig.tsbuildinfo
