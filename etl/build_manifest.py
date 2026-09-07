@@ -16,7 +16,8 @@ from etl.common import DATA, write_json
 
 OUT = DATA / "manifest.json"
 
-PRODUCTS = ["volcanoes.geojson", "onsen.geojson", "control.geojson", "stats.json"]
+PRODUCTS = ["volcanoes.geojson", "onsen.geojson", "control.geojson",
+            "rivers.geojson", "lakes.geojson", "stats.json"]
 
 
 def main() -> None:
@@ -49,7 +50,7 @@ def main() -> None:
 
     total = sum(e["bytes"] for e in entries)
     write_json(OUT, {
-        "generated": "2026-09-07",
+        "generated": "2026-09-08",
         "note": "件数は成果物を読み直して数えたもの。生成器の申告は写していない。",
         "total_bytes": total,
         "products": entries,

@@ -61,6 +61,20 @@ AXES: list[dict] = [
         "get": lambda p: band(p.get("distance_to_volcano_km"), [10, 20, 30, 50, 100], "km"),
         "order": ["〜10 km", "10〜20 km", "20〜30 km", "30〜50 km", "50〜100 km", "100 km 以上"],
     },
+    {
+        "key": "river_distance",
+        "label": "最寄りの河川までの距離",
+        "note": "国土数値情報の河川データ全 286,437 区間との距離(地図に描いている 1 級河川だけではない)",
+        "get": lambda p: band(p.get("distance_to_river_km"), [0.1, 0.3, 1, 3], "km"),
+        "order": ["〜0.1 km", "0.1〜0.3 km", "0.3〜1 km", "1〜3 km", "3 km 以上"],
+    },
+    {
+        "key": "lake_distance",
+        "label": "最寄りの湖沼までの距離",
+        "note": "国土数値情報の湖沼データ 556 面の岸までの距離",
+        "get": lambda p: band(p.get("distance_to_lake_km"), [1, 3, 10, 30], "km"),
+        "order": ["〜1 km", "1〜3 km", "3〜10 km", "10〜30 km", "30 km 以上"],
+    },
 ]
 
 

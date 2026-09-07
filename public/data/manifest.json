@@ -1,7 +1,7 @@
 {
- "generated": "2026-09-07",
+ "generated": "2026-09-08",
  "note": "件数は成果物を読み直して数えたもの。生成器の申告は写していない。",
- "total_bytes": 2310734,
+ "total_bytes": 5488925,
  "products": [
   {
    "file": "volcanoes.geojson",
@@ -18,8 +18,8 @@
   },
   {
    "file": "onsen.geojson",
-   "bytes": 1311034,
-   "sha256": "8d1c8e106c156910c43322b933bf2c50ccc26b0877937ca4e6bed03141c0ac43",
+   "bytes": 1471821,
+   "sha256": "0f71400b2f793b184de2a1b3f23c3dd6db50d7c963328d690dcd660f18be201d",
    "features": 1320,
    "source": "国土交通省 国土数値情報",
    "dataset": "観光資源データ(P12) 2014年(平成26年)版",
@@ -45,13 +45,36 @@
      "method": "球面(半径6371.0088km)の大円距離",
      "cross_check": "WGS84 測地線(Vincenty)との相対差",
      "max_relative_difference": 0.0033642144685241725
+    },
+    "water": {
+     "river": {
+      "source": "国土交通省 国土数値情報",
+      "dataset": "河川データ(W05)",
+      "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-W05.html",
+      "license": "国土数値情報 利用約款(**非商用限定**)",
+      "license_url": "https://nlftp.mlit.go.jp/ksj/other/agreement.html",
+      "download_date": "2026-09-08"
+     },
+     "lake": {
+      "source": "国土交通省 国土数値情報",
+      "dataset": "湖沼データ(W09) 2005年版",
+      "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-W09-v2_2.html",
+      "license": "国土数値情報 利用約款(商用可)",
+      "license_url": "https://nlftp.mlit.go.jp/ksj/other/agreement.html",
+      "download_date": "2026-09-08"
+     },
+     "method": "0.05 度の格子に線分を入れ、点のまわり 12 環(およそ 0.6 度)までを見て最小距離を取る。この範囲に見つからない点は欠測にする(埋めない)",
+     "coverage": {
+      "river": "1320/1320",
+      "lake": "1317/1320"
+     }
     }
    }
   },
   {
    "file": "control.geojson",
-   "bytes": 966891,
-   "sha256": "5b91c533d3a6bb749bad35361bd97a705f584f9edb894576b39b58053807747c",
+   "bytes": 1127593,
+   "sha256": "3268fa3afef7d2982a8f6fe90b9a6ca111c3f37230200a32095a2cc408069e74",
    "features": 1320,
    "source": "国土交通省 国土数値情報 観光資源データ(P12) 2014年版",
    "purpose": "温泉点の対照群(同じ P12 観光資源データの温泉以外の点)",
@@ -73,14 +96,63 @@
      "method": "球面(半径6371.0088km)の大円距離",
      "cross_check": "WGS84 測地線(Vincenty)との相対差",
      "max_relative_difference": 0.0033376318361446394
+    },
+    "water": {
+     "river": {
+      "source": "国土交通省 国土数値情報",
+      "dataset": "河川データ(W05)",
+      "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-W05.html",
+      "license": "国土数値情報 利用約款(**非商用限定**)",
+      "license_url": "https://nlftp.mlit.go.jp/ksj/other/agreement.html",
+      "download_date": "2026-09-08"
+     },
+     "lake": {
+      "source": "国土交通省 国土数値情報",
+      "dataset": "湖沼データ(W09) 2005年版",
+      "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-W09-v2_2.html",
+      "license": "国土数値情報 利用約款(商用可)",
+      "license_url": "https://nlftp.mlit.go.jp/ksj/other/agreement.html",
+      "download_date": "2026-09-08"
+     },
+     "method": "0.05 度の格子に線分を入れ、点のまわり 12 環(およそ 0.6 度)までを見て最小距離を取る。この範囲に見つからない点は欠測にする(埋めない)",
+     "coverage": {
+      "river": "1320/1320",
+      "lake": "1319/1320"
+     }
     }
    }
   },
   {
+   "file": "rivers.geojson",
+   "bytes": 2187028,
+   "sha256": "b68892f6fc2c5c69db02b1c7787e35c99820c4e7dfbb5d0c68cdab2072cfbb20",
+   "features": 11507,
+   "source": "国土交通省 国土数値情報",
+   "dataset": "河川データ(W05)",
+   "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-W05.html",
+   "license": "国土数値情報 利用約款(**非商用限定**)",
+   "license_url": "https://nlftp.mlit.go.jp/ksj/other/agreement.html",
+   "download_date": "2026-09-08",
+   "processing_method": "全 286,436 区間・15,459,552 頂点のうち、区間種別 1/5(1 級河川の直轄区間)だけを表示用に抽出し、Douglas-Peucker(許容 0.0005 度 ≒ 45 m)で頂点を 424,233 → 39,814 に間引いた。**距離の計算には間引く前の全区間を使っている**"
+  },
+  {
+   "file": "lakes.geojson",
+   "bytes": 667300,
+   "sha256": "12e3cecdc75d7058b1e46906da08248e09abfe2cc217dd4caefd2de6d4409585",
+   "features": 547,
+   "source": "国土交通省 国土数値情報",
+   "dataset": "湖沼データ(W09) 2005年版",
+   "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-W09-v2_2.html",
+   "license": "国土数値情報 利用約款(商用可)",
+   "license_url": "https://nlftp.mlit.go.jp/ksj/other/agreement.html",
+   "download_date": "2026-09-08",
+   "processing_method": "Douglas-Peucker(許容 0.0005 度 ≒ 45 m)で頂点を 474,921 → 26,547 に間引いた。距離の計算には間引く前を使っている"
+  },
+  {
    "file": "stats.json",
-   "bytes": 5270,
-   "sha256": "520a12dd5f83abb2e604e61a0387a8f1127ffa0aefa6b1bf98a1a29f2bfc82da",
-   "axes": 4,
+   "bytes": 7644,
+   "sha256": "a9c30a6a651f1278daa1d23bb022c85864d3170ecc38d706609eb5bc124baddf",
+   "axes": 6,
    "method": {
     "control": "同じ P12 観光資源データの温泉以外の点。都道府県ごとに温泉と同数を無作為抽出",
     "test": "ラベル置換検定 2000 回(seed=20260907)の χ²。p = (観測以上の回数 + 1) / (回数 + 1)",

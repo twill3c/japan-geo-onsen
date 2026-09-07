@@ -72,10 +72,15 @@ export default function FeaturePanel({ selection, onClose }: { selection: Select
               <Row label="地質時代" value={p.geology_age} />
               <Row label="最寄りの活火山" value={p.nearest_volcano} />
               <Row label="その距離" value={p.distance_to_volcano_km} unit="km" />
+              <Row label="最寄りの河川" value={p.nearest_river} />
+              <Row label="その距離" value={p.distance_to_river_km} unit="km" />
+              <Row label="最寄りの湖沼" value={p.nearest_lake} />
+              <Row label="その距離" value={p.distance_to_lake_km} unit="km" />
             </tbody>
           </table>
           <p className="hint">
             火山に近いことは、その温泉が火山性であることを意味しません。地理的な距離を示しているだけです。
+            河川の距離は全 286,437 区間から測っています（地図に描いているのは 1 級河川の直轄区間だけです）。
           </p>
 
           <h4>この点の出所</h4>

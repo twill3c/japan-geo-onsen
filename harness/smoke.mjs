@@ -182,6 +182,20 @@ async function main() {
     check(contourFeatures > 0, '等高線が地図に載っている', `${contourFeatures} 本`);
     await page.waitForTimeout(1200);
 
+    // 水のレイヤー。既定は消えているので、点けてから**実際に描かれたか**を数える
+    for (const [label, layer] of [['河川(1級河川の直轄区間)', 'rivers'], ['湖沼', 'lakes']]) {
+      await page.getByText(label, { exact: true }).click();
+      let n = 0;
+      try {
+        await page.waitForFunction(
+          (id) => (window.__map?.querySourceFeatures(id) ?? []).length > 0,
+          layer, { timeout: 30000 },
+        );
+        n = await page.evaluate((id) => window.__map.querySourceFeatures(id).length, layer);
+      } catch { /* 下の check で不合格になる */ }
+      check(n > 0, `${label} が地図に載っている`, `${n} 件`);
+    }
+
     // 温泉をクリックして詳細が出るか
     const clicked = await page.evaluate(() => {
       const m = window.__map;

@@ -70,6 +70,24 @@ export const OVERLAYS: RasterLayer[] = [
   },
 ];
 
+/** 水のレイヤー(線と面)。出典と利用条件が河川と湖沼で違う点に注意。 */
+export const WATER_LAYERS = [
+  {
+    id: 'rivers', label: '河川(1級河川の直轄区間)', kind: 'vector' as const,
+    data: '/data/rivers.geojson',
+    attribution: '国土交通省 国土数値情報 河川データ(W05・非商用限定)',
+    defaultVisible: false, defaultOpacity: 0.85,
+    note: '地図に描くのは国が直接管理する区間だけ。温泉からの距離は全 286,437 区間で測っている',
+  },
+  {
+    id: 'lakes', label: '湖沼', kind: 'vector' as const,
+    data: '/data/lakes.geojson',
+    attribution: '国土交通省 国土数値情報 湖沼データ(W09)',
+    defaultVisible: false, defaultOpacity: 0.55,
+    note: '全 556 面。表示用に頂点を間引いてある',
+  },
+];
+
 export const CONTOUR_INTERVALS = [10, 20, 50, 100, 200, 500] as const;
 export const DEFAULT_CONTOUR_INTERVAL = 100;
 
@@ -88,6 +106,8 @@ export const SOURCES = [
   { name: '産業技術総合研究所 地質調査総合センター', what: '20万分の1日本シームレス地質図V2(タイル・凡例 API)', url: 'https://gbank.gsj.jp/seamless/', license: '政府標準利用規約(第2.0版)', licenseUrl: 'https://gbank.gsj.jp/seamless/use.html' },
   { name: '気象庁', what: '活火山の一覧と位置', url: 'https://www.jma.go.jp/bosai/volcano/', license: '気象庁ホームページの利用について', licenseUrl: 'https://www.jma.go.jp/jma/kishou/info/coment.html' },
   { name: '国土交通省 国土数値情報', what: '観光資源データ(P12, 2014年版)から抽出した温泉点', url: 'https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-P12-2014.html', license: '国土数値情報 利用約款', licenseUrl: 'https://nlftp.mlit.go.jp/ksj/other/agreement.html' },
+  { name: '国土交通省 国土数値情報(河川)', what: '河川データ(W05)。地図表示は1級河川の直轄区間、距離は全区間', url: 'https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-W05.html', license: '国土数値情報 利用約款（非商用限定）', licenseUrl: 'https://nlftp.mlit.go.jp/ksj/other/agreement.html' },
+  { name: '国土交通省 国土数値情報(湖沼)', what: '湖沼データ(W09, 2005年版)', url: 'https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-W09-v2_2.html', license: '国土数値情報 利用約款', licenseUrl: 'https://nlftp.mlit.go.jp/ksj/other/agreement.html' },
 ] as const;
 
 /** 設計書 §36 の免責。表現をここに固定し、画面から必ず参照する。 */

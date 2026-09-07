@@ -5,7 +5,7 @@ import maplibregl from 'maplibre-gl';
 import 'maplibre-gl/dist/maplibre-gl.css';
 import {
   BASEMAPS, CONTOUR_INTERVALS, DEFAULT_CONTOUR_INTERVAL, DEM,
-  GEOLOGY_LEGEND_API, OVERLAYS,
+  GEOLOGY_LEGEND_API, OVERLAYS, WATER_LAYERS,
 } from '@/lib/layers';
 import { buildContours, demZoomFor } from '@/lib/contour-tiles';
 import FeaturePanel, { type Selection } from '@/components/FeaturePanel';
@@ -23,11 +23,13 @@ export default function MapView() {
   const [visible, setVisible] = useState<Record<string, boolean>>(() => {
     const v: Record<string, boolean> = { onsen: true, volcano: true };
     for (const o of OVERLAYS) v[o.id] = o.defaultVisible;
+    for (const w of WATER_LAYERS) v[w.id] = w.defaultVisible;
     return v;
   });
   const [opacity, setOpacity] = useState<Record<string, number>>(() => {
     const v: Record<string, number> = { onsen: 0.9, volcano: 0.9 };
     for (const o of OVERLAYS) v[o.id] = o.defaultOpacity;
+    for (const w of WATER_LAYERS) v[w.id] = w.defaultOpacity;
     return v;
   });
 
@@ -101,6 +103,24 @@ export default function MapView() {
           paint: { 'raster-opacity': o.defaultOpacity },
         });
       }
+
+      // 水は地形の上・点の下に置く
+      m.addSource('lakes', { type: 'geojson', data: '/data/lakes.geojson' });
+      m.addLayer({
+        id: 'lakes', type: 'fill', source: 'lakes',
+        layout: { visibility: 'none' },
+        paint: { 'fill-color': '#3b82c4', 'fill-opacity': 0.55, 'fill-outline-color': '#1f5b91' },
+      });
+      m.addSource('rivers', { type: 'geojson', data: '/data/rivers.geojson' });
+      m.addLayer({
+        id: 'rivers', type: 'line', source: 'rivers',
+        layout: { visibility: 'none', 'line-join': 'round', 'line-cap': 'round' },
+        paint: {
+          'line-color': '#2a6fb0',
+          'line-width': ['interpolate', ['linear'], ['zoom'], 5, 0.6, 9, 1.3, 14, 2.6],
+          'line-opacity': 0.85,
+        },
+      });
 
       m.addSource('contours', { type: 'geojson', data: { type: 'FeatureCollection', features: [] } });
       m.addLayer({
@@ -191,6 +211,10 @@ export default function MapView() {
       m.setLayoutProperty(o.id, 'visibility', visible[o.id] ? 'visible' : 'none');
       m.setPaintProperty(o.id, 'raster-opacity', opacity[o.id]);
     }
+    m.setLayoutProperty('rivers', 'visibility', visible.rivers ? 'visible' : 'none');
+    m.setPaintProperty('rivers', 'line-opacity', opacity.rivers);
+    m.setLayoutProperty('lakes', 'visibility', visible.lakes ? 'visible' : 'none');
+    m.setPaintProperty('lakes', 'fill-opacity', opacity.lakes);
     const pairs: [string, string][] = [['onsen', 'onsen-label'], ['volcano', 'volcano-label']];
     for (const [id, labelId] of pairs) {
       const vis = visible[id] ? 'visible' : 'none';
@@ -299,6 +323,7 @@ export default function MapView() {
         contourOn={contourOn} setContourOn={setContourOn}
         interval={interval} setInterval={setIntervalM}
         intervals={CONTOUR_INTERVALS as unknown as number[]}
+        water={WATER_LAYERS}
         contourNote={contourNote}
         demZoomNote={`標高タイルは z${DEM.minzoom}–z${DEM.maxzoom} にあります。縮尺に応じて使う段を切り替えます`}
         onsenNameOnly={onsenNameOnly} setOnsenNameOnly={setOnsenNameOnly}

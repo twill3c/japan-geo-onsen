@@ -239,6 +239,116 @@
    "null_mean_chi_square": 5.076,
    "p_permutation": 0.0005,
    "cramers_v": 0.1194
+  },
+  {
+   "key": "river_distance",
+   "label": "最寄りの河川までの距離",
+   "note": "国土数値情報の河川データ全 286,437 区間との距離(地図に描いている 1 級河川だけではない)",
+   "onsen_n": 1320,
+   "control_n": 1320,
+   "onsen_missing": 0,
+   "control_missing": 0,
+   "rows": [
+    {
+     "category": "〜0.1 km",
+     "onsen": 557,
+     "control": 288,
+     "onsen_pct": 42.2,
+     "control_pct": 21.82,
+     "diff_pt": 20.38
+    },
+    {
+     "category": "0.1〜0.3 km",
+     "onsen": 404,
+     "control": 424,
+     "onsen_pct": 30.61,
+     "control_pct": 32.12,
+     "diff_pt": -1.52
+    },
+    {
+     "category": "0.3〜1 km",
+     "onsen": 295,
+     "control": 489,
+     "onsen_pct": 22.35,
+     "control_pct": 37.05,
+     "diff_pt": -14.7
+    },
+    {
+     "category": "1〜3 km",
+     "onsen": 61,
+     "control": 107,
+     "onsen_pct": 4.62,
+     "control_pct": 8.11,
+     "diff_pt": -3.48
+    },
+    {
+     "category": "3 km 以上",
+     "onsen": 3,
+     "control": 12,
+     "onsen_pct": 0.23,
+     "control_pct": 0.91,
+     "diff_pt": -0.68
+    }
+   ],
+   "chi_square": 152.118,
+   "null_mean_chi_square": 3.914,
+   "p_permutation": 0.0005,
+   "cramers_v": 0.24
+  },
+  {
+   "key": "lake_distance",
+   "label": "最寄りの湖沼までの距離",
+   "note": "国土数値情報の湖沼データ 556 面の岸までの距離",
+   "onsen_n": 1317,
+   "control_n": 1319,
+   "onsen_missing": 3,
+   "control_missing": 1,
+   "rows": [
+    {
+     "category": "〜1 km",
+     "onsen": 73,
+     "control": 56,
+     "onsen_pct": 5.54,
+     "control_pct": 4.25,
+     "diff_pt": 1.3
+    },
+    {
+     "category": "1〜3 km",
+     "onsen": 62,
+     "control": 59,
+     "onsen_pct": 4.71,
+     "control_pct": 4.47,
+     "diff_pt": 0.23
+    },
+    {
+     "category": "3〜10 km",
+     "onsen": 393,
+     "control": 353,
+     "onsen_pct": 29.84,
+     "control_pct": 26.76,
+     "diff_pt": 3.08
+    },
+    {
+     "category": "10〜30 km",
+     "onsen": 677,
+     "control": 710,
+     "onsen_pct": 51.4,
+     "control_pct": 53.83,
+     "diff_pt": -2.42
+    },
+    {
+     "category": "30 km 以上",
+     "onsen": 112,
+     "control": 141,
+     "onsen_pct": 8.5,
+     "control_pct": 10.69,
+     "diff_pt": -2.19
+    }
+   ],
+   "chi_square": 8.567,
+   "null_mean_chi_square": 3.938,
+   "p_permutation": 0.06847,
+   "cramers_v": 0.057
   }
  ]
 }

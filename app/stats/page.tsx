@@ -84,11 +84,31 @@ export default function StatsPage() {
           </tbody>
         </table>
       </div>
-      <p>
-        どの軸でも差はありますが、<strong>Cramér の V はいずれも 0.17 未満</strong>で、
-        分布はほとんど重なっています。「温泉はこういう場所にある」と言い切れるほどの偏りではありません。
-        とくに地質の差はいちばん小さく、他の三軸のように明快には出ていません。
-      </p>
+      {(() => {
+        // 数は集計から取り出す。文章に書き写すと、軸が増えた日に静かに嘘になる。
+        const sorted = [...stats.axes].sort((a, b) => b.cramers_v - a.cramers_v);
+        const top = sorted[0];
+        const weak = sorted[sorted.length - 1];
+        const notSig = stats.axes.filter((a) => a.p_permutation > 0.05);
+        return (
+          <>
+            <p>
+              いちばん効果が大きいのは<strong>{top.label}</strong>（V = {top.cramers_v}）、
+              いちばん小さいのは<strong>{weak.label}</strong>（V = {weak.cramers_v}）です。
+              V が 0.3 に届く軸はひとつもなく、どの軸でも<strong>分布は大きく重なっています</strong>。
+              「温泉はこういう場所にある」と言い切れるほどの偏りではありません。
+            </p>
+            {notSig.length > 0 && (
+              <p>
+                このうち{notSig.map((a) => a.label).join('・')}は、
+                ラベルを入れ替えた分布の中に観測値が埋もれており
+                （p = {notSig.map((a) => a.p_permutation).join('、')}）、
+                <strong>差があるとは言えません</strong>。出なかったことも結果として載せています。
+              </p>
+            )}
+          </>
+        );
+      })()}
 
       {stats.axes.map((a) => (
         <section key={a.key}>
@@ -156,6 +176,15 @@ export default function StatsPage() {
           標高の差も一方向ではありません。温泉は 200〜800 m の帯に寄る一方、
           <strong>1200 m 以上では対照のほうが多い</strong>（山頂や高原の観光地が対照に入るため）。
           「高いところほど温泉がある」ではありません。
+        </li>
+        <li>
+          河川との近さがいちばん大きく出ますが、これは
+          <strong>温泉が谷底や川沿いの平地にあることの裏返し</strong>でもあります。
+          対照に選んだ観光地点も人が行ける場所なので、地形の効果を完全に切り分けてはいません。
+        </li>
+        <li>
+          河川の距離は全 286,437 区間から測っており、細い流れも含みます。
+          <strong>地図に描いている 1 級河川の直轄区間だけで測った値ではありません。</strong>
         </li>
       </ul>
     </div>

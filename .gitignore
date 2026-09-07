@@ -14,3 +14,8 @@ harness/shots/
 tsconfig.tsbuildinfo
 
 .vercel
+
+# 河川・湖沼の配布 zip。河川は 47 県で 296 MB あるのでリポジトリに入れない。
+# 取得手順は README にある(raw/ に置けば ETL がそのまま読む)。
+raw/ksj/W05/
+raw/ksj/W09/

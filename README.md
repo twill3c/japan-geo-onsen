@@ -54,12 +54,27 @@ npm install
 ./.venv/Scripts/python.exe etl/enrich_onsen.py
 ./.venv/Scripts/python.exe etl/build_control.py
 ./.venv/Scripts/python.exe etl/enrich_onsen.py control.geojson
+./.venv/Scripts/python.exe etl/build_water.py     # 河川・湖沼(下記の zip が要る)
 ./.venv/Scripts/python.exe etl/build_stats.py
+./.venv/Scripts/python.exe etl/build_manifest.py
 
 npm run verify     # 型検査 → vitest → next build
 node harness/smoke.mjs --shot                              # 実ブラウザ検品(手元)
 node harness/smoke.mjs --url https://japan-geo-onsen.vercel.app   # 本番に対する検品
 ```
+
+### 河川・湖沼の生データ
+
+リポジトリには入れていない（河川は 47 県で **296 MB**）。次で `raw/` に置く。
+
+```bash
+# 河川 W05（都道府県別・年版が県ごとに違うので一覧ページから拾う）
+#   https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-W05.html
+# 湖沼 W09（全国 1 ファイル・7.7 MB）
+curl -L -o raw/ksj/W09/W09-05_GML.zip   https://nlftp.mlit.go.jp/ksj/gml/data/W09/W09-05/W09-05_GML.zip
+```
+
+**河川データ(W05)の利用条件は非商用限定**で、国土数値情報の他のデータとは異なる。
 
 ## 配る
 

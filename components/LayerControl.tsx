@@ -2,7 +2,12 @@
 
 import { BASEMAPS, OVERLAYS, SOURCES } from '@/lib/layers';
 
+type WaterLayer = {
+  id: string; label: string; note?: string;
+};
+
 type Props = {
+  water: WaterLayer[];
   basemap: string;
   setBasemap: (v: string) => void;
   visible: Record<string, boolean>;
@@ -55,6 +60,26 @@ export default function LayerControl(p: Props) {
               aria-label={`${o.label} の不透明度`}
             />
             {o.note && <p className="hint">{o.note}</p>}
+          </div>
+        ))}
+      </section>
+
+      <section>
+        <h2>水</h2>
+        {p.water.map((w) => (
+          <div key={w.id} className="layer-item">
+            <label className="row">
+              <input type="checkbox" checked={!!p.visible[w.id]} onChange={() => toggle(w.id)} />
+              <span>{w.label}</span>
+            </label>
+            <input
+              type="range" min={0} max={1} step={0.05}
+              value={p.opacity[w.id]}
+              disabled={!p.visible[w.id]}
+              onChange={(e) => setOp(w.id, Number(e.target.value))}
+              aria-label={`${w.label} の不透明度`}
+            />
+            {w.note && <p className="hint">{w.note}</p>}
           </div>
         ))}
       </section>

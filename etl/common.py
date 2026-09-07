@@ -141,6 +141,61 @@ def fetch(url: str, dest: Path, *, sleep: float = 0.4, binary: bool = True) -> b
     return body
 
 
+def point_segment_distance_km(
+    plon: float, plat: float,
+    alon: float, alat: float,
+    blon: float, blat: float,
+) -> float:
+    """点と線分の距離[km]。
+
+    球面上で厳密に解くと重いので、**点のまわりで局所平面に落として**解く。
+    経度は cos(緯度) で縮め、1 度あたりの長さを緯度に依らない定数として扱う。
+    河川の 1 区間(数 km〜数十 km)の範囲では、刻み方式の大円距離と 0.5% 以内で
+    一致することをテストで確かめている(SPEC G-09)。
+    """
+    # 1 度あたりの長さ。**haversine と同じ球**を使う。
+    # ここで楕円体の子午線長(緯度 36 度で 110.96 km/度)を使うと、端点に落ちる場合に
+    # 返す haversine(球で 111.19 km/度)と 0.2% 食い違い、同じ関数の中で
+    # 二つの地球が混ざる。距離の基準はプロジェクト全体で球に揃える(G-08 と同じ球)。
+    lat0 = math.radians(plat)
+    km_per_deg_lat = 6371.0088 * math.pi / 180.0
+    km_per_deg_lon = km_per_deg_lat * math.cos(lat0)
+
+    ax = (alon - plon) * km_per_deg_lon
+    ay = (alat - plat) * km_per_deg_lat
+    bx = (blon - plon) * km_per_deg_lon
+    by = (blat - plat) * km_per_deg_lat
+
+    dx, dy = bx - ax, by - ay
+    denom = dx * dx + dy * dy
+    if denom == 0.0:  # 退化した線分 = ただの点。近似せず大円距離を返す
+        return haversine_km(plon, plat, alon, alat)
+    # 点(原点)から線分 AB への射影パラメータ
+    t = -(ax * dx + ay * dy) / denom
+    # 垂線の足が線分の外に落ちるときは端点との距離であり、これも近似しない。
+    # 河川の区間に対しては**この場合が大半**なので、ここを厳密にしておく意味は大きい。
+    if t <= 0.0:
+        return haversine_km(plon, plat, alon, alat)
+    if t >= 1.0:
+        return haversine_km(plon, plat, blon, blat)
+    return math.hypot(ax + dx * t, ay + dy * t)
+
+
+def point_polyline_distance_km(plon: float, plat: float, line) -> float | None:
+    """点と折れ線の距離[km]。頂点が無ければ None、1 点だけならその点までの距離。"""
+    pts = list(line)
+    if not pts:
+        return None
+    if len(pts) == 1:
+        return point_segment_distance_km(plon, plat, pts[0][0], pts[0][1], pts[0][0], pts[0][1])
+    best = float("inf")
+    for i in range(len(pts) - 1):
+        d = point_segment_distance_km(plon, plat, pts[i][0], pts[i][1], pts[i + 1][0], pts[i + 1][1])
+        if d < best:
+            best = d
+    return best
+
+
 P12_ZIP = RAW / "ksj" / "P12-14_GML.zip"
 P12_DIR = RAW / "ksj" / "P12"
 
