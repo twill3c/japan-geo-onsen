@@ -104,24 +104,8 @@ export default function MapView() {
         });
       }
 
-      // 水は地形の上・点の下に置く
-      m.addSource('lakes', { type: 'geojson', data: '/data/lakes.geojson' });
-      m.addLayer({
-        id: 'lakes', type: 'fill', source: 'lakes',
-        layout: { visibility: 'none' },
-        paint: { 'fill-color': '#3b82c4', 'fill-opacity': 0.55, 'fill-outline-color': '#1f5b91' },
-      });
-      m.addSource('rivers', { type: 'geojson', data: '/data/rivers.geojson' });
-      m.addLayer({
-        id: 'rivers', type: 'line', source: 'rivers',
-        layout: { visibility: 'none', 'line-join': 'round', 'line-cap': 'round' },
-        paint: {
-          'line-color': '#2a6fb0',
-          'line-width': ['interpolate', ['linear'], ['zoom'], 5, 0.6, 9, 1.3, 14, 2.6],
-          'line-opacity': 0.85,
-        },
-      });
-
+      // 水(河川 2.1 MB・湖沼 0.65 MB)は既定で消えている。ここで読み込むと、
+      // 見ない人にも 2.85 MB を配ることになる。**点けたときに初めて足す**。
       m.addSource('contours', { type: 'geojson', data: { type: 'FeatureCollection', features: [] } });
       m.addLayer({
         id: 'contours', type: 'line', source: 'contours',
@@ -211,10 +195,34 @@ export default function MapView() {
       m.setLayoutProperty(o.id, 'visibility', visible[o.id] ? 'visible' : 'none');
       m.setPaintProperty(o.id, 'raster-opacity', opacity[o.id]);
     }
-    m.setLayoutProperty('rivers', 'visibility', visible.rivers ? 'visible' : 'none');
-    m.setPaintProperty('rivers', 'line-opacity', opacity.rivers);
-    m.setLayoutProperty('lakes', 'visibility', visible.lakes ? 'visible' : 'none');
-    m.setPaintProperty('lakes', 'fill-opacity', opacity.lakes);
+    // 水は初めて点けたときに足す(起動時に読まない)。地形の上・等高線の下に入れる。
+    if (visible.lakes && !m.getLayer('lakes')) {
+      m.addSource('lakes', { type: 'geojson', data: '/data/lakes.geojson' });
+      m.addLayer({
+        id: 'lakes', type: 'fill', source: 'lakes',
+        paint: { 'fill-color': '#3b82c4', 'fill-opacity': opacity.lakes, 'fill-outline-color': '#1f5b91' },
+      }, 'contours');
+    }
+    if (visible.rivers && !m.getLayer('rivers')) {
+      m.addSource('rivers', { type: 'geojson', data: '/data/rivers.geojson' });
+      m.addLayer({
+        id: 'rivers', type: 'line', source: 'rivers',
+        layout: { 'line-join': 'round', 'line-cap': 'round' },
+        paint: {
+          'line-color': '#2a6fb0',
+          'line-width': ['interpolate', ['linear'], ['zoom'], 5, 0.6, 9, 1.3, 14, 2.6],
+          'line-opacity': opacity.rivers,
+        },
+      }, 'contours');
+    }
+    if (m.getLayer('rivers')) {
+      m.setLayoutProperty('rivers', 'visibility', visible.rivers ? 'visible' : 'none');
+      m.setPaintProperty('rivers', 'line-opacity', opacity.rivers);
+    }
+    if (m.getLayer('lakes')) {
+      m.setLayoutProperty('lakes', 'visibility', visible.lakes ? 'visible' : 'none');
+      m.setPaintProperty('lakes', 'fill-opacity', opacity.lakes);
+    }
     const pairs: [string, string][] = [['onsen', 'onsen-label'], ['volcano', 'volcano-label']];
     for (const [id, labelId] of pairs) {
       const vis = visible[id] ? 'visible' : 'none';

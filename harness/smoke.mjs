@@ -103,7 +103,9 @@ async function main() {
 
   try {
     /* ---------- 地図画面 ---------- */
-    await page.goto(`${base}/`, { waitUntil: 'networkidle' });
+    // networkidle は地図タイルが流れ続ける本番では届かないことがある。
+    // 以降の waitForSelector / waitForFunction が本当の待ちなので、ここは軽く待つ。
+    await page.goto(`${base}/`, { waitUntil: 'domcontentloaded' });
     await page.waitForSelector('.maplibregl-canvas', { timeout: 20000 });
     check(true, '地図の canvas が出る');
 
@@ -226,7 +228,7 @@ async function main() {
     }
 
     /* ---------- 統計画面 ---------- */
-    await page.goto(`${base}/stats/`, { waitUntil: 'networkidle' });
+    await page.goto(`${base}/stats/`, { waitUntil: 'domcontentloaded' });
     const svgs = await page.locator('.viz svg').count();
     check(svgs >= 4, `軸ごとの図がある(${svgs} 枚)`);
     const legends = await page.locator('.viz-legend').count();
@@ -236,7 +238,7 @@ async function main() {
     if (wantShots) await page.screenshot({ path: 'harness/shots/stats.png', fullPage: true });
 
     /* ---------- 出典画面 ---------- */
-    await page.goto(`${base}/about/`, { waitUntil: 'networkidle' });
+    await page.goto(`${base}/about/`, { waitUntil: 'domcontentloaded' });
     const about = await page.locator('main').innerText();
     check(/見つかりませんでした/.test(about), '見つからなかったデータの記録がある');
     check(/10 都府県/.test(about), '被覆の穴が書かれている');
