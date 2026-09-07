@@ -78,13 +78,25 @@ curl -L -o raw/ksj/W09/W09-05_GML.zip   https://nlftp.mlit.go.jp/ksj/gml/data/W0
 
 ## 配る
 
-`raw/` は 269 MB あり、そのまま送るとアップロードが中断したうえ
-Vercel free のファイル枠(5,000)を焼く。`.vercelignore` で除外し、
-**1 ファイルにまとめて**送ること。
+`raw/` は 570 MB あり、そのまま送るとアップロードが中断したうえ
+Vercel free のファイル枠(5,000)を焼く。`.vercelignore` で除外する。
 
 ```bash
-vercel deploy --prod --yes --archive=tgz
+vercel deploy --prod --yes
 ```
+
+**`--archive=tgz` を使ってはならない。** この経路は `.vercelignore` を
+ローカルで適用せず、`raw/` を丸ごと詰めて **530 MB** を送ろうとする
+(実測 2026-09-08)。archive はファイル数の上限を避ける道具であって、
+容量を減らす道具ではない。
+
+**デプロイ中に `npm run build` を走らせない。** 送信元の `out/` が
+書き換わると `ENOENT` で落ちる。
+
+**配ったあと、出た版が意図した版かを実測する。** デプロイの終了コードを読み、
+`node harness/smoke.mjs --url <本番>` を通し、さらに
+配られている JS が意図した実装かを確かめること —— デプロイが失敗していても
+古い版が動いているので、画面を見ただけでは気づけない。
 
 **生成はビルドより前に置くこと。** 成果物は `public/data/` に直接書いており、
 `data/` から写す段は作っていない（写す段があると、写した後に元を変えたときに

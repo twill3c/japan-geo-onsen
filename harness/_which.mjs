@@ -1,0 +1,12 @@
+import { chromium } from 'playwright';
+const url = process.argv[2] ?? 'https://japan-geo-onsen.vercel.app';
+const browser = await chromium.launch();
+const page = await browser.newPage({ viewport: { width: 1440, height: 900 } });
+const asked = [];
+page.on('request', (r) => { if (/\/data\/(rivers|lakes)\.geojson/.test(r.url())) asked.push(r.url().split('/data/')[1]); });
+await page.goto(url, { waitUntil: 'domcontentloaded' });
+await page.waitForSelector('.maplibregl-canvas');
+await page.waitForTimeout(6000);
+console.log('レイヤーを点ける前に取得した水データ:', asked.length ? asked.join(', ') : '(なし)');
+console.log(asked.length === 0 ? '→ 遅延読み込みの版が出ている' : '→ 起動時に読む古い版が出ている');
+await browser.close();
