@@ -1,0 +1,17 @@
+# ビルドに要らないものは送らない。raw/ は 269MB あり、丸ごと送ると
+# アップロードが中断する(実測 2026-09-07: Upload aborted)。
+raw/
+.venv/
+__pycache__/
+logs/
+harness/
+tests/
+etl/
+schema/
+.wt/
+.github/
+out/
+.next/
+node_modules/
+*.pyc
+pytest.ini

@@ -3,6 +3,8 @@
 地形・地質・火山・温泉を一枚の地図に重ね、**公開データの範囲で**その関係を実測する
 教育・研究・技術実験用の Web GIS。
 
+**本番: https://japan-geo-onsen.vercel.app**
+
 - 地図: MapLibre GL JS
 - 外側: Next.js（静的書き出し）— サーバ側の処理はひとつも無い
 - データ加工: Python（ETL は手動実行）
@@ -55,6 +57,18 @@ npm install
 ./.venv/Scripts/python.exe etl/build_stats.py
 
 npm run verify     # 型検査 → vitest → next build
+node harness/smoke.mjs --shot                              # 実ブラウザ検品(手元)
+node harness/smoke.mjs --url https://japan-geo-onsen.vercel.app   # 本番に対する検品
+```
+
+## 配る
+
+`raw/` は 269 MB あり、そのまま送るとアップロードが中断したうえ
+Vercel free のファイル枠(5,000)を焼く。`.vercelignore` で除外し、
+**1 ファイルにまとめて**送ること。
+
+```bash
+vercel deploy --prod --yes --archive=tgz
 ```
 
 **生成はビルドより前に置くこと。** 成果物は `public/data/` に直接書いており、
