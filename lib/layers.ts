@@ -88,6 +88,26 @@ export const WATER_LAYERS = [
   },
 ];
 
+/** 温泉の点は出所ごとに分ける。混ぜて 1 つの層にしない(性格が違うため)。 */
+export const ONSEN_LAYERS = [
+  {
+    id: 'onsen',
+    label: '温泉（国土数値情報）',
+    data: '/data/onsen.geojson',
+    color: '#c2410c',
+    defaultVisible: true,
+    note: '観光資源データの「温泉・健康」分類。統計はこの層だけで取っている',
+  },
+  {
+    id: 'onsen-wd',
+    label: '温泉（Wikidata）',
+    data: '/data/onsen_wikidata.geojson',
+    color: '#7c3aed',
+    defaultVisible: true,
+    note: '座標のある日本の温泉（CC0）。悉皆調査ではなく、記事が書かれた温泉が載っている',
+  },
+];
+
 export const CONTOUR_INTERVALS = [10, 20, 50, 100, 200, 500] as const;
 export const DEFAULT_CONTOUR_INTERVAL = 100;
 
@@ -108,6 +128,8 @@ export const SOURCES = [
   { name: '国土交通省 国土数値情報', what: '観光資源データ(P12, 2014年版)から抽出した温泉点', url: 'https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-P12-2014.html', license: '国土数値情報 利用約款', licenseUrl: 'https://nlftp.mlit.go.jp/ksj/other/agreement.html' },
   { name: '国土交通省 国土数値情報(河川)', what: '河川データ(W05)。地図表示は1級河川の直轄区間、距離は全区間', url: 'https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-W05.html', license: '国土数値情報 利用約款（非商用限定）', licenseUrl: 'https://nlftp.mlit.go.jp/ksj/other/agreement.html' },
   { name: '国土交通省 国土数値情報(湖沼)', what: '湖沼データ(W09, 2005年版)', url: 'https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-W09-v2_2.html', license: '国土数値情報 利用約款', licenseUrl: 'https://nlftp.mlit.go.jp/ksj/other/agreement.html' },
+  { name: '環境省', what: '温泉利用状況(都道府県別の源泉数・温度別源泉数・湧出量)', url: 'https://www.env.go.jp/nature/onsen/data/', license: '環境省ホームページ利用規約', licenseUrl: 'https://www.env.go.jp/help.html' },
+  { name: 'Wikidata', what: '座標のある日本の温泉(第二の点レイヤー)', url: 'https://query.wikidata.org/', license: 'CC0 1.0', licenseUrl: 'https://creativecommons.org/publicdomain/zero/1.0/' },
 ] as const;
 
 /** 設計書 §36 の免責。表現をここに固定し、画面から必ず参照する。 */

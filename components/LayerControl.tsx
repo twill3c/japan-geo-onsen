@@ -6,8 +6,13 @@ type WaterLayer = {
   id: string; label: string; note?: string;
 };
 
+type OnsenLayer = {
+  id: string; label: string; color: string; note?: string;
+};
+
 type Props = {
   water: WaterLayer[];
+  onsenLayers: OnsenLayer[];
   basemap: string;
   setBasemap: (v: string) => void;
   visible: Record<string, boolean>;
@@ -102,23 +107,25 @@ export default function LayerControl(p: Props) {
 
       <section>
         <h2>点で示す図</h2>
-        <div className="layer-item">
-          <label className="row">
-            <input type="checkbox" checked={!!p.visible.onsen} onChange={() => toggle('onsen')} />
-            <span><i className="dot onsen" /> 温泉(観光資源)</span>
-          </label>
-          <label className="row indent">
-            <input
-              type="checkbox" checked={p.onsenNameOnly}
-              disabled={!p.visible.onsen}
-              onChange={(e) => p.setOnsenNameOnly(e.target.checked)}
-            />
-            <span>名称に「温泉」「湯」を含むものだけ</span>
-          </label>
-          <p className="hint">
-            出典は観光資源データの「温泉・健康」分類です。温泉そのものの台帳ではありません。
-          </p>
-        </div>
+        {p.onsenLayers.map((o) => (
+          <div key={o.id} className="layer-item">
+            <label className="row">
+              <input type="checkbox" checked={!!p.visible[o.id]} onChange={() => toggle(o.id)} />
+              <span><i className="dot" style={{ background: o.color }} /> {o.label}</span>
+            </label>
+            {o.note && <p className="hint">{o.note}</p>}
+          </div>
+        ))}
+        <label className="row indent">
+          <input
+            type="checkbox" checked={p.onsenNameOnly}
+            onChange={(e) => p.setOnsenNameOnly(e.target.checked)}
+          />
+          <span>名称に「温泉」「湯」を含むものだけ（両方に効く）</span>
+        </label>
+        <p className="hint">
+          出所の違う 2 つの層です。<a href="/onsen-stats/">どちらも日本の温泉の一覧ではありません</a>。
+        </p>
         <div className="layer-item">
           <label className="row">
             <input type="checkbox" checked={!!p.visible.volcano} onChange={() => toggle('volcano')} />

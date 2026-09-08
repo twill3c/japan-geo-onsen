@@ -55,6 +55,11 @@ export default function StatsPage() {
         χ² を作り直し、観測値がその分布のどこに来るかで見ています。
       </p>
       <p className="caution">{stats.method.caution}</p>
+      <p className="hint">
+        地図には <strong>Wikidata から採った温泉の層</strong>も出していますが、
+        <strong>この集計には使っていません</strong>。対照群は同じ観光資源データの中から選ぶことで
+        「人が登録した場所」という偏りを打ち消しています。出所の違う点を混ぜると、その揃えが崩れるためです。
+      </p>
 
       <h2>いちばん大きな差</h2>
       <p className="hint">

@@ -210,8 +210,14 @@ def add_coverage(doc: dict) -> dict:
             "sources_total": r["sources_total"],
         })
     total_points = sum(x["points"] for x in rows)
+
+    # Wikidata の層(第二の点レイヤー)。県別の内訳は行政区域ポリゴンが要るので出さず、
+    # 全国の数と「重複を除いた地点の数」だけを並べる
+    wd_path = DATA / "onsen_wikidata.geojson"
+    wd = json.loads(wd_path.read_text(encoding="utf-8")) if wd_path.exists() else None
+
     doc["coverage"] = {
-        "note": ("地図の点は国土数値情報の観光資源データから採ったもので、"
+        "note": ("地図の点は国土数値情報の観光資源データ(と Wikidata)から採ったもので、"
                  "環境省が数えている温泉地・源泉の一覧ではない。両者の数を並べて置く"),
         "points_total": total_points,
         "onsen_areas_total": doc["national"]["onsen_areas"],
@@ -219,6 +225,13 @@ def add_coverage(doc: dict) -> dict:
         "points_per_onsen_area": total_points / doc["national"]["onsen_areas"],
         "prefectures_with_zero_points": [x["prefecture"] for x in rows if x["points"] == 0],
         "rows": rows,
+        "wikidata": None if wd is None else {
+            "points": len(wd["features"]),
+            "new_locations": wd["metadata"]["overlap"]["new_locations"],
+            "distinct_locations": wd["metadata"]["overlap"]["distinct_locations"],
+            "distinct_per_onsen_area":
+                wd["metadata"]["overlap"]["distinct_locations"] / doc["national"]["onsen_areas"],
+        },
     }
     return doc
 
@@ -227,8 +240,13 @@ if __name__ == "__main__":
     doc = add_coverage(parse_pdf())
     write_json(OUT, doc, indent=1)
     c = doc["coverage"]
-    print(f"  地図の点 {c['points_total']:,} 対 温泉地 {c['onsen_areas_total']:,}"
+    print(f"  地図の点(P12) {c['points_total']:,} 対 温泉地 {c['onsen_areas_total']:,}"
           f"({100*c['points_per_onsen_area']:.0f}%)・源泉 {c['sources_total']:,}")
+    if c["wikidata"]:
+        w = c["wikidata"]
+        print(f"  Wikidata {w['points']:,} 点(新しい場所 {w['new_locations']:,})"
+              f" → 重複を除いた地点 {w['distinct_locations']:,}"
+              f"(温泉地の {100*w['distinct_per_onsen_area']:.0f}%)")
     print(f"  点が 0 の都道府県 {len(c['prefectures_with_zero_points'])}: "
           f"{'・'.join(c['prefectures_with_zero_points'])}")
     n = doc["national"]

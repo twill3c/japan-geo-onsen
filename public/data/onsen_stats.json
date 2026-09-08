@@ -1132,7 +1132,7 @@
   }
  ],
  "coverage": {
-  "note": "地図の点は国土数値情報の観光資源データから採ったもので、環境省が数えている温泉地・源泉の一覧ではない。両者の数を並べて置く",
+  "note": "地図の点は国土数値情報の観光資源データ(と Wikidata)から採ったもので、環境省が数えている温泉地・源泉の一覧ではない。両者の数を並べて置く",
   "points_total": 1320,
   "onsen_areas_total": 2839,
   "sources_total": 27899,
@@ -1432,6 +1432,12 @@
     "onsen_areas": 15,
     "sources_total": 22
    }
-  ]
+  ],
+  "wikidata": {
+   "points": 1477,
+   "new_locations": 1135,
+   "distinct_locations": 2455,
+   "distinct_per_onsen_area": 0.8647411060232476
+  }
  }
 }

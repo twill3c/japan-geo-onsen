@@ -42,6 +42,8 @@ KEEP = 8               # 篩で残す候補数。この分だけ厳密な距離�
 UNNAMED = "名称不明"
 
 DISPLAY_SECTIONS = {"1", "5"}   # 1 級河川の直轄区間
+# 距離を付ける対象。温泉(P12)・対照・Wikidata の温泉
+POINT_FILES = ("onsen.geojson", "control.geojson", "onsen_wikidata.geojson")
 SIMPLIFY_TOL = 0.0005           # 度。およそ 45 m
 
 RIVER_LICENSE = {
@@ -226,7 +228,7 @@ def simplify(pts, tol: float):
 def load_points() -> list[dict]:
     """温泉と対照の全点を、走査中の最小値を持つ器として並べる。"""
     out = []
-    for path in ("onsen.geojson", "control.geojson"):
+    for path in POINT_FILES:
         fc = json.loads((DATA / path).read_text(encoding="utf-8"))
         for f in fc["features"]:
             lon, lat = f["geometry"]["coordinates"]
@@ -368,7 +370,7 @@ def main() -> None:
     print(f"  面 {lak['polygons']:,}")
 
     # 点へ書き戻す
-    for path in ("onsen.geojson", "control.geojson"):
+    for path in POINT_FILES:
         fc = json.loads((DATA / path).read_text(encoding="utf-8"))
         mine = [p for p in points if p["file"] == path]
         assert len(mine) == len(fc["features"]), f"{path} の点数が合わない"

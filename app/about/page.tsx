@@ -77,6 +77,36 @@ export default function About() {
         <strong>距離の計算には間引く前のデータを使っています。</strong>
       </p>
 
+      <h3>温泉の点を 2 つの層に分けている</h3>
+      <p>
+        地図の温泉には出所の違う 2 つの層があります。
+      </p>
+      <div className="table-scroll">
+        <table>
+          <thead><tr><th>層</th><th>出所</th><th>性格</th><th>統計に使うか</th></tr></thead>
+          <tbody>
+            <tr>
+              <td>温泉（国土数値情報）</td>
+              <td>観光資源データ P12・利用約款</td>
+              <td>行政が集めた資料の統合</td>
+              <td>使う</td>
+            </tr>
+            <tr>
+              <td>温泉（Wikidata）</td>
+              <td>Wikidata・CC0</td>
+              <td>記事が書かれた温泉が載っている。悉皆調査ではない</td>
+              <td><strong>使わない</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        Wikidata の層を足したのは、地図の被覆を広げるためです。
+        ただし<strong>統計には使いません</strong>。対照群は同じ観光資源データの中から選ぶことで
+        「人が登録した場所」という偏りを打ち消しており、出所の違う点を混ぜるとその揃えが崩れるからです。
+        重なる点も消していません（出所が違うので両方残しています）。
+      </p>
+
       <h2>被覆の穴</h2>
       <p>
         この温泉点は観光地点等名簿の提出状況に依存するため、<strong>分布に偏りがあります</strong>。

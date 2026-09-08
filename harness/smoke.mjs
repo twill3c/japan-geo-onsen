@@ -150,13 +150,15 @@ async function main() {
       if (!m) return null;
       return {
         onsen: m.queryRenderedFeatures({ layers: ['onsen'] }).length,
+        onsenWd: m.queryRenderedFeatures({ layers: ['onsen-wd'] }).length,
         volcano: m.queryRenderedFeatures({ layers: ['volcano'] }).length,
       };
     });
     if (counts === null) {
       notes.push('  --   window.__map が無いので描画数は数えていない');
     } else {
-      check(counts.onsen > 0, `温泉が描かれている(${counts?.onsen} 件)`);
+      check(counts.onsen > 0, `温泉(国土数値情報)が描かれている(${counts?.onsen} 件)`);
+      check(counts.onsenWd > 0, `温泉(Wikidata)が描かれている(${counts?.onsenWd} 件)`);
       check(counts.volcano > 0, `火山が描かれている(${counts?.volcano} 件)`);
     }
 
@@ -229,6 +231,9 @@ async function main() {
 
     /* ---------- 統計画面 ---------- */
     await page.goto(`${base}/stats/`, { waitUntil: 'domcontentloaded' });
+    const statsText = await page.locator('main').innerText();
+    check(/この集計には使っていません/.test(statsText),
+      '統計に Wikidata を使っていないと書かれている');
     const svgs = await page.locator('.viz svg').count();
     check(svgs >= 4, `軸ごとの図がある(${svgs} 枚)`);
     const legends = await page.locator('.viz-legend').count();
@@ -243,6 +248,8 @@ async function main() {
     check(/27,899/.test(os), '全国の源泉総数が出ている');
     check(/42 度以上/.test(os), '温度別の区分が出ている');
     check(/点が 1 つもありません/.test(os), '点の被覆の穴が書かれている');
+    check(/Wikidata/.test(os) && /2,839 という数そのものを再現したものではありません/.test(os),
+      'Wikidata を足しても 2,839 の再現ではないと書かれている');
     check(/富山県/.test(os), '出典の食い違いが書かれている');
     const segs = await page.locator('.seg-legend li').count();
     check(segs === 4, `温度別の凡例が 4 区分ある(${segs})`);

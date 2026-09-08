@@ -47,6 +47,10 @@ type Stats = {
     points_per_onsen_area: number;
     prefectures_with_zero_points: string[];
     rows: { prefecture: string; points: number; onsen_areas: number; sources_total: number }[];
+    wikidata: {
+      points: number; new_locations: number;
+      distinct_locations: number; distinct_per_onsen_area: number;
+    } | null;
   };
 };
 
@@ -146,14 +150,27 @@ export default function OnsenStatsPage() {
         点は温泉地のおよそ <strong>{(100 * s.coverage.points_per_onsen_area).toFixed(0)}%</strong> にあたる数で、
         源泉の数には遠く及びません。
       </p>
+      {s.coverage.wikidata && (
+        <p>
+          これを補うため、<strong>Wikidata から採った温泉の層</strong>（CC0）を重ねています。
+          こちらは {n(s.coverage.wikidata.points)} 点あり、
+          そのうち <strong>{n(s.coverage.wikidata.new_locations)} 点</strong>は
+          観光資源データの点から 300 m 以上離れた新しい場所です。
+          重複を除くと地点は <strong>{n(s.coverage.wikidata.distinct_locations)}</strong>、
+          温泉地 {n(s.coverage.onsen_areas_total)} の
+          <strong>{(100 * s.coverage.wikidata.distinct_per_onsen_area).toFixed(0)}%</strong> にあたります。
+          ただし Wikidata も悉皆調査ではなく「記事が書かれた温泉が載っている」データなので、
+          <strong>2,839 という数そのものを再現したものではありません</strong>。
+        </p>
+      )}
       <p>
-        しかも <strong>{s.coverage.prefectures_with_zero_points.length} 都府県には点が 1 つもありません</strong>
+        しかも観光資源データの側では <strong>{s.coverage.prefectures_with_zero_points.length} 都府県に点が 1 つもありません</strong>
         （{s.coverage.prefectures_with_zero_points.join('・')}）。
         いずれも環境省の集計には源泉があります。
         <strong>点が無いことは温泉が無いことを意味しません。</strong>
       </p>
       <details>
-        <summary>都道府県ごとの対比</summary>
+        <summary>都道府県ごとの対比（観光資源データの点のみ）</summary>
         <div className="table-scroll">
           <table>
             <thead>

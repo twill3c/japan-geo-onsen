@@ -5,7 +5,7 @@ import maplibregl from 'maplibre-gl';
 import 'maplibre-gl/dist/maplibre-gl.css';
 import {
   BASEMAPS, CONTOUR_INTERVALS, DEFAULT_CONTOUR_INTERVAL, DEM,
-  GEOLOGY_LEGEND_API, OVERLAYS, WATER_LAYERS,
+  GEOLOGY_LEGEND_API, ONSEN_LAYERS, OVERLAYS, WATER_LAYERS,
 } from '@/lib/layers';
 import { buildContours, demZoomFor } from '@/lib/contour-tiles';
 import FeaturePanel, { type Selection } from '@/components/FeaturePanel';
@@ -21,13 +21,15 @@ export default function MapView() {
 
   const [basemap, setBasemap] = useState('pale');
   const [visible, setVisible] = useState<Record<string, boolean>>(() => {
-    const v: Record<string, boolean> = { onsen: true, volcano: true };
+    const v: Record<string, boolean> = { volcano: true };
+    for (const o of ONSEN_LAYERS) v[o.id] = o.defaultVisible;
     for (const o of OVERLAYS) v[o.id] = o.defaultVisible;
     for (const w of WATER_LAYERS) v[w.id] = w.defaultVisible;
     return v;
   });
   const [opacity, setOpacity] = useState<Record<string, number>>(() => {
-    const v: Record<string, number> = { onsen: 0.9, volcano: 0.9 };
+    const v: Record<string, number> = { volcano: 0.9 };
+    for (const o of ONSEN_LAYERS) v[o.id] = 0.9;
     for (const o of OVERLAYS) v[o.id] = o.defaultOpacity;
     for (const w of WATER_LAYERS) v[w.id] = w.defaultOpacity;
     return v;
@@ -137,27 +139,32 @@ export default function MapView() {
         paint: { 'text-color': '#7f1d1d', 'text-halo-color': '#ffffff', 'text-halo-width': 1.4 },
       });
 
-      m.addSource('onsen', { type: 'geojson', data: '/data/onsen.geojson' });
-      m.addLayer({
-        id: 'onsen', type: 'circle', source: 'onsen',
-        paint: {
-          'circle-radius': ['interpolate', ['linear'], ['zoom'], 5, 2.4, 10, 4.6, 14, 7],
-          'circle-color': '#c2410c',
-          'circle-stroke-color': '#ffffff',
-          'circle-stroke-width': 0.8,
-          'circle-opacity': 0.9,
-        },
-      });
-      m.addLayer({
-        id: 'onsen-label', type: 'symbol', source: 'onsen', minzoom: 11,
-        layout: {
-          'text-field': ['get', 'name'], 'text-size': 10.5,
-          'text-offset': [0, 0.9], 'text-anchor': 'top',
-        },
-        paint: { 'text-color': '#7c2d12', 'text-halo-color': '#ffffff', 'text-halo-width': 1.3 },
-      });
+      // 温泉は出所ごとに層を分ける。色で見分けられるようにし、混ぜない
+      for (const o of ONSEN_LAYERS) {
+        m.addSource(o.id, { type: 'geojson', data: o.data });
+        m.addLayer({
+          id: o.id, type: 'circle', source: o.id,
+          layout: { visibility: o.defaultVisible ? 'visible' : 'none' },
+          paint: {
+            'circle-radius': ['interpolate', ['linear'], ['zoom'], 5, 2.4, 10, 4.6, 14, 7],
+            'circle-color': o.color,
+            'circle-stroke-color': '#ffffff',
+            'circle-stroke-width': 0.8,
+            'circle-opacity': 0.9,
+          },
+        });
+        m.addLayer({
+          id: `${o.id}-label`, type: 'symbol', source: o.id, minzoom: 11,
+          layout: {
+            visibility: o.defaultVisible ? 'visible' : 'none',
+            'text-field': ['coalesce', ['get', 'name'], ''], 'text-size': 10.5,
+            'text-offset': [0, 0.9], 'text-anchor': 'top',
+          },
+          paint: { 'text-color': '#4b2d12', 'text-halo-color': '#ffffff', 'text-halo-width': 1.3 },
+        });
+      }
 
-      for (const id of ['onsen', 'volcano']) {
+      for (const id of [...ONSEN_LAYERS.map((o) => o.id), 'volcano']) {
         m.on('mouseenter', id, () => { m.getCanvas().style.cursor = 'pointer'; });
         m.on('mouseleave', id, () => { m.getCanvas().style.cursor = ''; });
       }
@@ -223,7 +230,10 @@ export default function MapView() {
       m.setLayoutProperty('lakes', 'visibility', visible.lakes ? 'visible' : 'none');
       m.setPaintProperty('lakes', 'fill-opacity', opacity.lakes);
     }
-    const pairs: [string, string][] = [['onsen', 'onsen-label'], ['volcano', 'volcano-label']];
+    const pairs: [string, string][] = [
+      ...ONSEN_LAYERS.map((o) => [o.id, `${o.id}-label`] as [string, string]),
+      ['volcano', 'volcano-label'],
+    ];
     for (const [id, labelId] of pairs) {
       const vis = visible[id] ? 'visible' : 'none';
       m.setLayoutProperty(id, 'visibility', vis);
@@ -239,8 +249,10 @@ export default function MapView() {
     const filter = onsenNameOnly
       ? (['==', ['get', 'name_has_onsen'], true] as maplibregl.FilterSpecification)
       : null;
-    m.setFilter('onsen', filter);
-    m.setFilter('onsen-label', filter);
+    for (const o of ONSEN_LAYERS) {
+      m.setFilter(o.id, filter);
+      m.setFilter(`${o.id}-label`, filter);
+    }
   }, [onsenNameOnly, ready]);
 
   /* ---- 等高線 ---- */
@@ -295,11 +307,12 @@ export default function MapView() {
     const m = map.current;
     if (!m || !ready) return;
     const onClick = async (e: maplibregl.MapMouseEvent) => {
-      const hits = m.queryRenderedFeatures(e.point, { layers: ['onsen', 'volcano'] });
+      const onsenIds = ONSEN_LAYERS.map((o) => o.id);
+      const hits = m.queryRenderedFeatures(e.point, { layers: [...onsenIds, 'volcano'] });
       if (hits.length > 0) {
         const f = hits[0];
         setSelection({
-          kind: f.layer.id === 'onsen' ? 'onsen' : 'volcano',
+          kind: onsenIds.includes(f.layer.id) ? 'onsen' : 'volcano',
           properties: f.properties ?? {},
         });
         return;
@@ -332,6 +345,7 @@ export default function MapView() {
         interval={interval} setInterval={setIntervalM}
         intervals={CONTOUR_INTERVALS as unknown as number[]}
         water={WATER_LAYERS}
+        onsenLayers={ONSEN_LAYERS}
         contourNote={contourNote}
         demZoomNote={`標高タイルは z${DEM.minzoom}–z${DEM.maxzoom} にあります。縮尺に応じて使う段を切り替えます`}
         onsenNameOnly={onsenNameOnly} setOnsenNameOnly={setOnsenNameOnly}

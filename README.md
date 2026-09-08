@@ -38,6 +38,10 @@ marching squares で引いている。
 - **温泉の泉質・泉温・湧出量を地点ごとに載せた全国の公開データは存在しない。**
   国土数値情報の全 157 データセットに温泉は無く、環境省は都道府県別の集計 PDF のみ。
   よってこれらの欄は **null のまま出荷し、画面には「公開データに無い」と書く**。
+- **環境省が数える温泉地 2,839 の一覧は公開されていない。** 集計 PDF に載るのは数だけで、
+  名前も座標も無い。だから 2,839 そのものを点にすることはできない。
+  被覆を広げるため **Wikidata(CC0)の温泉 1,477 件**を第二の層として足した
+  （重複を除いた地点 **2,455**＝温泉地の 86%）。ただし悉皆調査ではないので**統計には使わない**。
 - **温泉点の被覆には穴がある。** 10 都府県に 1 点も無い。「点が無い＝温泉が無い」ではない。
   環境省の公表値と並べると、地図の点 **1,320** は温泉地 **2,839** の 46%、源泉 **27,899** の 5% にすぎない。
 - **泉温は都道府県別になら実データがある。** 環境省の集計で、温度の記録がある源泉 24,668 のうち
@@ -58,6 +62,8 @@ npm install
 ./.venv/Scripts/python.exe etl/build_volcanoes.py
 ./.venv/Scripts/python.exe etl/build_onsen_base.py
 ./.venv/Scripts/python.exe etl/enrich_onsen.py
+./.venv/Scripts/python.exe etl/build_onsen_wikidata.py   # 第二の点レイヤー(CC0)
+./.venv/Scripts/python.exe etl/enrich_onsen.py onsen_wikidata.geojson
 ./.venv/Scripts/python.exe etl/build_control.py
 ./.venv/Scripts/python.exe etl/enrich_onsen.py control.geojson
 ./.venv/Scripts/python.exe etl/build_water.py     # 河川・湖沼(下記の zip が要る)

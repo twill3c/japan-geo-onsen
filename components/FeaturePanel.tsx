@@ -42,7 +42,11 @@ export default function FeaturePanel({ selection, onClose }: { selection: Select
       {selection.kind === 'onsen' && (
         <>
           <h3>♨ {txt(p.name) ?? '(名称なし)'}</h3>
-          <p className="where">{txt(p.prefecture)}{txt(p.address) ? ` ・ ${txt(p.address)}` : ''}</p>
+          <p className="where">
+            {p.provenance === 'wikidata'
+              ? 'Wikidata の温泉'
+              : `${txt(p.prefecture) ?? ''}${txt(p.address) ? ` ・ ${txt(p.address)}` : ''}`}
+          </p>
 
           <h4>温泉の属性</h4>
           <table>
@@ -86,13 +90,36 @@ export default function FeaturePanel({ selection, onClose }: { selection: Select
           </p>
 
           <h4>この点の出所</h4>
-          <table>
-            <tbody>
-              <Row label="出典" value="国土数値情報 観光資源データ(P12, 2014年版)" />
-              <Row label="元 ID" value={p.source_id} />
-              <Row label="分類" value={txt(p.kind_name) ?? (p.category_code === '3' ? '観光資源分類コード 3(温泉・健康)' : null)} />
-            </tbody>
-          </table>
+          {p.provenance === 'wikidata' ? (
+            <>
+              <table>
+                <tbody>
+                  <Row label="出典" value="Wikidata（CC0）" />
+                  <Row label="項目" value={p.wikidata_id} />
+                </tbody>
+              </table>
+              <p className="hint">
+                {txt(p.wikidata_id) && (
+                  <a
+                    href={`https://www.wikidata.org/wiki/${txt(p.wikidata_id)}`}
+                    target="_blank" rel="noreferrer"
+                  >
+                    Wikidata で見る
+                  </a>
+                )}
+                。記事が書かれた温泉が載っているデータで、行政の悉皆調査ではありません。
+                <strong>統計（温泉と地理環境）にはこの層を使っていません。</strong>
+              </p>
+            </>
+          ) : (
+            <table>
+              <tbody>
+                <Row label="出典" value="国土数値情報 観光資源データ(P12, 2014年版)" />
+                <Row label="元 ID" value={p.source_id} />
+                <Row label="分類" value={txt(p.kind_name) ?? (p.category_code === '3' ? '観光資源分類コード 3(温泉・健康)' : null)} />
+              </tbody>
+            </table>
+          )}
         </>
       )}
 

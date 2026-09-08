@@ -129,13 +129,24 @@ def fetch(url: str, dest: Path, *, sleep: float = 0.4, binary: bool = True) -> b
         return dest.read_bytes()
     dest.parent.mkdir(parents=True, exist_ok=True)
     req = urllib.request.Request(url, headers={"User-Agent": UA})
-    try:
-        with urllib.request.urlopen(req, timeout=60) as r:
-            body = r.read()
-    except urllib.error.HTTPError as e:
-        if e.code == 404:
-            return None
-        raise
+    # 名前解決や接続が一時的に落ちることがある(実測 2026-09-08: getaddrinfo failed で
+    # 1,477 点の途中で停止した)。数分の取得を一度の瞬断で捨てないよう、間を空けて数回試す。
+    # HTTP 404 は「無い」という答えなので再試行しない。
+    last: Exception | None = None
+    for attempt in range(4):
+        try:
+            with urllib.request.urlopen(req, timeout=60) as r:
+                body = r.read()
+            break
+        except urllib.error.HTTPError as e:
+            if e.code == 404:
+                return None
+            last = e
+        except (urllib.error.URLError, TimeoutError, OSError) as e:
+            last = e
+        time.sleep(2 * (attempt + 1))
+    else:
+        raise RuntimeError(f"取得に 4 回失敗した: {url}") from last
     dest.write_bytes(body)
     time.sleep(sleep)
     return body
