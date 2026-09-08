@@ -1,7 +1,7 @@
 {
  "generated": "2026-09-08",
  "note": "件数は成果物を読み直して数えたもの。生成器の申告は写していない。",
- "total_bytes": 5488925,
+ "total_bytes": 5522650,
  "products": [
   {
    "file": "volcanoes.geojson",
@@ -159,6 +159,13 @@
     "effect_size": "Cramér の V",
     "caution": "これは共起の記述であって、温泉ができる原因を示すものではない"
    }
+  },
+  {
+   "file": "onsen_stats.json",
+   "bytes": 33725,
+   "sha256": "ee7d593ead1f1872bb1bc41f626c6f12d318e9ee8b8f37d6708e861117424f29",
+   "axes": 0,
+   "method": null
   }
  ]
 }

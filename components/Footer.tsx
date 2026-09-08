@@ -8,7 +8,7 @@ export default function Footer() {
       <span>・</span>
       <a href="/about/">データと出典</a>
       <span>・</span>
-      <a href="/stats/">温泉と地理環境</a>
+      <a href="/onsen-stats/">温泉の統計</a>
       <span>・</span>
       <a href="https://app-menu-nine.vercel.app/" target="_blank" rel="noreferrer">App Menu</a>
     </footer>

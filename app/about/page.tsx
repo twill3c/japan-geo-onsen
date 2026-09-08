@@ -112,7 +112,10 @@ export default function About() {
             </tr>
             <tr>
               <td>環境省 温泉に関するデータ</td>
-              <td>都道府県別の集計 PDF のみ（源泉総数・温度別源泉数・湧出量）。地点別は無い</td>
+              <td>
+                都道府県別の集計 PDF のみ（源泉総数・温度別源泉数・湧出量）。地点別は無い。
+                この集計は読み取って<a href="/onsen-stats/">温泉の統計</a>に載せた
+              </td>
             </tr>
             <tr>
               <td>OpenStreetMap <code>natural=hot_spring</code></td>

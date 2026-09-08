@@ -17,7 +17,8 @@ from etl.common import DATA, write_json
 OUT = DATA / "manifest.json"
 
 PRODUCTS = ["volcanoes.geojson", "onsen.geojson", "control.geojson",
-            "rivers.geojson", "lakes.geojson", "stats.json"]
+            "rivers.geojson", "lakes.geojson", "stats.json",
+            "onsen_stats.json"]
 
 
 def main() -> None:

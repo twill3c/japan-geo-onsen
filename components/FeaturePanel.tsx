@@ -58,6 +58,8 @@ export default function FeaturePanel({ selection, onClose }: { selection: Select
           <p className="hint">
             泉質・泉温・湧出量を地点ごとに載せた全国の公開データは見つかりませんでした
             （<a href="/about/">調べた範囲</a>）。空欄は「測っていない」ことを表しています。
+            <strong>都道府県ごとの集計</strong>なら環境省の実データがあります
+            （<a href="/onsen-stats/">温泉の統計</a>）。
           </p>
 
           <h4>まわりの地理環境</h4>

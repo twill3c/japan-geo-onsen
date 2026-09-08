@@ -237,6 +237,19 @@ async function main() {
     check(bad.length === 0, '統計画面に横のはみ出しが無い', bad.join(' / '));
     if (wantShots) await page.screenshot({ path: 'harness/shots/stats.png', fullPage: true });
 
+    /* ---------- 温泉の統計画面 ---------- */
+    await page.goto(`${base}/onsen-stats/`, { waitUntil: 'domcontentloaded' });
+    const os = await page.locator('main').innerText();
+    check(/27,899/.test(os), '全国の源泉総数が出ている');
+    check(/42 度以上/.test(os), '温度別の区分が出ている');
+    check(/点が 1 つもありません/.test(os), '点の被覆の穴が書かれている');
+    check(/富山県/.test(os), '出典の食い違いが書かれている');
+    const segs = await page.locator('.seg-legend li').count();
+    check(segs === 4, `温度別の凡例が 4 区分ある(${segs})`);
+    bad = await overflowing(page);
+    check(bad.length === 0, '温泉の統計画面に横のはみ出しが無い', bad.join(' / '));
+    if (wantShots) await page.screenshot({ path: 'harness/shots/onsen-stats.png', fullPage: true });
+
     /* ---------- 出典画面 ---------- */
     await page.goto(`${base}/about/`, { waitUntil: 'domcontentloaded' });
     const about = await page.locator('main').innerText();
