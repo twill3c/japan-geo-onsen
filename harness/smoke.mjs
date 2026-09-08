@@ -143,17 +143,30 @@ async function main() {
     check(/保証するものではありません/.test(disclaimer), '免責が常に出ている', disclaimer.slice(0, 40));
 
     // 温泉と火山が描かれているか(MapLibre の内部状態ではなく、描画済みフィーチャを数える)
-    const counts = await page.evaluate(async () => {
+    //
+    // 固定の待ち時間で数えていたら、本番で 3 層とも 0 件になった。実測すると点が出るのは
+    // 約 3.0 秒で、待ちが 2.5 秒では足りていなかっただけである(手元では届いていた)。
+    // 固定待ちは回線の速さを測る計器になってしまうので、**出るまで待って、出なければ落とす**
+    // 形に変えた。締切を過ぎたらそのときの数(0 のまま)を返すので、本当に描かれない故障は
+    // これまで通り落ちる。
+    const RENDER_DEADLINE_MS = Number(process.env.SMOKE_RENDER_DEADLINE_MS ?? 20000);
+    const counts = await page.evaluate(async (deadlineMs) => {
       const wait = (ms) => new Promise((r) => setTimeout(r, ms));
-      await wait(2500);
       const m = window.__map;
       if (!m) return null;
-      return {
+      const read = () => ({
         onsen: m.queryRenderedFeatures({ layers: ['onsen'] }).length,
         onsenWd: m.queryRenderedFeatures({ layers: ['onsen-wd'] }).length,
         volcano: m.queryRenderedFeatures({ layers: ['volcano'] }).length,
-      };
-    });
+      });
+      const until = Date.now() + deadlineMs;
+      let c = read();
+      while (Date.now() < until && !(c.onsen > 0 && c.onsenWd > 0 && c.volcano > 0)) {
+        await wait(250);
+        c = read();
+      }
+      return c;
+    }, RENDER_DEADLINE_MS);
     if (counts === null) {
       notes.push('  --   window.__map が無いので描画数は数えていない');
     } else {
