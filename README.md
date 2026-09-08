@@ -42,6 +42,8 @@ marching squares で引いている。
   名前も座標も無い。だから 2,839 そのものを点にすることはできない。
   被覆を広げるため **Wikidata(CC0)の温泉 1,477 件**を第二の層として足した
   （重複を除いた地点 **2,455**＝温泉地の 86%）。ただし悉皆調査ではないので**統計には使わない**。
+- **植生自然度で差が出るのは中ほどの段階だけ。** 温泉は市街地・農耕地に少なく（−14.2 pt）、
+  植林地・二次林に多い（+7.1 / +8.5 pt）一方、**自然林・自然草原では +0.09 pt** でほぼ差が無い。
 - **温泉点の被覆には穴がある。** 10 都府県に 1 点も無い。「点が無い＝温泉が無い」ではない。
   環境省の公表値と並べると、地図の点 **1,320** は温泉地 **2,839** の 46%、源泉 **27,899** の 5% にすぎない。
 - **泉温は都道府県別になら実データがある。** 環境省の集計で、温度の記録がある源泉 24,668 のうち
@@ -68,6 +70,7 @@ npm install
 ./.venv/Scripts/python.exe etl/enrich_onsen.py control.geojson
 ./.venv/Scripts/python.exe etl/build_water.py     # 河川・湖沼(下記の zip が要る)
 ./.venv/Scripts/python.exe etl/parse_onsen_stats.py  # 環境省 PDF(都道府県別)
+./.venv/Scripts/python.exe etl/build_vegetation.py    # 植生(下記の lzh が要る)
 ./.venv/Scripts/python.exe etl/build_stats.py
 ./.venv/Scripts/python.exe etl/build_manifest.py
 
@@ -75,6 +78,18 @@ npm run verify     # 型検査 → vitest → next build
 node harness/smoke.mjs --shot                              # 実ブラウザ検品(手元)
 node harness/smoke.mjs --url https://japan-geo-onsen.vercel.app   # 本番に対する検品
 ```
+
+### 植生の生データ
+
+```bash
+curl -L -o raw/biodic/veg_c02.lzh   https://www.biodic.go.jp/dload/veg_c02.lzh
+curl -L -o raw/biodic/veg05m01.lzh  https://www.biodic.go.jp/dload/veg05m01.lzh
+"/c/Program Files/7-Zip/7z.exe" x -y -oraw/biodic raw/biodic/veg_c02.lzh
+"/c/Program Files/7-Zip/7z.exe" x -y -oraw/biodic raw/biodic/veg05m01.lzh
+```
+
+**LZH 形式**なので 7-Zip が要る（Python の標準ライブラリでは開けない）。
+展開物はリポジトリに入れていない（配布形の lzh だけを残す）。
 
 ### 河川・湖沼の生データ
 

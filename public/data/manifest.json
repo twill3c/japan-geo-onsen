@@ -1,7 +1,7 @@
 {
  "generated": "2026-09-08",
  "note": "件数は成果物を読み直して数えたもの。生成器の申告は写していない。",
- "total_bytes": 6949303,
+ "total_bytes": 7862984,
  "products": [
   {
    "file": "volcanoes.geojson",
@@ -18,8 +18,8 @@
   },
   {
    "file": "onsen.geojson",
-   "bytes": 1471821,
-   "sha256": "0f71400b2f793b184de2a1b3f23c3dd6db50d7c963328d690dcd660f18be201d",
+   "bytes": 1766348,
+   "sha256": "b790ff4f2fca37c1b2a9ced2542727c6a787b9622a4a1a63213e9ac4ead7bb7c",
    "features": 1320,
    "source": "国土交通省 国土数値情報",
    "dataset": "観光資源データ(P12) 2014年(平成26年)版",
@@ -68,13 +68,23 @@
       "river": "1320/1320",
       "lake": "1317/1320"
      }
+    },
+    "vegetation": {
+     "source": "環境省生物多様性センター",
+     "dataset": "第5回自然環境保全基礎調査 植生調査 3次メッシュデータ(1992-1996)",
+     "source_url": "https://www.biodic.go.jp/kiso/vg/vg_kiso.html",
+     "license": "公共データ利用規約(第1.0版) PDL1.0",
+     "license_url": "https://www.biodic.go.jp/copyright/terms_of_service.html",
+     "download_date": "2026-09-09",
+     "method": "点が入る 3 次メッシュ(約 1 km)の代表群落を引いた。メッシュが無い点は欠測",
+     "coverage": "1278/1320"
     }
    }
   },
   {
    "file": "control.geojson",
-   "bytes": 1127593,
-   "sha256": "3268fa3afef7d2982a8f6fe90b9a6ca111c3f37230200a32095a2cc408069e74",
+   "bytes": 1415454,
+   "sha256": "931c924e3b2ec9821a1d9f7c2e259126d466185ea9d4e592be6e86f766f89db1",
    "features": 1320,
    "source": "国土交通省 国土数値情報 観光資源データ(P12) 2014年版",
    "purpose": "温泉点の対照群(同じ P12 観光資源データの温泉以外の点)",
@@ -119,6 +129,16 @@
       "river": "1320/1320",
       "lake": "1319/1320"
      }
+    },
+    "vegetation": {
+     "source": "環境省生物多様性センター",
+     "dataset": "第5回自然環境保全基礎調査 植生調査 3次メッシュデータ(1992-1996)",
+     "source_url": "https://www.biodic.go.jp/kiso/vg/vg_kiso.html",
+     "license": "公共データ利用規約(第1.0版) PDL1.0",
+     "license_url": "https://www.biodic.go.jp/copyright/terms_of_service.html",
+     "download_date": "2026-09-09",
+     "method": "点が入る 3 次メッシュ(約 1 km)の代表群落を引いた。メッシュが無い点は欠測",
+     "coverage": "1259/1320"
     }
    }
   },
@@ -150,9 +170,9 @@
   },
   {
    "file": "stats.json",
-   "bytes": 7644,
-   "sha256": "a9c30a6a651f1278daa1d23bb022c85864d3170ecc38d706609eb5bc124baddf",
-   "axes": 6,
+   "bytes": 9160,
+   "sha256": "2612f7fddd725fad090a5ae5c6180557cf5aca7d5250d8cef3dfaacd4426bb1b",
+   "axes": 7,
    "method": {
     "control": "同じ P12 観光資源データの温泉以外の点。都道府県ごとに温泉と同数を無作為抽出",
     "test": "ラベル置換検定 2000 回(seed=20260907)の χ²。p = (観測以上の回数 + 1) / (回数 + 1)",
@@ -169,8 +189,8 @@
   },
   {
    "file": "onsen_wikidata.geojson",
-   "bytes": 1426493,
-   "sha256": "da40e46987fd38aff26ef960a8dab39bea4c7915f171be0f4350898498e56846",
+   "bytes": 1751911,
+   "sha256": "e50d92acd17153a5f87d8aa6c955eecf3df9c58cd0183fdef99b001ed6014d43",
    "features": 1477,
    "source": "Wikidata",
    "dataset": "日本の温泉(instance of / subclass of 温泉 Q177380・国 = 日本・座標あり)",
@@ -219,8 +239,25 @@
       "river": "1477/1477",
       "lake": "1469/1477"
      }
+    },
+    "vegetation": {
+     "source": "環境省生物多様性センター",
+     "dataset": "第5回自然環境保全基礎調査 植生調査 3次メッシュデータ(1992-1996)",
+     "source_url": "https://www.biodic.go.jp/kiso/vg/vg_kiso.html",
+     "license": "公共データ利用規約(第1.0版) PDL1.0",
+     "license_url": "https://www.biodic.go.jp/copyright/terms_of_service.html",
+     "download_date": "2026-09-09",
+     "method": "点が入る 3 次メッシュ(約 1 km)の代表群落を引いた。メッシュが無い点は欠測",
+     "coverage": "1429/1477"
     }
    }
+  },
+  {
+   "file": "vegetation_stats.json",
+   "bytes": 4359,
+   "sha256": "cbd5b98c2988803bc552488893668293dc043de6e18f3891b2b142abd8fe0613",
+   "axes": 0,
+   "method": null
   }
  ]
 }

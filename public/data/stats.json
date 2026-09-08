@@ -296,6 +296,69 @@
    "cramers_v": 0.24
   },
   {
+   "key": "vegetation",
+   "label": "植生自然度",
+   "note": "環境省 生物多様性センターの植生3次メッシュ(約1km)から引いた自然度。1 = 市街地、10 = 自然草原。調査は 1992-1996 年で、いまの土地被覆とは違いうる",
+   "onsen_n": 1278,
+   "control_n": 1259,
+   "onsen_missing": 42,
+   "control_missing": 61,
+   "rows": [
+    {
+     "category": "1〜2(市街地・農耕地)",
+     "onsen": 528,
+     "control": 699,
+     "onsen_pct": 41.31,
+     "control_pct": 55.52,
+     "diff_pt": -14.21
+    },
+    {
+     "category": "3〜5(樹園地・二次草原)",
+     "onsen": 62,
+     "control": 75,
+     "onsen_pct": 4.85,
+     "control_pct": 5.96,
+     "diff_pt": -1.11
+    },
+    {
+     "category": "6(植林地)",
+     "onsen": 265,
+     "control": 172,
+     "onsen_pct": 20.74,
+     "control_pct": 13.66,
+     "diff_pt": 7.07
+    },
+    {
+     "category": "7〜8(二次林)",
+     "onsen": 334,
+     "control": 222,
+     "onsen_pct": 26.13,
+     "control_pct": 17.63,
+     "diff_pt": 8.5
+    },
+    {
+     "category": "9〜10(自然林・自然草原)",
+     "onsen": 57,
+     "control": 55,
+     "onsen_pct": 4.46,
+     "control_pct": 4.37,
+     "diff_pt": 0.09
+    },
+    {
+     "category": "その他(裸地・水域)",
+     "onsen": 32,
+     "control": 36,
+     "onsen_pct": 2.5,
+     "control_pct": 2.86,
+     "diff_pt": -0.36
+    }
+   ],
+   "chi_square": 67.55,
+   "null_mean_chi_square": 5.034,
+   "p_permutation": 0.0005,
+   "cramers_v": 0.1632
+  },
+  {
    "key": "lake_distance",
    "label": "最寄りの湖沼までの距離",
    "note": "国土数値情報の湖沼データ 556 面の岸までの距離",

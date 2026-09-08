@@ -82,11 +82,20 @@ export default function FeaturePanel({ selection, onClose }: { selection: Select
               <Row label="その距離" value={p.distance_to_river_km} unit="km" />
               <Row label="最寄りの湖沼" value={p.nearest_lake} />
               <Row label="その距離" value={p.distance_to_lake_km} unit="km" />
+              <Row label="植生" value={p.vegetation_community} />
+              <Row
+                label="植生自然度"
+                value={txt(p.vegetation_naturalness)
+                  ? `${Number(p.vegetation_naturalness)}（${txt(p.vegetation_naturalness_label)}）`
+                  : null}
+              />
+              <Row label="植生の帯" value={p.vegetation_zone} />
             </tbody>
           </table>
           <p className="hint">
             火山に近いことは、その温泉が火山性であることを意味しません。地理的な距離を示しているだけです。
             河川の距離は全 286,437 区間から測っています（地図に描いているのは 1 級河川の直轄区間だけです）。
+            植生は約 1 km のメッシュの代表値で、調査は 1992〜1996 年のものです。
           </p>
 
           <h4>この点の出所</h4>

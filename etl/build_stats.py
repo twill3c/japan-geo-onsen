@@ -32,6 +32,29 @@ def band(value, edges: list[float], unit: str) -> str | None:
     return f"{edges[-1]:g} {unit} 以上"
 
 
+def _sizendo_band(code) -> str | None:
+    """植生自然度の 13 区分を、意味のまとまりで 6 つに畳む。
+
+    1〜10 をそのまま 10 列にすると、置換検定のセル度数が小さくなりすぎる。
+    畳み方は凡例の「区分内容」に従う(市街地/農耕地・樹園地/二次草原・植林地・二次林・自然)。
+    98(自然裸地)・99(開放水域)・00(不明)は「その他」にまとめる —— 自然度の段階ではないため。
+    """
+    if code is None:
+        return None
+    if code in ("00", "98", "99"):
+        return "その他(裸地・水域)"
+    n = int(code)
+    if n <= 2:
+        return "1〜2(市街地・農耕地)"
+    if n <= 5:
+        return "3〜5(樹園地・二次草原)"
+    if n == 6:
+        return "6(植林地)"
+    if n <= 8:
+        return "7〜8(二次林)"
+    return "9〜10(自然林・自然草原)"
+
+
 AXES: list[dict] = [
     {
         "key": "geology_group",
@@ -67,6 +90,15 @@ AXES: list[dict] = [
         "note": "国土数値情報の河川データ全 286,437 区間との距離(地図に描いている 1 級河川だけではない)",
         "get": lambda p: band(p.get("distance_to_river_km"), [0.1, 0.3, 1, 3], "km"),
         "order": ["〜0.1 km", "0.1〜0.3 km", "0.3〜1 km", "1〜3 km", "3 km 以上"],
+    },
+    {
+        "key": "vegetation",
+        "label": "植生自然度",
+        "note": ("環境省 生物多様性センターの植生3次メッシュ(約1km)から引いた自然度。"
+                 "1 = 市街地、10 = 自然草原。調査は 1992-1996 年で、いまの土地被覆とは違いうる"),
+        "get": lambda p: _sizendo_band(p.get("vegetation_naturalness")),
+        "order": ["1〜2(市街地・農耕地)", "3〜5(樹園地・二次草原)", "6(植林地)",
+                  "7〜8(二次林)", "9〜10(自然林・自然草原)", "その他(裸地・水域)"],
     },
     {
         "key": "lake_distance",

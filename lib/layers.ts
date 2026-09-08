@@ -129,6 +129,7 @@ export const SOURCES = [
   { name: '国土交通省 国土数値情報(河川)', what: '河川データ(W05)。地図表示は1級河川の直轄区間、距離は全区間', url: 'https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-W05.html', license: '国土数値情報 利用約款（非商用限定）', licenseUrl: 'https://nlftp.mlit.go.jp/ksj/other/agreement.html' },
   { name: '国土交通省 国土数値情報(湖沼)', what: '湖沼データ(W09, 2005年版)', url: 'https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-W09-v2_2.html', license: '国土数値情報 利用約款', licenseUrl: 'https://nlftp.mlit.go.jp/ksj/other/agreement.html' },
   { name: '環境省', what: '温泉利用状況(都道府県別の源泉数・温度別源泉数・湧出量)', url: 'https://www.env.go.jp/nature/onsen/data/', license: '環境省ホームページ利用規約', licenseUrl: 'https://www.env.go.jp/help.html' },
+  { name: '環境省 生物多様性センター', what: '第5回自然環境保全基礎調査 植生調査(3次メッシュ・植生自然度)', url: 'https://www.biodic.go.jp/kiso/vg/vg_kiso.html', license: '公共データ利用規約(第1.0版) PDL1.0', licenseUrl: 'https://www.biodic.go.jp/copyright/terms_of_service.html' },
   { name: 'Wikidata', what: '座標のある日本の温泉(第二の点レイヤー)', url: 'https://query.wikidata.org/', license: 'CC0 1.0', licenseUrl: 'https://creativecommons.org/publicdomain/zero/1.0/' },
 ] as const;
 

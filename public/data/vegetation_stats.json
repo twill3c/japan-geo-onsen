@@ -1,0 +1,169 @@
+{
+ "source": "環境省生物多様性センター",
+ "dataset": "第5回自然環境保全基礎調査 植生調査 3次メッシュデータ(1992-1996)",
+ "source_url": "https://www.biodic.go.jp/kiso/vg/vg_kiso.html",
+ "license": "公共データ利用規約(第1.0版) PDL1.0",
+ "license_url": "https://www.biodic.go.jp/copyright/terms_of_service.html",
+ "download_date": "2026-09-09",
+ "processing_method": "3 次メッシュ(約 1 km)ごとの群落コードを群落表で引き、植生自然度に直した。群落コードは 579 種すべてが群落表にあり、自然度の欠測は 0",
+ "counts": {
+  "meshes": 368727,
+  "community_codes_used": 579,
+  "community_codes_in_table": 898
+ },
+ "sizendo_legend": [
+  {
+   "code": "00",
+   "label": "その他",
+   "content": "不明区分",
+   "criterion": "",
+   "meshes": 70
+  },
+  {
+   "code": "01",
+   "label": "１",
+   "content": "市街地・造成地等",
+   "criterion": "市街地、造成地等の植生のほとんど存在しない地区",
+   "meshes": 15999
+  },
+  {
+   "code": "02",
+   "label": "２",
+   "content": "農耕地（水田・畑）／緑の多い住宅地",
+   "criterion": "畑地、水田等の耕作地、緑の多い住宅地",
+   "meshes": 77734
+  },
+  {
+   "code": "03",
+   "label": "３",
+   "content": "農耕地（樹園地）",
+   "criterion": "果樹園、桑園、茶畑、苗圃等の樹園地",
+   "meshes": 6788
+  },
+  {
+   "code": "04",
+   "label": "４",
+   "content": "二次草原（背の低い草原）",
+   "criterion": "シバ群落等の背丈の低い草原",
+   "meshes": 7552
+  },
+  {
+   "code": "05",
+   "label": "５",
+   "content": "二次草原（背の高い草原）",
+   "criterion": "ササ群落、ススキ群落等の背丈の高い草原",
+   "meshes": 5568
+  },
+  {
+   "code": "06",
+   "label": "６",
+   "content": "植林地",
+   "criterion": "常緑針葉樹、落葉針葉樹、常緑広葉樹等の植林地",
+   "meshes": 91414
+  },
+  {
+   "code": "07",
+   "label": "７",
+   "content": "二次林",
+   "criterion": "クリ－ミズナラ群落、クヌギ－コナラ群落等、一般には二次林と呼ばれる代償植生地区",
+   "meshes": 68540
+  },
+  {
+   "code": "08",
+   "label": "８",
+   "content": "二次林（自然林に近いもの）",
+   "criterion": "ブナ・ミズナラ再生林、シイ・カシ萌芽林等代償植生であっても特に自然植生に近い地区",
+   "meshes": 19598
+  },
+  {
+   "code": "09",
+   "label": "９",
+   "content": "自然林",
+   "criterion": "エゾマツ－トドマツ群集等、ブナ群集等、自然植生のうち多層の植物社会を形成する地区",
+   "meshes": 65824
+  },
+  {
+   "code": "10",
+   "label": "１０",
+   "content": "自然草原",
+   "criterion": "高山ハイデ、風衝草原、自然草原等、自然植生のうち単層の植物社会を形成する地区（自然度９、１０は自然性の高さにおいては同じランク）",
+   "meshes": 3993
+  },
+  {
+   "code": "98",
+   "label": "その他",
+   "content": "自然裸地",
+   "criterion": "",
+   "meshes": 1420
+  },
+  {
+   "code": "99",
+   "label": "その他",
+   "content": "開放水域",
+   "criterion": "",
+   "meshes": 4227
+  }
+ ],
+ "kubun_legend": [
+  {
+   "code": "01",
+   "symbol": "I",
+   "name": "寒帯・高山帯植生",
+   "meshes": 1158
+  },
+  {
+   "code": "02",
+   "symbol": "II",
+   "name": "亜寒帯・亜高山帯自然植生",
+   "meshes": 15947
+  },
+  {
+   "code": "03",
+   "symbol": "III",
+   "name": "亜寒帯・亜高山帯代償植生",
+   "meshes": 1266
+  },
+  {
+   "code": "04",
+   "symbol": "IV",
+   "name": "ブナクラス域自然植生",
+   "meshes": 44328
+  },
+  {
+   "code": "05",
+   "symbol": "V",
+   "name": "ブナクラス域代償植生",
+   "meshes": 41860
+  },
+  {
+   "code": "06",
+   "symbol": "VI",
+   "name": "ヤブツバキクラス域自然植生",
+   "meshes": 5925
+  },
+  {
+   "code": "07",
+   "symbol": "VII",
+   "name": "ヤブツバキクラス域代償植生",
+   "meshes": 57110
+  },
+  {
+   "code": "08",
+   "symbol": "VIII",
+   "name": "河辺・湿原・沼沢地・砂丘植生",
+   "meshes": 2478
+  },
+  {
+   "code": "09",
+   "symbol": "IX",
+   "name": "植林地・耕作地植生",
+   "meshes": 170508
+  },
+  {
+   "code": "10",
+   "symbol": "X",
+   "name": "その他",
+   "meshes": 28147
+  }
+ ]
+}

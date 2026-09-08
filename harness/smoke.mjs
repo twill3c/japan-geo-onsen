@@ -219,6 +219,7 @@ async function main() {
       if (shown) {
         const t = await page.locator('.feature-panel').innerText();
         check(/公開データに無い/.test(t), '無い項目が「公開データに無い」と書かれている');
+        check(/植生自然度/.test(t), '温泉詳細に植生自然度が出ている');
       }
     }
 
@@ -234,8 +235,11 @@ async function main() {
     const statsText = await page.locator('main').innerText();
     check(/この集計には使っていません/.test(statsText),
       '統計に Wikidata を使っていないと書かれている');
+    check(/自然林・自然草原では差がほぼありません/.test(statsText),
+      '植生で差が出るのが中ほどだけと書かれている');
+    check(/1992〜1996 年/.test(statsText), '植生調査の年が書かれている');
     const svgs = await page.locator('.viz svg').count();
-    check(svgs >= 4, `軸ごとの図がある(${svgs} 枚)`);
+    check(svgs >= 7, `軸ごとの図がある(${svgs} 枚)`);
     const legends = await page.locator('.viz-legend').count();
     check(legends === svgs, '図の数だけ凡例がある');
     bad = await overflowing(page);

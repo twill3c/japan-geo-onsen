@@ -19,3 +19,7 @@ tsconfig.tsbuildinfo
 # 取得手順は README にある(raw/ に置けば ETL がそのまま読む)。
 raw/ksj/W05/
 raw/ksj/W09/
+
+# 植生メッシュの展開物。配布形(lzh)だけを残す
+raw/biodic/veg05m01/
+raw/biodic/veg_c02/
