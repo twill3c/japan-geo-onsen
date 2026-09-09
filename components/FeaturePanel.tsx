@@ -41,12 +41,20 @@ export default function FeaturePanel({ selection, onClose }: { selection: Select
 
       {selection.kind === 'onsen' && (
         <>
-          <h3>♨ {txt(p.name) ?? '(名称なし)'}</h3>
+          <h3>{p.provenance === 'wikidata-facility' ? '🛁' : '♨'} {txt(p.name) ?? '(名称なし)'}</h3>
           <p className="where">
-            {p.provenance === 'wikidata'
-              ? 'Wikidata の温泉'
-              : `${txt(p.prefecture) ?? ''}${txt(p.address) ? ` ・ ${txt(p.address)}` : ''}`}
+            {p.provenance === 'wikidata' ? 'Wikidata の温泉'
+              : p.provenance === 'wikidata-facility'
+                ? `Wikidata の入浴施設${txt(p.facility_class) ? `（${txt(p.facility_class)}）` : ''}`
+                : `${txt(p.prefecture) ?? ''}${txt(p.address) ? ` ・ ${txt(p.address)}` : ''}`}
           </p>
+
+          {p.provenance === 'wikidata-facility' && (
+            <p className="hint">
+              この点は<strong>入浴施設として登録された場所</strong>です。温泉とは限りません
+              （銭湯・公衆浴場も同じ分類に入ります）。
+            </p>
+          )}
 
           <h4>温泉の属性</h4>
           <table>
@@ -99,12 +107,15 @@ export default function FeaturePanel({ selection, onClose }: { selection: Select
           </p>
 
           <h4>この点の出所</h4>
-          {p.provenance === 'wikidata' ? (
+          {p.provenance === 'wikidata' || p.provenance === 'wikidata-facility' ? (
             <>
               <table>
                 <tbody>
                   <Row label="出典" value="Wikidata（CC0）" />
                   <Row label="項目" value={p.wikidata_id} />
+                  {p.provenance === 'wikidata-facility' && (
+                    <Row label="分類" value={p.facility_class} />
+                  )}
                 </tbody>
               </table>
               <p className="hint">
@@ -116,7 +127,10 @@ export default function FeaturePanel({ selection, onClose }: { selection: Select
                     Wikidata で見る
                   </a>
                 )}
-                。記事が書かれた温泉が載っているデータで、行政の悉皆調査ではありません。
+                。
+                {p.provenance === 'wikidata-facility'
+                  ? '国土数値情報にも、Wikidata の「温泉」分類にも入らない場所です。'
+                  : '記事が書かれた温泉が載っているデータで、行政の悉皆調査ではありません。'}
                 <strong>統計（温泉と地理環境）にはこの層を使っていません。</strong>
               </p>
             </>

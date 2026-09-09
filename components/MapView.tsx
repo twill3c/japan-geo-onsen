@@ -156,7 +156,10 @@ export default function MapView() {
         id: 'volcano', type: 'circle', source: 'volcano',
         paint: {
           'circle-radius': ['interpolate', ['linear'], ['zoom'], 5, 3.2, 10, 6.5, 14, 9],
-          'circle-color': ['case', ['get', 'warning_level_operated'], '#991b1b', '#b45309'],
+          // 火山の色は温泉と衝突していた(#b45309 と #c2410c は 2 型色覚で ΔE00 0.1)。
+          // 色覚型を変えた色差で選び直した組(全組・3 視型の最小 ΔE00 が 0.1 → 17.4)。
+          // 判定は tests/test_palette.py が実ファイルの値を読んで行う(HC-257)
+          'circle-color': ['case', ['get', 'warning_level_operated'], '#7f1d1d', '#1f2937'],
           'circle-stroke-color': '#ffffff',
           'circle-stroke-width': 1,
           'circle-opacity': 0.9,

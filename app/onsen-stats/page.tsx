@@ -164,6 +164,17 @@ export default function OnsenStatsPage() {
         </p>
       )}
       <p>
+        <strong>分類の食い違いでどちらの層にも入らない場所があります。</strong>
+        たとえば山梨市の「ほったらかし温泉」は、観光資源データ（2014 年版）に 1 件もなく、
+        Wikidata には項目があるものの <code>instance of</code> が「日帰り入浴施設」で、
+        上位クラスをたどっても「温泉」に当たりません。
+        同じ理由で外れる場所は日本国内・座標つきで <strong>108 件</strong>あり、
+        うち <strong>78 件</strong>は名前に「温泉」を含むか「湯」で終わります。
+        これらは<strong>第三の層「入浴施設（Wikidata）」</strong>として地図に出しています
+        —— ただし銭湯・公衆浴場も同じ分類に入るので、<strong>温泉とは限りません</strong>。
+        統計にはこの層も使っていません。
+      </p>
+      <p>
         しかも観光資源データの側では <strong>{s.coverage.prefectures_with_zero_points.length} 都府県に点が 1 つもありません</strong>
         （{s.coverage.prefectures_with_zero_points.join('・')}）。
         いずれも環境省の集計には源泉があります。

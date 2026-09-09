@@ -236,6 +236,51 @@ async function main() {
       }
     }
 
+    // 入浴施設の層(第三の層)。全国 108 点しかないので、**その場所へ寄ってから**数える。
+    // 発端になった「ほったらかし温泉」が実際に出ることを、名前で確かめる。
+    const fac = await page.evaluate(async () => {
+      const m = window.__map;
+      if (!m || !m.getLayer('onsen-fac')) return null;
+      m.jumpTo({ center: [138.652222, 35.706111], zoom: 12 });
+      const wait = (ms) => new Promise((r) => setTimeout(r, ms));
+      const until = Date.now() + 20000;
+      let f = [];
+      while (Date.now() < until && f.length === 0) {
+        await wait(250);
+        f = m.queryRenderedFeatures({ layers: ['onsen-fac'] });
+      }
+      return {
+        count: f.length,
+        names: f.map((x) => x.properties?.name).filter(Boolean),
+        cls: f.map((x) => x.properties?.facility_class).filter(Boolean),
+      };
+    });
+    check(fac !== null, '入浴施設の層がある');
+    if (fac) {
+      check(fac.count > 0, `入浴施設が地図に描かれている(${fac.count} 件)`);
+      check(fac.names.includes('ほったらかし温泉'), 'ほったらかし温泉が地図に出る', fac.names.join('/'));
+      check(fac.cls.some((c) => /入浴施設|銭湯|浴場/.test(c)), '入浴施設の分類が属性に入っている', fac.cls.join('/'));
+      // クリックすると「温泉とは限らない」と断っているか
+      const opened = await page.evaluate(() => {
+        const m = window.__map;
+        const f = m.queryRenderedFeatures({ layers: ['onsen-fac'] })[0];
+        if (!f) return false;
+        const p = m.project(f.geometry.coordinates);
+        const r = m.getCanvas().getBoundingClientRect();
+        m.getCanvas().dispatchEvent(new MouseEvent('click', {
+          bubbles: true, clientX: p.x + r.left, clientY: p.y + r.top,
+        }));
+        return true;
+      });
+      if (opened) {
+        const t = await page.locator('.feature-panel').innerText().catch(() => '');
+        check(/温泉とは限りません/.test(t), '入浴施設は温泉とは限らないと断っている');
+        check(/統計（温泉と地理環境）にはこの層を使っていません/.test(t), '入浴施設が統計に使われないと書かれている');
+      }
+      await page.evaluate(() => window.__map.jumpTo({ center: [138.35, 35.98], zoom: 9.2 }));
+      await page.locator('.feature-panel .close').click().catch(() => {});
+    }
+
     // 地形断面(設計書 §56)。地図を 2 回クリックして図が出るところまで見る。
     // 切替が無い版に当てたときは、例外で検品ごと落とさず**不合格として**数える
     // (この検査群は、断面を積む前の本番に当てて 7 件とも落ちることを確かめてある)。

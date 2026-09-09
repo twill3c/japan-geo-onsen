@@ -6,7 +6,8 @@
   --line: #ddd7cc;
   --accent: #8a4b2a;
   --onsen: #c2410c;
-  --volcano: #7f1d1d;
+  /* 火山の点。温泉(#c2410c)と色覚型を変えても見分けられる値を測って選んだ(HC-257) */
+  --volcano: #1f2937;
   --footer-h: 34px;
 }
 

@@ -43,7 +43,7 @@ UNNAMED = "名称不明"
 
 DISPLAY_SECTIONS = {"1", "5"}   # 1 級河川の直轄区間
 # 距離を付ける対象。温泉(P12)・対照・Wikidata の温泉
-POINT_FILES = ("onsen.geojson", "control.geojson", "onsen_wikidata.geojson")
+POINT_FILES = ("onsen.geojson", "control.geojson", "onsen_wikidata.geojson", "onsen_facility.geojson")
 SIMPLIFY_TOL = 0.0005           # 度。およそ 45 m
 
 RIVER_LICENSE = {

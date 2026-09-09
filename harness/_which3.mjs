@@ -33,6 +33,8 @@ const checks = [
   ['温泉の統計ページ(源泉総数)', '/onsen-stats/', '27,899'],
   ['統計に Wikidata を使わない注記', '/stats/', 'この集計には使っていません'],
   ['2,839 の再現ではないという断り', '/onsen-stats/', '再現したものではありません'],
+  ['入浴施設の層の説明(about)', '/about/', '入浴施設の層'],
+  ['ほったらかし温泉の経緯(onsen-stats)', '/onsen-stats/', 'ほったらかし温泉'],
 ];
 for (const [label, path, needle] of checks) {
   await page.goto(url + path, { waitUntil: 'domcontentloaded' });
