@@ -1,0 +1,331 @@
+{
+ "summary": {
+  "z": 14,
+  "points": 26,
+  "compared": 26,
+  "median_abs_diff_m": 3.05,
+  "p90_abs_diff_m": 9.18,
+  "max_abs_diff_m": 10.32,
+  "peaks": [
+   {
+    "name": "富士山",
+    "qid": "Q39231",
+    "published_m": 3777.24,
+    "tile_m": 3771.81,
+    "tile_max_m": 3774.04,
+    "radius_px": 25,
+    "diff_from_published_m": -3.2
+   },
+   {
+    "name": "北岳",
+    "qid": "Q961873",
+    "published_m": 3193.0,
+    "tile_m": 3184.39,
+    "tile_max_m": 3190.98,
+    "radius_px": 25,
+    "diff_from_published_m": -2.02
+   }
+  ]
+ },
+ "rows": [
+  {
+   "name": "富士山",
+   "qid": "Q39231",
+   "lon": 138.7275,
+   "lat": 35.360555555,
+   "published_m": 3777.24,
+   "rejected": [
+    {
+     "qid": "Q55521778",
+     "published_m": 160.0
+    },
+    {
+     "qid": "Q30926500",
+     "published_m": 152.0
+    }
+   ],
+   "tile_m": 3771.81,
+   "tile_max_m": 3774.04,
+   "api_m": 3767.2,
+   "api_source": "1m（レーザ）",
+   "diff_m": 4.61
+  },
+  {
+   "name": "北岳",
+   "qid": "Q961873",
+   "lon": 138.23874,
+   "lat": 35.67432,
+   "published_m": 3193.0,
+   "rejected": [],
+   "tile_m": 3184.39,
+   "tile_max_m": 3190.98,
+   "api_m": 3188.3,
+   "api_source": "5m（レーザ）",
+   "diff_m": -3.91
+  },
+  {
+   "name": "無作為点",
+   "lon": 138.8282518865359,
+   "lat": 36.20182775712024,
+   "published_m": null,
+   "tile_m": 515.6,
+   "tile_max_m": null,
+   "api_m": 511.7,
+   "api_source": "1m（レーザ）",
+   "diff_m": 3.9
+  },
+  {
+   "name": "無作為点",
+   "lon": 138.3107722879056,
+   "lat": 36.07981636301015,
+   "published_m": null,
+   "tile_m": 1993.68,
+   "tile_max_m": null,
+   "api_m": 1988.1,
+   "api_source": "1m（レーザ）",
+   "diff_m": 5.58
+  },
+  {
+   "name": "無作為点",
+   "lon": 138.51112334517387,
+   "lat": 35.47229724588495,
+   "published_m": null,
+   "tile_m": 431.16,
+   "tile_max_m": null,
+   "api_m": 430.6,
+   "api_source": "5m（レーザ）",
+   "diff_m": 0.56
+  },
+  {
+   "name": "無作為点",
+   "lon": 138.15734514634275,
+   "lat": 36.112220334697234,
+   "published_m": null,
+   "tile_m": 1575.83,
+   "tile_max_m": null,
+   "api_m": 1581.7,
+   "api_source": "1m（レーザ）",
+   "diff_m": -5.87
+  },
+  {
+   "name": "無作為点",
+   "lon": 138.02492372829315,
+   "lat": 35.45691513444515,
+   "published_m": null,
+   "tile_m": 1793.52,
+   "tile_max_m": null,
+   "api_m": 1783.3,
+   "api_source": "5m（レーザ）",
+   "diff_m": 10.22
+  },
+  {
+   "name": "無作為点",
+   "lon": 138.06524618380513,
+   "lat": 36.19395211989181,
+   "published_m": null,
+   "tile_m": 999.75,
+   "tile_max_m": null,
+   "api_m": 1000.4,
+   "api_source": "1m（レーザ）",
+   "diff_m": -0.65
+  },
+  {
+   "name": "無作為点",
+   "lon": 138.70317644696922,
+   "lat": 36.08888919365022,
+   "published_m": null,
+   "tile_m": 799.14,
+   "tile_max_m": null,
+   "api_m": 802.0,
+   "api_source": "5m（レーザ）",
+   "diff_m": -2.86
+  },
+  {
+   "name": "無作為点",
+   "lon": 138.46801197210735,
+   "lat": 35.21592801259916,
+   "published_m": null,
+   "tile_m": 257.38,
+   "tile_max_m": null,
+   "api_m": 257.9,
+   "api_source": "5m（レーザ）",
+   "diff_m": -0.52
+  },
+  {
+   "name": "無作為点",
+   "lon": 138.27207325399365,
+   "lat": 35.978290718259764,
+   "published_m": null,
+   "tile_m": 1291.39,
+   "tile_max_m": null,
+   "api_m": 1290.5,
+   "api_source": "1m（レーザ）",
+   "diff_m": 0.89
+  },
+  {
+   "name": "無作為点",
+   "lon": 138.8582942711886,
+   "lat": 36.00713552430843,
+   "published_m": null,
+   "tile_m": 902.6800000000001,
+   "tile_max_m": null,
+   "api_m": 897.1,
+   "api_source": "1m（レーザ）",
+   "diff_m": 5.58
+  },
+  {
+   "name": "無作為点",
+   "lon": 138.0201784911293,
+   "lat": 35.26571340616087,
+   "published_m": null,
+   "tile_m": 1456.72,
+   "tile_max_m": null,
+   "api_m": 1465.9,
+   "api_source": "5m（レーザ）",
+   "diff_m": -9.18
+  },
+  {
+   "name": "無作為点",
+   "lon": 137.90624679160697,
+   "lat": 35.31751497936007,
+   "published_m": null,
+   "tile_m": 617.58,
+   "tile_max_m": null,
+   "api_m": 617.4,
+   "api_source": "5m（レーザ）",
+   "diff_m": 0.18
+  },
+  {
+   "name": "無作為点",
+   "lon": 138.2756653898537,
+   "lat": 35.23305347450761,
+   "published_m": null,
+   "tile_m": 1235.53,
+   "tile_max_m": null,
+   "api_m": 1232.6,
+   "api_source": "1m（レーザ）",
+   "diff_m": 2.93
+  },
+  {
+   "name": "無作為点",
+   "lon": 138.15882585935674,
+   "lat": 35.855907247980035,
+   "published_m": null,
+   "tile_m": 1888.0900000000001,
+   "tile_max_m": null,
+   "api_m": 1881.6,
+   "api_source": "5m（レーザ）",
+   "diff_m": 6.49
+  },
+  {
+   "name": "無作為点",
+   "lon": 138.4576026968766,
+   "lat": 35.435858801544455,
+   "published_m": null,
+   "tile_m": 523.1800000000001,
+   "tile_max_m": null,
+   "api_m": 533.5,
+   "api_source": "1m（レーザ）",
+   "diff_m": -10.32
+  },
+  {
+   "name": "無作為点",
+   "lon": 138.23667048614297,
+   "lat": 36.27901699450973,
+   "published_m": null,
+   "tile_m": 639.37,
+   "tile_max_m": null,
+   "api_m": 637.7,
+   "api_source": "1m（レーザ）",
+   "diff_m": 1.67
+  },
+  {
+   "name": "無作為点",
+   "lon": 138.11993800492837,
+   "lat": 35.250733220479205,
+   "published_m": null,
+   "tile_m": 1522.05,
+   "tile_max_m": null,
+   "api_m": 1519.7,
+   "api_source": "5m（レーザ）",
+   "diff_m": 2.35
+  },
+  {
+   "name": "無作為点",
+   "lon": 138.3908811992297,
+   "lat": 35.307315465197945,
+   "published_m": null,
+   "tile_m": 614.14,
+   "tile_max_m": null,
+   "api_m": 615.8,
+   "api_source": "5m（レーザ）",
+   "diff_m": -1.66
+  },
+  {
+   "name": "無作為点",
+   "lon": 138.33939518755957,
+   "lat": 36.042175595051326,
+   "published_m": null,
+   "tile_m": 2079.11,
+   "tile_max_m": null,
+   "api_m": 2079.8,
+   "api_source": "1m（レーザ）",
+   "diff_m": -0.69
+  },
+  {
+   "name": "無作為点",
+   "lon": 138.86766107661316,
+   "lat": 36.00920529326356,
+   "published_m": null,
+   "tile_m": 1032.54,
+   "tile_max_m": null,
+   "api_m": 1023.7,
+   "api_source": "1m（レーザ）",
+   "diff_m": 8.84
+  },
+  {
+   "name": "無作為点",
+   "lon": 138.11786546196532,
+   "lat": 35.20478806860579,
+   "published_m": null,
+   "tile_m": 1096.94,
+   "tile_max_m": null,
+   "api_m": 1098.5,
+   "api_source": "5m（レーザ）",
+   "diff_m": -1.56
+  },
+  {
+   "name": "無作為点",
+   "lon": 138.17048837041634,
+   "lat": 35.582738608920586,
+   "published_m": null,
+   "tile_m": 2624.36,
+   "tile_max_m": null,
+   "api_m": 2631.6,
+   "api_source": "5m（レーザ）",
+   "diff_m": -7.24
+  },
+  {
+   "name": "無作為点",
+   "lon": 138.41567586595366,
+   "lat": 35.60683897720434,
+   "published_m": null,
+   "tile_m": 769.15,
+   "tile_max_m": null,
+   "api_m": 766.1,
+   "api_source": "5m（レーザ）",
+   "diff_m": 3.05
+  },
+  {
+   "name": "無作為点",
+   "lon": 138.25922188380514,
+   "lat": 35.931844708309825,
+   "published_m": null,
+   "tile_m": 1087.34,
+   "tile_max_m": null,
+   "api_m": 1087.6,
+   "api_source": "1m（レーザ）",
+   "diff_m": -0.26
+  }
+ ]
+}

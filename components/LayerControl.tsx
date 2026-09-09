@@ -28,6 +28,9 @@ type Props = {
   demZoomNote: string;
   onsenNameOnly: boolean;
   setOnsenNameOnly: (v: boolean) => void;
+  profileOn: boolean;
+  setProfileOn: (v: boolean) => void;
+  profileNote: string;
 };
 
 export default function LayerControl(p: Props) {
@@ -103,6 +106,22 @@ export default function LayerControl(p: Props) {
         </label>
         <p className="hint">{p.demZoomNote}</p>
         {p.contourOn && p.contourNote && <p className="status">{p.contourNote}</p>}
+      </section>
+
+      <section>
+        <h2>地形断面</h2>
+        <label className="row">
+          <input
+            type="checkbox" checked={p.profileOn}
+            onChange={(e) => p.setProfileOn(e.target.checked)}
+          />
+          <span>地図に線を引いて断面を見る</span>
+        </label>
+        <p className="hint">
+          地図を 2 回クリックすると、その間の標高断面を引きます。
+          標高は表示中の範囲と同じ標高タイルから読みます。
+        </p>
+        {p.profileOn && p.profileNote && <p className="status">{p.profileNote}</p>}
       </section>
 
       <section>

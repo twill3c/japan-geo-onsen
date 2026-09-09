@@ -8,8 +8,10 @@ import {
   GEOLOGY_LEGEND_API, ONSEN_LAYERS, OVERLAYS, WATER_LAYERS,
 } from '@/lib/layers';
 import { buildContours, demZoomFor } from '@/lib/contour-tiles';
+import { buildProfile } from '@/lib/profile';
 import FeaturePanel, { type Selection } from '@/components/FeaturePanel';
 import LayerControl from '@/components/LayerControl';
+import ProfilePanel, { type ProfileState } from '@/components/ProfilePanel';
 
 /** 初期表示は八ヶ岳周辺(設計書 §59 の実証地域)。 */
 const INITIAL = { center: [138.35, 35.98] as [number, number], zoom: 9.2 };
@@ -42,6 +44,10 @@ export default function MapView() {
   const [selection, setSelection] = useState<Selection | null>(null);
   const [tileError, setTileError] = useState<string | null>(null);
   const contourRun = useRef(0);
+
+  const [profileOn, setProfileOn] = useState(false);
+  const [profile, setProfile] = useState<ProfileState>({ phase: 'idle' });
+  const profileRun = useRef(0);
 
   /* ---- 地図ページの間だけ、画面の高さを確定させる ---- */
   useEffect(() => {
@@ -117,6 +123,32 @@ export default function MapView() {
           'line-width': ['case', ['get', 'major'], 1.4, 0.6],
           'line-opacity': ['case', ['get', 'major'], 0.85, 0.5],
         },
+      });
+
+      // 地形断面の線。引いた線そのものを地図に残しておかないと、
+      // 図がどこの断面なのか分からなくなる
+      m.addSource('profile-line', { type: 'geojson', data: { type: 'FeatureCollection', features: [] } });
+      m.addLayer({
+        id: 'profile-line', type: 'line', source: 'profile-line',
+        filter: ['==', ['geometry-type'], 'LineString'],
+        layout: { 'line-join': 'round', 'line-cap': 'round' },
+        paint: { 'line-color': '#111827', 'line-width': 2.2, 'line-dasharray': [2, 1.2] },
+      });
+      m.addLayer({
+        id: 'profile-ends', type: 'circle', source: 'profile-line',
+        filter: ['==', ['geometry-type'], 'Point'],
+        paint: {
+          'circle-radius': 6,
+          'circle-color': '#111827',
+          'circle-stroke-color': '#ffffff',
+          'circle-stroke-width': 1.6,
+        },
+      });
+      m.addLayer({
+        id: 'profile-ends-label', type: 'symbol', source: 'profile-line',
+        filter: ['==', ['geometry-type'], 'Point'],
+        layout: { 'text-field': ['get', 'label'], 'text-size': 12, 'text-offset': [0, -1.2] },
+        paint: { 'text-color': '#111827', 'text-halo-color': '#ffffff', 'text-halo-width': 1.6 },
       });
 
       m.addSource('volcano', { type: 'geojson', data: '/data/volcanoes.geojson' });
@@ -302,11 +334,63 @@ export default function MapView() {
     return () => { clearTimeout(timer); m.off('moveend', onMove); };
   }, [refreshContours, ready]);
 
+  /* ---- 地形断面(設計書 §56) ---- */
+  // 引いた線を地図に描く。状態が変わるたびに描き直す
+  useEffect(() => {
+    const m = map.current;
+    if (!m || !ready) return;
+    const src = m.getSource('profile-line') as maplibregl.GeoJSONSource | undefined;
+    if (!src) return;
+    const features: GeoJSON.Feature[] = [];
+    const ends = profile.phase === 'idle' ? [] :
+      profile.phase === 'picking' ? [profile.a] : [profile.a, profile.b];
+    ends.forEach((p, k) => {
+      features.push({
+        type: 'Feature',
+        geometry: { type: 'Point', coordinates: p },
+        properties: { label: k === 0 ? 'A' : 'B' },
+      });
+    });
+    if (ends.length === 2) {
+      features.push({
+        type: 'Feature',
+        geometry: { type: 'LineString', coordinates: [ends[0], ends[1]] },
+        properties: {},
+      });
+    }
+    src.setData({ type: 'FeatureCollection', features });
+  }, [profile, ready]);
+
+  // 断面をやめたら線も消す
+  useEffect(() => {
+    if (!profileOn) setProfile({ phase: 'idle' });
+  }, [profileOn]);
+
+  const pickProfilePoint = useCallback(async (lngLat: [number, number]) => {
+    if (profile.phase === 'picking') {
+      const a = profile.a;
+      const run = ++profileRun.current;
+      setProfile({ phase: 'loading', a, b: lngLat });
+      const result = await buildProfile(a, lngLat);
+      if (run !== profileRun.current) return;   // 追い越された結果は捨てる
+      setProfile({ phase: 'done', a, b: lngLat, result });
+      return;
+    }
+    // idle でも done でも、次のクリックは新しい始点になる
+    profileRun.current++;
+    setProfile({ phase: 'picking', a: lngLat });
+  }, [profile]);
+
   /* ---- クリック ---- */
   useEffect(() => {
     const m = map.current;
     if (!m || !ready) return;
     const onClick = async (e: maplibregl.MapMouseEvent) => {
+      // 断面を引いている間は、地物の選択より線を引くほうを優先する
+      if (profileOn) {
+        await pickProfilePoint([e.lngLat.lng, e.lngLat.lat]);
+        return;
+      }
       const onsenIds = ONSEN_LAYERS.map((o) => o.id);
       const hits = m.queryRenderedFeatures(e.point, { layers: [...onsenIds, 'volcano'] });
       if (hits.length > 0) {
@@ -333,7 +417,15 @@ export default function MapView() {
     };
     m.on('click', onClick);
     return () => { m.off('click', onClick); };
-  }, [ready, visible.geology]);
+  }, [ready, visible.geology, profileOn, pickProfilePoint]);
+
+  const profileNote =
+    profile.phase === 'picking' ? '始点 A を置きました。終点 B をクリックしてください'
+    : profile.phase === 'loading' ? '標高タイルを読み込み中…'
+    : profile.phase === 'done' && profile.result.ok
+      ? `全長 ${profile.result.lengthKm.toFixed(2)} km / 標高タイル z${profile.result.zoom} を ${profile.result.tiles} 枚`
+    : profile.phase === 'done' && !profile.result.ok ? profile.result.reason
+    : '';
 
   return (
     <div className="map-shell">
@@ -349,11 +441,16 @@ export default function MapView() {
         contourNote={contourNote}
         demZoomNote={`標高タイルは z${DEM.minzoom}–z${DEM.maxzoom} にあります。縮尺に応じて使う段を切り替えます`}
         onsenNameOnly={onsenNameOnly} setOnsenNameOnly={setOnsenNameOnly}
+        profileOn={profileOn} setProfileOn={setProfileOn}
+        profileNote={profileNote}
       />
       <div className="map-area">
         <div ref={holder} className="map-canvas" />
         {tileError && <div className="map-toast">{tileError}</div>}
         <FeaturePanel selection={selection} onClose={() => setSelection(null)} />
+        {profileOn && (
+          <ProfilePanel state={profile} onClose={() => setProfileOn(false)} />
+        )}
       </div>
     </div>
   );

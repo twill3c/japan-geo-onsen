@@ -1,0 +1,98 @@
+{
+ "head": {
+  "vars": [
+   "x",
+   "xLabel",
+   "coord",
+   "elev"
+  ]
+ },
+ "results": {
+  "bindings": [
+   {
+    "x": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q39231"
+    },
+    "elev": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+     "type": "literal",
+     "value": "3777.24"
+    },
+    "coord": {
+     "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+     "type": "literal",
+     "value": "Point(138.7275 35.360555555)"
+    },
+    "xLabel": {
+     "xml:lang": "ja",
+     "type": "literal",
+     "value": "富士山"
+    }
+   },
+   {
+    "x": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q961873"
+    },
+    "elev": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+     "type": "literal",
+     "value": "3193"
+    },
+    "coord": {
+     "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+     "type": "literal",
+     "value": "Point(138.23874 35.67432)"
+    },
+    "xLabel": {
+     "xml:lang": "ja",
+     "type": "literal",
+     "value": "北岳"
+    }
+   },
+   {
+    "x": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q30926500"
+    },
+    "elev": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+     "type": "literal",
+     "value": "152"
+    },
+    "coord": {
+     "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+     "type": "literal",
+     "value": "Point(140.183611111 36.223611111)"
+    },
+    "xLabel": {
+     "xml:lang": "ja",
+     "type": "literal",
+     "value": "富士山"
+    }
+   },
+   {
+    "x": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q55521778"
+    },
+    "elev": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+     "type": "literal",
+     "value": "160"
+    },
+    "coord": {
+     "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+     "type": "literal",
+     "value": "Point(139.31516667 36.41502778)"
+    },
+    "xLabel": {
+     "xml:lang": "ja",
+     "type": "literal",
+     "value": "富士山"
+    }
+   }
+  ]
+ }
+}

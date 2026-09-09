@@ -42,6 +42,8 @@ marching squares で引いている。
   名前も座標も無い。だから 2,839 そのものを点にすることはできない。
   被覆を広げるため **Wikidata(CC0)の温泉 1,477 件**を第二の層として足した
   （重複を除いた地点 **2,455**＝温泉地の 86%）。ただし悉皆調査ではないので**統計には使わない**。
+- **地形断面は縦を引き伸ばして描くので、倍率を必ず出す。** 上り・下りの合計は刻みの
+  細かさで変わる量なので、そのことも書く（起伏は刻みが 1 画素に近ければ落ち着く）。
 - **植生自然度で差が出るのは中ほどの段階だけ。** 温泉は市街地・農耕地に少なく（−14.2 pt）、
   植林地・二次林に多い（+7.1 / +8.5 pt）一方、**自然林・自然草原では +0.09 pt** でほぼ差が無い。
 - **温泉点の被覆には穴がある。** 10 都府県に 1 点も無い。「点が無い＝温泉が無い」ではない。
@@ -71,6 +73,8 @@ npm install
 ./.venv/Scripts/python.exe etl/build_water.py     # 河川・湖沼(下記の zip が要る)
 ./.venv/Scripts/python.exe etl/parse_onsen_stats.py  # 環境省 PDF(都道府県別)
 ./.venv/Scripts/python.exe etl/build_vegetation.py    # 植生(下記の lzh が要る)
+./.venv/Scripts/python.exe etl/make_profile_fixture.py  # 断面の二実装照合フィクスチャ
+./.venv/Scripts/python.exe etl/check_elevation.py      # 標高を地理院 標高 API と突き合わせる
 ./.venv/Scripts/python.exe etl/build_stats.py
 ./.venv/Scripts/python.exe etl/build_manifest.py
 

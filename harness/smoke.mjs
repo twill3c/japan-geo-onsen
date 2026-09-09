@@ -236,6 +236,53 @@ async function main() {
       }
     }
 
+    // 地形断面(設計書 §56)。地図を 2 回クリックして図が出るところまで見る。
+    // 切替が無い版に当てたときは、例外で検品ごと落とさず**不合格として**数える
+    // (この検査群は、断面を積む前の本番に当てて 7 件とも落ちることを確かめてある)。
+    const profileToggle = page.getByText('地図に線を引いて断面を見る');
+    const hasProfile = (await profileToggle.count()) > 0;
+    check(hasProfile, '地形断面の切替がある');
+    if (hasProfile) await profileToggle.click();
+    const drew = hasProfile && await page.evaluate(async () => {
+      const m = window.__map;
+      if (!m) return false;
+      const c = m.getCanvas();
+      const r = c.getBoundingClientRect();
+      const clickAt = (dx, dy) => c.dispatchEvent(new MouseEvent('click', {
+        bubbles: true, clientX: r.left + r.width * dx, clientY: r.top + r.height * dy,
+      }));
+      clickAt(0.35, 0.42);
+      await new Promise((res) => setTimeout(res, 250));
+      clickAt(0.62, 0.58);
+      return true;
+    });
+    if (drew) {
+      let shown = false;
+      try {
+        await page.waitForFunction(
+          () => /全長 [\d.]+ km/.test(document.querySelector('.profile-panel')?.innerText ?? ''),
+          null, { timeout: 40000 },
+        );
+        shown = true;
+      } catch { /* 下の check で不合格になる */ }
+      check(shown, '地図を 2 回クリックすると断面図が出る');
+      if (shown) {
+        const t = await page.locator('.profile-panel').innerText();
+        // 縦を引き伸ばして描いていることを言わずに出すと、実際より険しく見える
+        check(/縦は横の.*倍に引き伸ばして/.test(t), '断面図に誇張倍率が書かれている');
+        check(/標高タイル z\d+ を \d+ 枚/.test(t), '断面が読んだ標高タイルの段と枚数が出ている');
+        check(/画素の値をそのまま/.test(t), '断面が画素を混ぜていないと書かれている');
+        check(/国土地理院 標高タイル/.test(t), '断面に出典が書かれている');
+        const path = await page.locator('.profile-panel svg path').count();
+        check(path > 0, '断面図に線が描かれている', `${path} 本`);
+      }
+      const line = await page.evaluate(
+        () => (window.__map?.querySourceFeatures('profile-line') ?? []).length,
+      );
+      // 点 A・点 B・線の 3 つ
+      check(line >= 3, '引いた線が地図にも残っている', `${line} 件`);
+    }
+
     let bad = await overflowing(page);
     check(bad.length === 0, '地図画面に横のはみ出しが無い', bad.join(' / '));
     if (wantShots) {

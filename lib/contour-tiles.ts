@@ -16,7 +16,13 @@ export const MAX_GRID = 640;
 
 const cache = new Map<string, (number | null)[] | null>();
 
-async function loadTile(z: number, x: number, y: number): Promise<(number | null)[] | null> {
+/**
+ * 標高タイル 1 枚を読んで標高の格子にする。取れなければ null(埋めない)。
+ *
+ * 等高線と地形断面が同じ経路を通り、**同じキャッシュ**を共有する。
+ * 断面を引いた直後に等高線を出しても、同じタイルを二度取りに行かない。
+ */
+export async function loadDemTile(z: number, x: number, y: number): Promise<(number | null)[] | null> {
   const key = `${z}/${x}/${y}`;
   const hit = cache.get(key);
   if (hit !== undefined) return hit;
@@ -67,7 +73,7 @@ export async function buildContours(bounds: Bounds, mapZoom: number, interval: n
   }
 
   const tiles = await Promise.all(
-    Array.from({ length: nx * ny }, (_, k) => loadTile(z, x0 + (k % nx), y0 + Math.floor(k / nx))),
+    Array.from({ length: nx * ny }, (_, k) => loadDemTile(z, x0 + (k % nx), y0 + Math.floor(k / nx))),
   );
   const missing = tiles.filter((t) => t === null).length;
   if (missing === tiles.length) return { ok: false, reason: '標高タイルを取得できませんでした' };
