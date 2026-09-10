@@ -16,6 +16,39 @@ import ProfilePanel, { type ProfileState } from '@/components/ProfilePanel';
 /** 初期表示は八ヶ岳周辺(設計書 §59 の実証地域)。 */
 const INITIAL = { center: [138.35, 35.98] as [number, number], zoom: 9.2 };
 
+type OnsenLayerDef = (typeof ONSEN_LAYERS)[number];
+
+/**
+ * 温泉の点レイヤーを 1 つ足す(丸・ラベル・カーソル)。
+ *
+ * 起動時と「あとで点けたとき」の両方から呼ぶ。**同じ規則を二度書かない**ため、
+ * 追加の手順はここ 1 か所に置く。
+ */
+function addOnsenLayer(m: maplibregl.Map, o: OnsenLayerDef): void {
+  if (m.getLayer(o.id)) return;
+  m.addSource(o.id, { type: 'geojson', data: o.data });
+  m.addLayer({
+    id: o.id, type: 'circle', source: o.id,
+    paint: {
+      'circle-radius': ['interpolate', ['linear'], ['zoom'], 5, 2.4, 10, 4.6, 14, 7],
+      'circle-color': o.color,
+      'circle-stroke-color': '#ffffff',
+      'circle-stroke-width': 0.8,
+      'circle-opacity': 0.9,
+    },
+  });
+  m.addLayer({
+    id: `${o.id}-label`, type: 'symbol', source: o.id, minzoom: 11,
+    layout: {
+      'text-field': ['coalesce', ['get', 'name'], ''], 'text-size': 10.5,
+      'text-offset': [0, 0.9], 'text-anchor': 'top',
+    },
+    paint: { 'text-color': '#4b2d12', 'text-halo-color': '#ffffff', 'text-halo-width': 1.3 },
+  });
+  m.on('mouseenter', o.id, () => { m.getCanvas().style.cursor = 'pointer'; });
+  m.on('mouseleave', o.id, () => { m.getCanvas().style.cursor = ''; });
+}
+
 export default function MapView() {
   const holder = useRef<HTMLDivElement | null>(null);
   const map = useRef<maplibregl.Map | null>(null);
@@ -174,32 +207,15 @@ export default function MapView() {
         paint: { 'text-color': '#7f1d1d', 'text-halo-color': '#ffffff', 'text-halo-width': 1.4 },
       });
 
-      // 温泉は出所ごとに層を分ける。色で見分けられるようにし、混ぜない
+      // 温泉は出所ごとに層を分ける。色で見分けられるようにし、混ぜない。
+      // **既定で消えている層は、点けたときに初めて読む。** 起動時に addSource すると
+      // 見ない人にもデータを配ることになる(実測 2026-09-10: Wikipedia の層 1.8 MB を
+      // 既定 OFF のまま起動時に取りに行っていた。水の層で一度直したのと同じ誤り)。
       for (const o of ONSEN_LAYERS) {
-        m.addSource(o.id, { type: 'geojson', data: o.data });
-        m.addLayer({
-          id: o.id, type: 'circle', source: o.id,
-          layout: { visibility: o.defaultVisible ? 'visible' : 'none' },
-          paint: {
-            'circle-radius': ['interpolate', ['linear'], ['zoom'], 5, 2.4, 10, 4.6, 14, 7],
-            'circle-color': o.color,
-            'circle-stroke-color': '#ffffff',
-            'circle-stroke-width': 0.8,
-            'circle-opacity': 0.9,
-          },
-        });
-        m.addLayer({
-          id: `${o.id}-label`, type: 'symbol', source: o.id, minzoom: 11,
-          layout: {
-            visibility: o.defaultVisible ? 'visible' : 'none',
-            'text-field': ['coalesce', ['get', 'name'], ''], 'text-size': 10.5,
-            'text-offset': [0, 0.9], 'text-anchor': 'top',
-          },
-          paint: { 'text-color': '#4b2d12', 'text-halo-color': '#ffffff', 'text-halo-width': 1.3 },
-        });
+        if (o.defaultVisible) addOnsenLayer(m, o);
       }
 
-      for (const id of [...ONSEN_LAYERS.map((o) => o.id), 'volcano']) {
+      for (const id of ['volcano']) {
         m.on('mouseenter', id, () => { m.getCanvas().style.cursor = 'pointer'; });
         m.on('mouseleave', id, () => { m.getCanvas().style.cursor = ''; });
       }
@@ -265,11 +281,16 @@ export default function MapView() {
       m.setLayoutProperty('lakes', 'visibility', visible.lakes ? 'visible' : 'none');
       m.setPaintProperty('lakes', 'fill-opacity', opacity.lakes);
     }
+    // 既定で消えている温泉の層は、初めて点けたときに足す(起動時に読まない)
+    for (const o of ONSEN_LAYERS) {
+      if (visible[o.id]) addOnsenLayer(m, o);
+    }
     const pairs: [string, string][] = [
       ...ONSEN_LAYERS.map((o) => [o.id, `${o.id}-label`] as [string, string]),
       ['volcano', 'volcano-label'],
     ];
     for (const [id, labelId] of pairs) {
+      if (!m.getLayer(id)) continue;   // まだ足していない層
       const vis = visible[id] ? 'visible' : 'none';
       m.setLayoutProperty(id, 'visibility', vis);
       m.setLayoutProperty(labelId, 'visibility', vis);
@@ -285,6 +306,7 @@ export default function MapView() {
       ? (['==', ['get', 'name_has_onsen'], true] as maplibregl.FilterSpecification)
       : null;
     for (const o of ONSEN_LAYERS) {
+      if (!m.getLayer(o.id)) continue;   // まだ足していない層
       m.setFilter(o.id, filter);
       m.setFilter(`${o.id}-label`, filter);
     }
@@ -394,7 +416,8 @@ export default function MapView() {
         await pickProfilePoint([e.lngLat.lng, e.lngLat.lat]);
         return;
       }
-      const onsenIds = ONSEN_LAYERS.map((o) => o.id);
+      // まだ足していない層を渡すと queryRenderedFeatures は例外を投げる
+      const onsenIds = ONSEN_LAYERS.map((o) => o.id).filter((id) => m.getLayer(id));
       const hits = m.queryRenderedFeatures(e.point, { layers: [...onsenIds, 'volcano'] });
       if (hits.length > 0) {
         const f = hits[0];
