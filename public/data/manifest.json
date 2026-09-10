@@ -1,7 +1,7 @@
 {
  "generated": "2026-09-08",
  "note": "件数は成果物を読み直して数えたもの。生成器の申告は写していない。",
- "total_bytes": 7997428,
+ "total_bytes": 9972740,
  "products": [
   {
    "file": "volcanoes.geojson",
@@ -323,6 +323,78 @@
      }
     }
    }
+  },
+  {
+   "file": "onsen_wikipedia.geojson",
+   "bytes": 1834539,
+   "sha256": "0f342bb9d7b3005a48e96594364c2d745fa036db00e7c7e08b6defbbd1bfbc71",
+   "features": 1344,
+   "source": "日本語版 Wikipedia",
+   "dataset": "47 都道府県の「○○の温泉」カテゴリ直下の記事(記事名前空間のみ)",
+   "source_url": "https://ja.wikipedia.org/",
+   "license": "CC BY-SA 4.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/4.0/deed.ja",
+   "download_date": "2026-09-10",
+   "processing_method": "47 都道府県の「○○の温泉」カテゴリの**直下**にある記事(名前空間 0)を集め、記事の座標を採った。記事に無い場合だけ Wikidata の P625 を見た。日本の範囲に入るものだけを採り、既存 3 層と重なるものも消していない",
+   "enrichment": {
+    "elevation": {
+     "source": "国土地理院 標高タイル(dem_png)",
+     "source_url": "https://maps.gsi.go.jp/development/demtile.html",
+     "zoom": 14,
+     "download_date": "2026-09-07"
+    },
+    "geology": {
+     "source": "産業技術総合研究所 地質調査総合センター",
+     "dataset": "20万分の1日本シームレス地質図V2 Web API 1.3(凡例取得サービス)",
+     "source_url": "https://gbank.gsj.jp/seamless/v2/api/1.3/",
+     "download_date": "2026-09-07"
+    },
+    "volcano_distance": {
+     "method": "球面(半径6371.0088km)の大円距離",
+     "cross_check": "WGS84 測地線(Vincenty)との相対差",
+     "max_relative_difference": 0.0037931645816633927
+    },
+    "vegetation": {
+     "source": "環境省生物多様性センター",
+     "dataset": "第5回自然環境保全基礎調査 植生調査 3次メッシュデータ(1992-1996)",
+     "source_url": "https://www.biodic.go.jp/kiso/vg/vg_kiso.html",
+     "license": "公共データ利用規約(第1.0版) PDL1.0",
+     "license_url": "https://www.biodic.go.jp/copyright/terms_of_service.html",
+     "download_date": "2026-09-09",
+     "method": "点が入る 3 次メッシュ(約 1 km)の代表群落を引いた。メッシュが無い点は欠測",
+     "coverage": "1299/1344"
+    },
+    "water": {
+     "river": {
+      "source": "国土交通省 国土数値情報",
+      "dataset": "河川データ(W05)",
+      "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-W05.html",
+      "license": "国土数値情報 利用約款(**非商用限定**)",
+      "license_url": "https://nlftp.mlit.go.jp/ksj/other/agreement.html",
+      "download_date": "2026-09-08"
+     },
+     "lake": {
+      "source": "国土交通省 国土数値情報",
+      "dataset": "湖沼データ(W09) 2005年版",
+      "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-W09-v2_2.html",
+      "license": "国土数値情報 利用約款(商用可)",
+      "license_url": "https://nlftp.mlit.go.jp/ksj/other/agreement.html",
+      "download_date": "2026-09-08"
+     },
+     "method": "0.05 度の格子に線分を入れ、点のまわり 12 環(およそ 0.6 度)までを見て最小距離を取る。この範囲に見つからない点は欠測にする(埋めない)",
+     "coverage": {
+      "river": "1344/1344",
+      "lake": "1335/1344"
+     }
+    }
+   }
+  },
+  {
+   "file": "onsen_missing.json",
+   "bytes": 140773,
+   "sha256": "13f3ee1cf5481b5c2e70319a6ec779eb67fd2097447b0daf042591ff7bbfabb5",
+   "axes": 0,
+   "method": null
   }
  ]
 }

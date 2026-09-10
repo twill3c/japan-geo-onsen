@@ -19,7 +19,7 @@ OUT = DATA / "manifest.json"
 PRODUCTS = ["volcanoes.geojson", "onsen.geojson", "control.geojson",
             "rivers.geojson", "lakes.geojson", "stats.json",
             "onsen_stats.json", "onsen_wikidata.geojson", "vegetation_stats.json",
-            "onsen_facility.geojson"]
+            "onsen_facility.geojson", "onsen_wikipedia.geojson", "onsen_missing.json"]
 
 
 def main() -> None:

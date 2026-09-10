@@ -281,6 +281,24 @@ async function main() {
       await page.locator('.feature-panel .close').click().catch(() => {});
     }
 
+    // 第四の層(Wikipedia の温泉記事)。既定では消えているので、点けてから数える。
+    const wpToggle = page.getByText('温泉記事（Wikipedia）');
+    const hasWp = (await wpToggle.count()) > 0;
+    check(hasWp, 'Wikipedia の温泉記事の層がある');
+    if (hasWp) {
+      await wpToggle.click();
+      let wp = 0;
+      try {
+        await page.waitForFunction(
+          () => (window.__map?.querySourceFeatures('onsen-wp') ?? []).length > 0,
+          null, { timeout: 30000 },
+        );
+        wp = await page.evaluate(() => window.__map.querySourceFeatures('onsen-wp').length);
+      } catch { /* 下の check で不合格になる */ }
+      check(wp > 0, 'Wikipedia の温泉記事が地図に載っている', `${wp} 件`);
+      await wpToggle.click();
+    }
+
     // 地形断面(設計書 §56)。地図を 2 回クリックして図が出るところまで見る。
     // 切替が無い版に当てたときは、例外で検品ごと落とさず**不合格として**数える
     // (この検査群は、断面を積む前の本番に当てて 7 件とも落ちることを確かめてある)。
@@ -367,6 +385,18 @@ async function main() {
     if (wantShots) await page.screenshot({ path: 'harness/shots/onsen-stats.png', fullPage: true });
 
     /* ---------- 出典画面 ---------- */
+    // 地図に出せない温泉の一覧(名前は分かるが位置が公開データに無いもの)
+    await page.goto(`${base}/missing/`, { waitUntil: 'domcontentloaded' });
+    const ms = await page.locator('main').innerText();
+    check(/架空のデータを作ること/.test(ms), '座標を作らない理由が書かれている');
+    check(/山中湖温泉/.test(ms), '指摘された温泉が一覧に載っている');
+    check(/大田区の黒湯温泉/.test(ms), '大田区の黒湯温泉が一覧に載っている');
+    check(/まとまり/.test(ms) && /概念/.test(ms), '一覧にまとまりや概念が混ざると断っている');
+    const names = await page.locator('.name-list li').count();
+    check(names > 900, `一覧に名前が並んでいる(${names} 件)`);
+    bad = await overflowing(page);
+    check(bad.length === 0, '未掲載一覧に横のはみ出しが無い', bad.join(' / '));
+
     await page.goto(`${base}/about/`, { waitUntil: 'domcontentloaded' });
     const about = await page.locator('main').innerText();
     check(/見つかりませんでした/.test(about), '見つからなかったデータの記録がある');

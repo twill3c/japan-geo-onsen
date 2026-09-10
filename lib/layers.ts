@@ -115,6 +115,18 @@ export const ONSEN_LAYERS = [
     note: '入浴施設として登録された場所（CC0）。温泉とは限りません（銭湯・公衆浴場も含む）。'
       + '上の 2 層に入らない「ほったらかし温泉」のような場所がここに出る',
   },
+  {
+    id: 'onsen-wp',
+    label: '温泉記事（Wikipedia）',
+    data: '/data/onsen_wikipedia.geojson',
+    // 温泉(#c2410c)と 2 型色覚で ΔE00 0.5 になる色を一度置いてゲートに落とされた。
+    // 候補を総当たりで測って選び直した(全組・三視型の最小 17.4)
+    color: '#db2777',
+    defaultVisible: false,
+    note: '都道府県別「○○の温泉」カテゴリの記事のうち座標があるもの（CC BY-SA 4.0）。'
+      + '温泉のある施設（遊園地・公園など）も含み、座標の精度もまちまちです。'
+      + '座標が無くて出せない 518 件は一覧に別掲',
+  },
 ];
 
 export const CONTOUR_INTERVALS = [10, 20, 50, 100, 200, 500] as const;
@@ -140,6 +152,7 @@ export const SOURCES = [
   { name: '環境省', what: '温泉利用状況(都道府県別の源泉数・温度別源泉数・湧出量)', url: 'https://www.env.go.jp/nature/onsen/data/', license: '環境省ホームページ利用規約', licenseUrl: 'https://www.env.go.jp/help.html' },
   { name: '環境省 生物多様性センター', what: '第5回自然環境保全基礎調査 植生調査(3次メッシュ・植生自然度)', url: 'https://www.biodic.go.jp/kiso/vg/vg_kiso.html', license: '公共データ利用規約(第1.0版) PDL1.0', licenseUrl: 'https://www.biodic.go.jp/copyright/terms_of_service.html' },
   { name: 'Wikidata', what: '座標のある日本の温泉(第二の点レイヤー)と、入浴施設(第三の点レイヤー・温泉とは限らない)', url: 'https://query.wikidata.org/', license: 'CC0 1.0', licenseUrl: 'https://creativecommons.org/publicdomain/zero/1.0/' },
+  { name: '日本語版 Wikipedia', what: '都道府県別「○○の温泉」カテゴリの記事(第四の点レイヤー)と、座標が無くて地図に出せない温泉の一覧', url: 'https://ja.wikipedia.org/', license: 'CC BY-SA 4.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/deed.ja' },
 ] as const;
 
 /** 設計書 §36 の免責。表現をここに固定し、画面から必ず参照する。 */

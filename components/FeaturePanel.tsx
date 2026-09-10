@@ -41,18 +41,30 @@ export default function FeaturePanel({ selection, onClose }: { selection: Select
 
       {selection.kind === 'onsen' && (
         <>
-          <h3>{p.provenance === 'wikidata-facility' ? '🛁' : '♨'} {txt(p.name) ?? '(名称なし)'}</h3>
+          <h3>
+            {p.provenance === 'wikidata-facility' ? '🛁' : p.provenance === 'wikipedia' ? '📄' : '♨'}
+            {' '}{txt(p.name) ?? '(名称なし)'}
+          </h3>
           <p className="where">
             {p.provenance === 'wikidata' ? 'Wikidata の温泉'
               : p.provenance === 'wikidata-facility'
                 ? `Wikidata の入浴施設${txt(p.facility_class) ? `（${txt(p.facility_class)}）` : ''}`
-                : `${txt(p.prefecture) ?? ''}${txt(p.address) ? ` ・ ${txt(p.address)}` : ''}`}
+                : p.provenance === 'wikipedia'
+                  ? `Wikipedia の温泉記事${txt(p.facility_class) ? `（${txt(p.facility_class)}）` : ''}`
+                  : `${txt(p.prefecture) ?? ''}${txt(p.address) ? ` ・ ${txt(p.address)}` : ''}`}
           </p>
 
           {p.provenance === 'wikidata-facility' && (
             <p className="hint">
               この点は<strong>入浴施設として登録された場所</strong>です。温泉とは限りません
               （銭湯・公衆浴場も同じ分類に入ります）。
+            </p>
+          )}
+          {p.provenance === 'wikipedia' && (
+            <p className="hint">
+              この点は<strong>Wikipedia の記事に書かれた座標</strong>です。
+              都道府県の温泉カテゴリには温泉のある施設（遊園地・公園など）も入り、
+              座標が温泉街の中心を指すか建物を指すかもまちまちです。
             </p>
           )}
 
@@ -107,7 +119,25 @@ export default function FeaturePanel({ selection, onClose }: { selection: Select
           </p>
 
           <h4>この点の出所</h4>
-          {p.provenance === 'wikidata' || p.provenance === 'wikidata-facility' ? (
+          {p.provenance === 'wikipedia' ? (
+            <>
+              <table>
+                <tbody>
+                  <Row label="出典" value="日本語版 Wikipedia（CC BY-SA 4.0）" />
+                  <Row label="座標の出どころ" value={p.coord_source === 'wikidata' ? 'Wikidata（P625）' : '記事の座標'} />
+                  <Row label="分類" value={p.facility_class} />
+                  <Row label="Wikidata" value={p.wikidata_id} />
+                </tbody>
+              </table>
+              <p className="hint">
+                {txt(p.wikipedia_url) && (
+                  <a href={String(p.wikipedia_url)} target="_blank" rel="noreferrer">記事を読む</a>
+                )}
+                。本文の利用条件は <strong>CC BY-SA 4.0</strong> で、他の層（CC0・政府の利用約款）とは違います。
+                <strong>統計（温泉と地理環境）にはこの層を使っていません。</strong>
+              </p>
+            </>
+          ) : p.provenance === 'wikidata' || p.provenance === 'wikidata-facility' ? (
             <>
               <table>
                 <tbody>

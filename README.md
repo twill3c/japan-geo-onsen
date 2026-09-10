@@ -42,6 +42,12 @@ marching squares で引いている。
   名前も座標も無い。だから 2,839 そのものを点にすることはできない。
   被覆を広げるため **Wikidata(CC0)の温泉 1,477 件**を第二の層として足した
   （重複を除いた地点 **2,455**＝温泉地の 86%）。ただし悉皆調査ではないので**統計には使わない**。
+- **辿れない理由は三つある。** ①分類が違う(ほったらかし温泉: 日帰り入浴施設)、
+  ②**座標が無い**(大田区の黒湯温泉: 分類は温泉だが P625 が無い)、
+  ③記事と項目が紐付いていない(山中湖温泉: 項目は在るがサイトリンクが無い)。
+  ②③は地図に出せないので、**名前の一覧**として `/missing/` に出す(518+432 件)。
+- **0 件は「無い」の証拠にならない。** `Category:日本の温泉` は存在せず(実体は都道府県別)、
+  存在しない入口を叩いて 0 件を得ていた。**入口が在ることを確かめてから数える。**
 - **分類の食い違いで、どちらの出典にも入らない温泉がある。** ほったらかし温泉は
   観光資源データに 1 件も無く、Wikidata では「日帰り入浴施設」に分類されていて
   温泉クラスに当たらない。同じ理由で外れる 108 件を**第三の層**にした
@@ -77,6 +83,7 @@ npm install
 ./.venv/Scripts/python.exe etl/build_water.py     # 河川・湖沼(下記の zip が要る)
 ./.venv/Scripts/python.exe etl/parse_onsen_stats.py  # 環境省 PDF(都道府県別)
 ./.venv/Scripts/python.exe etl/build_onsen_facility.py # 入浴施設(第三の層・Wikidata)
+./.venv/Scripts/python.exe etl/build_onsen_wikipedia.py # 温泉記事(第四の層)と未掲載一覧
 ./.venv/Scripts/python.exe etl/build_vegetation.py    # 植生(下記の lzh が要る)
 ./.venv/Scripts/python.exe etl/make_profile_fixture.py  # 断面の二実装照合フィクスチャ
 ./.venv/Scripts/python.exe etl/check_elevation.py      # 標高を地理院 標高 API と突き合わせる

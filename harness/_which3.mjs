@@ -35,6 +35,8 @@ const checks = [
   ['2,839 の再現ではないという断り', '/onsen-stats/', '再現したものではありません'],
   ['入浴施設の層の説明(about)', '/about/', '入浴施設の層'],
   ['ほったらかし温泉の経緯(onsen-stats)', '/onsen-stats/', 'ほったらかし温泉'],
+  ['地図に出せない温泉の一覧', '/missing/', '架空のデータを作ること'],
+  ['山中湖温泉が一覧に載っている', '/missing/', '山中湖温泉'],
 ];
 for (const [label, path, needle] of checks) {
   await page.goto(url + path, { waitUntil: 'domcontentloaded' });

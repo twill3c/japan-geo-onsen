@@ -225,6 +225,18 @@ main {
   .profile-panel { max-height: 46%; }
 }
 
+/* 名前だけを並べる一覧(地図に出せない温泉)。件数が多いので段組みにする */
+.name-list {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 0;
+  columns: 3 200px;
+  column-gap: 20px;
+  font-size: 13px;
+}
+.name-list li { break-inside: avoid; margin: 0 0 2px; }
+.name-list .hint { font-size: 11px; color: var(--muted); }
+
 /* ---- 図と統計 ---- */
 .prose h3 { font-size: 13.5px; margin: 18px 0 4px; }
 .prose .hint { font-size: 12px; color: var(--muted); margin: 4px 0; }

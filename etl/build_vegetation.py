@@ -164,6 +164,6 @@ if __name__ == "__main__":
 
     gunraku, sizendo, kubun = load_tables()
     mesh = load_mesh()
-    for path in ("onsen.geojson", "control.geojson", "onsen_wikidata.geojson", "onsen_facility.geojson"):
+    for path in ("onsen.geojson", "control.geojson", "onsen_wikidata.geojson", "onsen_facility.geojson", "onsen_wikipedia.geojson"):
         got, total = attach(path, gunraku, sizendo, kubun, mesh)
         print(f"{path}: 植生 {got}/{total}")

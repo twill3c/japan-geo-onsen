@@ -1,0 +1,6121 @@
+{
+ "note": "**名前は分かるが、位置が公開データに無い温泉。**緯度経度を作れば地図に出せるが、それは架空のデータを作ることになる(設計書 §71/§72)。だから地図には出さず、ここに名前で残す",
+ "generated_at": "2026-09-10",
+ "sources": [
+  {
+   "source": "日本語版 Wikipedia",
+   "dataset": "47 都道府県の「○○の温泉」カテゴリ直下の記事(記事名前空間のみ)",
+   "source_url": "https://ja.wikipedia.org/",
+   "license": "CC BY-SA 4.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/4.0/deed.ja",
+   "download_date": "2026-09-10",
+   "what": "座標が無い温泉記事",
+   "count": 518
+  },
+  {
+   "source": "Wikidata",
+   "license": "CC0 1.0",
+   "source_url": "https://query.wikidata.org/",
+   "what": "instance of/subclass of 温泉・国=日本 だが座標(P625)が無い項目",
+   "count": 432
+  }
+ ],
+ "wikipedia": [
+  {
+   "name": "I+Land nagasaki",
+   "wikidata_id": "Q11652607",
+   "url": "https://ja.wikipedia.org/wiki/I%2BLand%20nagasaki"
+  },
+  {
+   "name": "SPA・X",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/SPA%E3%83%BBX"
+  },
+  {
+   "name": "あがの温泉白糸の湯",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E3%81%82%E3%81%8C%E3%81%AE%E6%B8%A9%E6%B3%89%E7%99%BD%E7%B3%B8%E3%81%AE%E6%B9%AF"
+  },
+  {
+   "name": "あたみ温泉",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E3%81%82%E3%81%9F%E3%81%BF%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "いなり鉱泉",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E3%81%84%E3%81%AA%E3%82%8A%E9%89%B1%E6%B3%89"
+  },
+  {
+   "name": "うすずみ温泉",
+   "wikidata_id": "Q11260412",
+   "url": "https://ja.wikipedia.org/wiki/%E3%81%86%E3%81%99%E3%81%9A%E3%81%BF%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "かご岩温泉",
+   "wikidata_id": "Q11603848",
+   "url": "https://ja.wikipedia.org/wiki/%E3%81%8B%E3%81%94%E5%B2%A9%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "かじかの湯",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E3%81%8B%E3%81%98%E3%81%8B%E3%81%AE%E6%B9%AF"
+  },
+  {
+   "name": "きいながしま古里温泉",
+   "wikidata_id": "Q11264706",
+   "url": "https://ja.wikipedia.org/wiki/%E3%81%8D%E3%81%84%E3%81%AA%E3%81%8C%E3%81%97%E3%81%BE%E5%8F%A4%E9%87%8C%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "きつねうち温泉",
+   "wikidata_id": "Q109597148",
+   "url": "https://ja.wikipedia.org/wiki/%E3%81%8D%E3%81%A4%E3%81%AD%E3%81%86%E3%81%A1%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "きのえ温泉",
+   "wikidata_id": "Q109598511",
+   "url": "https://ja.wikipedia.org/wiki/%E3%81%8D%E3%81%AE%E3%81%88%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "くにさき六郷温泉",
+   "wikidata_id": "Q28688040",
+   "url": "https://ja.wikipedia.org/wiki/%E3%81%8F%E3%81%AB%E3%81%95%E3%81%8D%E5%85%AD%E9%83%B7%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "くわどり湯ったり村",
+   "wikidata_id": "Q109361363",
+   "url": "https://ja.wikipedia.org/wiki/%E3%81%8F%E3%82%8F%E3%81%A9%E3%82%8A%E6%B9%AF%E3%81%A3%E3%81%9F%E3%82%8A%E6%9D%91"
+  },
+  {
+   "name": "さいごう温泉",
+   "wikidata_id": "Q109603068",
+   "url": "https://ja.wikipedia.org/wiki/%E3%81%95%E3%81%84%E3%81%94%E3%81%86%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "さいと温泉",
+   "wikidata_id": "Q11267557",
+   "url": "https://ja.wikipedia.org/wiki/%E3%81%95%E3%81%84%E3%81%A8%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "さくら野温泉",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E3%81%95%E3%81%8F%E3%82%89%E9%87%8E%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "さわらびの湯",
+   "wikidata_id": "Q11268515",
+   "url": "https://ja.wikipedia.org/wiki/%E3%81%95%E3%82%8F%E3%82%89%E3%81%B3%E3%81%AE%E6%B9%AF"
+  },
+  {
+   "name": "しほろ温泉",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E3%81%97%E3%81%BB%E3%82%8D%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "しまなみ温泉 喜助の湯",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E3%81%97%E3%81%BE%E3%81%AA%E3%81%BF%E6%B8%A9%E6%B3%89%20%E5%96%9C%E5%8A%A9%E3%81%AE%E6%B9%AF"
+  },
+  {
+   "name": "せら温泉",
+   "wikidata_id": "Q11270127",
+   "url": "https://ja.wikipedia.org/wiki/%E3%81%9B%E3%82%89%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "たけべ八幡温泉",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E3%81%9F%E3%81%91%E3%81%B9%E5%85%AB%E5%B9%A1%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "たてやま温泉郷",
+   "wikidata_id": "Q65235114",
+   "url": "https://ja.wikipedia.org/wiki/%E3%81%9F%E3%81%A6%E3%82%84%E3%81%BE%E6%B8%A9%E6%B3%89%E9%83%B7"
+  },
+  {
+   "name": "たんげ温泉",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E3%81%9F%E3%82%93%E3%81%92%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "つま恋温泉",
+   "wikidata_id": "Q11272483",
+   "url": "https://ja.wikipedia.org/wiki/%E3%81%A4%E3%81%BE%E6%81%8B%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "とりごえ温泉",
+   "wikidata_id": "Q109601271",
+   "url": "https://ja.wikipedia.org/wiki/%E3%81%A8%E3%82%8A%E3%81%94%E3%81%88%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "なかじま猿田彦温泉 いやしの湯",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E3%81%AA%E3%81%8B%E3%81%98%E3%81%BE%E7%8C%BF%E7%94%B0%E5%BD%A6%E6%B8%A9%E6%B3%89%20%E3%81%84%E3%82%84%E3%81%97%E3%81%AE%E6%B9%AF"
+  },
+  {
+   "name": "のりくら温泉郷",
+   "wikidata_id": "Q11275251",
+   "url": "https://ja.wikipedia.org/wiki/%E3%81%AE%E3%82%8A%E3%81%8F%E3%82%89%E6%B8%A9%E6%B3%89%E9%83%B7"
+  },
+  {
+   "name": "ひょっこり温泉 島の湯",
+   "wikidata_id": "Q133819944",
+   "url": "https://ja.wikipedia.org/wiki/%E3%81%B2%E3%82%87%E3%81%A3%E3%81%93%E3%82%8A%E6%B8%A9%E6%B3%89%20%E5%B3%B6%E3%81%AE%E6%B9%AF"
+  },
+  {
+   "name": "ふなりっと温泉",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E3%81%B5%E3%81%AA%E3%82%8A%E3%81%A3%E3%81%A8%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "ふるっぷ温泉",
+   "wikidata_id": "Q17230936",
+   "url": "https://ja.wikipedia.org/wiki/%E3%81%B5%E3%82%8B%E3%81%A3%E3%81%B7%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "べふ峡温泉",
+   "wikidata_id": "Q109598186",
+   "url": "https://ja.wikipedia.org/wiki/%E3%81%B9%E3%81%B5%E5%B3%A1%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "みうら湯 弘明寺温泉",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E3%81%BF%E3%81%86%E3%82%89%E6%B9%AF%20%E5%BC%98%E6%98%8E%E5%AF%BA%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "みたまの湯",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E3%81%BF%E3%81%9F%E3%81%BE%E3%81%AE%E6%B9%AF"
+  },
+  {
+   "name": "みやぎ蔵王温泉郷",
+   "wikidata_id": "Q28692399",
+   "url": "https://ja.wikipedia.org/wiki/%E3%81%BF%E3%82%84%E3%81%8E%E8%94%B5%E7%8E%8B%E6%B8%A9%E6%B3%89%E9%83%B7"
+  },
+  {
+   "name": "むかわ温泉",
+   "wikidata_id": "Q11279536",
+   "url": "https://ja.wikipedia.org/wiki/%E3%82%80%E3%81%8B%E3%82%8F%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "よさこい温泉",
+   "wikidata_id": "Q109598235",
+   "url": "https://ja.wikipedia.org/wiki/%E3%82%88%E3%81%95%E3%81%93%E3%81%84%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "アルプスの湯",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E3%82%A2%E3%83%AB%E3%83%97%E3%82%B9%E3%81%AE%E6%B9%AF"
+  },
+  {
+   "name": "オホーツク温泉",
+   "wikidata_id": "Q11292386",
+   "url": "https://ja.wikipedia.org/wiki/%E3%82%AA%E3%83%9B%E3%83%BC%E3%83%84%E3%82%AF%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "カンパネルラの湯",
+   "wikidata_id": "Q109598269",
+   "url": "https://ja.wikipedia.org/wiki/%E3%82%AB%E3%83%B3%E3%83%91%E3%83%8D%E3%83%AB%E3%83%A9%E3%81%AE%E6%B9%AF"
+  },
+  {
+   "name": "ガラメキ温泉",
+   "wikidata_id": "Q11296241",
+   "url": "https://ja.wikipedia.org/wiki/%E3%82%AC%E3%83%A9%E3%83%A1%E3%82%AD%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "クア・ガーデン (多摩テック)",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E3%82%AF%E3%82%A2%E3%83%BB%E3%82%AC%E3%83%BC%E3%83%87%E3%83%B3%20%28%E5%A4%9A%E6%91%A9%E3%83%86%E3%83%83%E3%82%AF%29"
+  },
+  {
+   "name": "グランスパかの苑",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E3%82%B0%E3%83%A9%E3%83%B3%E3%82%B9%E3%83%91%E3%81%8B%E3%81%AE%E8%8B%91"
+  },
+  {
+   "name": "コタン温泉",
+   "wikidata_id": "Q11302192",
+   "url": "https://ja.wikipedia.org/wiki/%E3%82%B3%E3%82%BF%E3%83%B3%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "サイボク天然温泉",
+   "wikidata_id": "Q11304209",
+   "url": "https://ja.wikipedia.org/wiki/%E3%82%B5%E3%82%A4%E3%83%9C%E3%82%AF%E5%A4%A9%E7%84%B6%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "サープレィ足洗温泉",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E3%82%B5%E3%83%BC%E3%83%97%E3%83%AC%E3%82%A3%E8%B6%B3%E6%B4%97%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "シギラ温泉",
+   "wikidata_id": "Q11307080",
+   "url": "https://ja.wikipedia.org/wiki/%E3%82%B7%E3%82%AE%E3%83%A9%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "シンフロ",
+   "wikidata_id": "Q28685428",
+   "url": "https://ja.wikipedia.org/wiki/%E3%82%B7%E3%83%B3%E3%83%95%E3%83%AD"
+  },
+  {
+   "name": "スパジアムジャポン",
+   "wikidata_id": "Q138357470",
+   "url": "https://ja.wikipedia.org/wiki/%E3%82%B9%E3%83%91%E3%82%B8%E3%82%A2%E3%83%A0%E3%82%B8%E3%83%A3%E3%83%9D%E3%83%B3"
+  },
+  {
+   "name": "テルメ金沢",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E3%83%86%E3%83%AB%E3%83%A1%E9%87%91%E6%B2%A2"
+  },
+  {
+   "name": "ピラミッド温泉",
+   "wikidata_id": "Q85873202",
+   "url": "https://ja.wikipedia.org/wiki/%E3%83%94%E3%83%A9%E3%83%9F%E3%83%83%E3%83%89%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "マキノ白谷温泉",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E3%83%9E%E3%82%AD%E3%83%8E%E7%99%BD%E8%B0%B7%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "モッタ海岸温泉",
+   "wikidata_id": "Q11344356",
+   "url": "https://ja.wikipedia.org/wiki/%E3%83%A2%E3%83%83%E3%82%BF%E6%B5%B7%E5%B2%B8%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "ユインチホテル南城",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E3%83%A6%E3%82%A4%E3%83%B3%E3%83%81%E3%83%9B%E3%83%86%E3%83%AB%E5%8D%97%E5%9F%8E"
+  },
+  {
+   "name": "一関温泉郷",
+   "wikidata_id": "Q11353265",
+   "url": "https://ja.wikipedia.org/wiki/%E4%B8%80%E9%96%A2%E6%B8%A9%E6%B3%89%E9%83%B7"
+  },
+  {
+   "name": "七里田温泉",
+   "wikidata_id": "Q11353716",
+   "url": "https://ja.wikipedia.org/wiki/%E4%B8%83%E9%87%8C%E7%94%B0%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "三加和温泉",
+   "wikidata_id": "Q11354484",
+   "url": "https://ja.wikipedia.org/wiki/%E4%B8%89%E5%8A%A0%E5%92%8C%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "三富温泉",
+   "wikidata_id": "Q114797433",
+   "url": "https://ja.wikipedia.org/wiki/%E4%B8%89%E5%AF%8C%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "三峰温泉",
+   "wikidata_id": "Q109597187",
+   "url": "https://ja.wikipedia.org/wiki/%E4%B8%89%E5%B3%B0%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "三段峡温泉",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E4%B8%89%E6%AE%B5%E5%B3%A1%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "三石温泉",
+   "wikidata_id": "Q11356835",
+   "url": "https://ja.wikipedia.org/wiki/%E4%B8%89%E7%9F%B3%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "三福温泉",
+   "wikidata_id": "Q11356870",
+   "url": "https://ja.wikipedia.org/wiki/%E4%B8%89%E7%A6%8F%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "三船温泉",
+   "wikidata_id": "Q11356967",
+   "url": "https://ja.wikipedia.org/wiki/%E4%B8%89%E8%88%B9%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "三香温泉",
+   "wikidata_id": "Q11358317",
+   "url": "https://ja.wikipedia.org/wiki/%E4%B8%89%E9%A6%99%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "上北温泉郷",
+   "wikidata_id": "Q11358525",
+   "url": "https://ja.wikipedia.org/wiki/%E4%B8%8A%E5%8C%97%E6%B8%A9%E6%B3%89%E9%83%B7"
+  },
+  {
+   "name": "上小野温泉",
+   "wikidata_id": "Q11358810",
+   "url": "https://ja.wikipedia.org/wiki/%E4%B8%8A%E5%B0%8F%E9%87%8E%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "上河内温泉",
+   "wikidata_id": "Q11359508",
+   "url": "https://ja.wikipedia.org/wiki/%E4%B8%8A%E6%B2%B3%E5%86%85%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "下里瀬温泉",
+   "wikidata_id": "Q109598550",
+   "url": "https://ja.wikipedia.org/wiki/%E4%B8%8B%E9%87%8C%E7%80%AC%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "不動の湯",
+   "wikidata_id": "Q109597277",
+   "url": "https://ja.wikipedia.org/wiki/%E4%B8%8D%E5%8B%95%E3%81%AE%E6%B9%AF"
+  },
+  {
+   "name": "不動の湯 (大阪市)",
+   "wikidata_id": "Q140193524",
+   "url": "https://ja.wikipedia.org/wiki/%E4%B8%8D%E5%8B%95%E3%81%AE%E6%B9%AF%20%28%E5%A4%A7%E9%98%AA%E5%B8%82%29"
+  },
+  {
+   "name": "世知原温泉",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E4%B8%96%E7%9F%A5%E5%8E%9F%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "両津温泉郷",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E4%B8%A1%E6%B4%A5%E6%B8%A9%E6%B3%89%E9%83%B7"
+  },
+  {
+   "name": "中三依温泉",
+   "wikidata_id": "Q24870034",
+   "url": "https://ja.wikipedia.org/wiki/%E4%B8%AD%E4%B8%89%E4%BE%9D%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "中京温泉",
+   "wikidata_id": "Q28691999",
+   "url": "https://ja.wikipedia.org/wiki/%E4%B8%AD%E4%BA%AC%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "中原温泉",
+   "wikidata_id": "Q109365247",
+   "url": "https://ja.wikipedia.org/wiki/%E4%B8%AD%E5%8E%9F%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "串原温泉",
+   "wikidata_id": "Q109595715",
+   "url": "https://ja.wikipedia.org/wiki/%E4%B8%B2%E5%8E%9F%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "串間温泉",
+   "wikidata_id": "Q11367921",
+   "url": "https://ja.wikipedia.org/wiki/%E4%B8%B2%E9%96%93%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "久住高原温泉",
+   "wikidata_id": "Q11368942",
+   "url": "https://ja.wikipedia.org/wiki/%E4%B9%85%E4%BD%8F%E9%AB%98%E5%8E%9F%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "久住高原温泉郷",
+   "wikidata_id": "Q30922879",
+   "url": "https://ja.wikipedia.org/wiki/%E4%B9%85%E4%BD%8F%E9%AB%98%E5%8E%9F%E6%B8%A9%E6%B3%89%E9%83%B7"
+  },
+  {
+   "name": "久瀬温泉",
+   "wikidata_id": "Q109602791",
+   "url": "https://ja.wikipedia.org/wiki/%E4%B9%85%E7%80%AC%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "久米之癒",
+   "wikidata_id": "Q11369575",
+   "url": "https://ja.wikipedia.org/wiki/%E4%B9%85%E7%B1%B3%E4%B9%8B%E7%99%92"
+  },
+  {
+   "name": "九重九湯",
+   "wikidata_id": "Q11370455",
+   "url": "https://ja.wikipedia.org/wiki/%E4%B9%9D%E9%87%8D%E4%B9%9D%E6%B9%AF"
+  },
+  {
+   "name": "亀川温泉",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E4%BA%80%E5%B7%9D%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "二丈温泉きららの湯",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E4%BA%8C%E4%B8%88%E6%B8%A9%E6%B3%89%E3%81%8D%E3%82%89%E3%82%89%E3%81%AE%E6%B9%AF"
+  },
+  {
+   "name": "二口温泉",
+   "wikidata_id": "Q11371419",
+   "url": "https://ja.wikipedia.org/wiki/%E4%BA%8C%E5%8F%A3%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "五味温泉",
+   "wikidata_id": "Q11372253",
+   "url": "https://ja.wikipedia.org/wiki/%E4%BA%94%E5%91%B3%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "五戸まきば温泉",
+   "wikidata_id": "Q11372374",
+   "url": "https://ja.wikipedia.org/wiki/%E4%BA%94%E6%88%B8%E3%81%BE%E3%81%8D%E3%81%B0%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "五浦元湯温泉",
+   "wikidata_id": "Q11372541",
+   "url": "https://ja.wikipedia.org/wiki/%E4%BA%94%E6%B5%A6%E5%85%83%E6%B9%AF%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "京都桂温泉",
+   "wikidata_id": "Q65248517",
+   "url": "https://ja.wikipedia.org/wiki/%E4%BA%AC%E9%83%BD%E6%A1%82%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "今江温泉",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E4%BB%8A%E6%B1%9F%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "付知峡倉屋温泉おんぽいの湯",
+   "wikidata_id": "Q21653627",
+   "url": "https://ja.wikipedia.org/wiki/%E4%BB%98%E7%9F%A5%E5%B3%A1%E5%80%89%E5%B1%8B%E6%B8%A9%E6%B3%89%E3%81%8A%E3%82%93%E3%81%BD%E3%81%84%E3%81%AE%E6%B9%AF"
+  },
+  {
+   "name": "伊勢志摩神代温泉",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E4%BC%8A%E5%8B%A2%E5%BF%97%E6%91%A9%E7%A5%9E%E4%BB%A3%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "伊香保神社掲額事件",
+   "wikidata_id": "Q11381015",
+   "url": "https://ja.wikipedia.org/wiki/%E4%BC%8A%E9%A6%99%E4%BF%9D%E7%A5%9E%E7%A4%BE%E6%8E%B2%E9%A1%8D%E4%BA%8B%E4%BB%B6"
+  },
+  {
+   "name": "伏目温泉",
+   "wikidata_id": "Q11381056",
+   "url": "https://ja.wikipedia.org/wiki/%E4%BC%8F%E7%9B%AE%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "佐久山温泉",
+   "wikidata_id": "Q11382605",
+   "url": "https://ja.wikipedia.org/wiki/%E4%BD%90%E4%B9%85%E5%B1%B1%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "佐渡島の温泉地一覧",
+   "wikidata_id": "Q30923233",
+   "url": "https://ja.wikipedia.org/wiki/%E4%BD%90%E6%B8%A1%E5%B3%B6%E3%81%AE%E6%B8%A9%E6%B3%89%E5%9C%B0%E4%B8%80%E8%A6%A7"
+  },
+  {
+   "name": "作州武蔵温泉",
+   "wikidata_id": "Q109600092",
+   "url": "https://ja.wikipedia.org/wiki/%E4%BD%9C%E5%B7%9E%E6%AD%A6%E8%94%B5%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "信州高山温泉郷",
+   "wikidata_id": "Q11386117",
+   "url": "https://ja.wikipedia.org/wiki/%E4%BF%A1%E5%B7%9E%E9%AB%98%E5%B1%B1%E6%B8%A9%E6%B3%89%E9%83%B7"
+  },
+  {
+   "name": "八尾ゆめの森 ゆうゆう館",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E5%85%AB%E5%B0%BE%E3%82%86%E3%82%81%E3%81%AE%E6%A3%AE%20%E3%82%86%E3%81%86%E3%82%86%E3%81%86%E9%A4%A8"
+  },
+  {
+   "name": "凧温泉",
+   "wikidata_id": "Q131983760",
+   "url": "https://ja.wikipedia.org/wiki/%E5%87%A7%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "別府八十八湯",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E5%88%A5%E5%BA%9C%E5%85%AB%E5%8D%81%E5%85%AB%E6%B9%AF"
+  },
+  {
+   "name": "別府八湯",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E5%88%A5%E5%BA%9C%E5%85%AB%E6%B9%AF"
+  },
+  {
+   "name": "別府八湯温泉泊覧会",
+   "wikidata_id": "Q11396698",
+   "url": "https://ja.wikipedia.org/wiki/%E5%88%A5%E5%BA%9C%E5%85%AB%E6%B9%AF%E6%B8%A9%E6%B3%89%E6%B3%8A%E8%A6%A7%E4%BC%9A"
+  },
+  {
+   "name": "別府八湯温泉道",
+   "wikidata_id": "Q11396699",
+   "url": "https://ja.wikipedia.org/wiki/%E5%88%A5%E5%BA%9C%E5%85%AB%E6%B9%AF%E6%B8%A9%E6%B3%89%E9%81%93"
+  },
+  {
+   "name": "別府十湯",
+   "wikidata_id": "Q11396703",
+   "url": "https://ja.wikipedia.org/wiki/%E5%88%A5%E5%BA%9C%E5%8D%81%E6%B9%AF"
+  },
+  {
+   "name": "別府明礬温泉の湯の花製造技術",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E5%88%A5%E5%BA%9C%E6%98%8E%E7%A4%AC%E6%B8%A9%E6%B3%89%E3%81%AE%E6%B9%AF%E3%81%AE%E8%8A%B1%E8%A3%BD%E9%80%A0%E6%8A%80%E8%A1%93"
+  },
+  {
+   "name": "別府温泉観光産業大博覧会",
+   "wikidata_id": "Q18339230",
+   "url": "https://ja.wikipedia.org/wiki/%E5%88%A5%E5%BA%9C%E6%B8%A9%E6%B3%89%E8%A6%B3%E5%85%89%E7%94%A3%E6%A5%AD%E5%A4%A7%E5%8D%9A%E8%A6%A7%E4%BC%9A"
+  },
+  {
+   "name": "別所温泉 (石川県)",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E5%88%A5%E6%89%80%E6%B8%A9%E6%B3%89%20%28%E7%9F%B3%E5%B7%9D%E7%9C%8C%29"
+  },
+  {
+   "name": "加賀三谷温泉",
+   "wikidata_id": "Q11399649",
+   "url": "https://ja.wikipedia.org/wiki/%E5%8A%A0%E8%B3%80%E4%B8%89%E8%B0%B7%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "加賀温泉郷",
+   "wikidata_id": "Q11399702",
+   "url": "https://ja.wikipedia.org/wiki/%E5%8A%A0%E8%B3%80%E6%B8%A9%E6%B3%89%E9%83%B7"
+  },
+  {
+   "name": "北志賀温泉",
+   "wikidata_id": "Q11401722",
+   "url": "https://ja.wikipedia.org/wiki/%E5%8C%97%E5%BF%97%E8%B3%80%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "北斗市健康センターせせらぎ温泉",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E5%8C%97%E6%96%97%E5%B8%82%E5%81%A5%E5%BA%B7%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC%E3%81%9B%E3%81%9B%E3%82%89%E3%81%8E%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "北竜温泉",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E5%8C%97%E7%AB%9C%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "北郷温泉",
+   "wikidata_id": "Q11404208",
+   "url": "https://ja.wikipedia.org/wiki/%E5%8C%97%E9%83%B7%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "十治朗の湯",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E5%8D%81%E6%B2%BB%E6%9C%97%E3%81%AE%E6%B9%AF"
+  },
+  {
+   "name": "十津川温泉郷",
+   "wikidata_id": "Q28689091",
+   "url": "https://ja.wikipedia.org/wiki/%E5%8D%81%E6%B4%A5%E5%B7%9D%E6%B8%A9%E6%B3%89%E9%83%B7"
+  },
+  {
+   "name": "十谷上湯温泉",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E5%8D%81%E8%B0%B7%E4%B8%8A%E6%B9%AF%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "千倉温泉",
+   "wikidata_id": "Q65249608",
+   "url": "https://ja.wikipedia.org/wiki/%E5%8D%83%E5%80%89%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "千里浜やわらぎ温泉",
+   "wikidata_id": "Q109598873",
+   "url": "https://ja.wikipedia.org/wiki/%E5%8D%83%E9%87%8C%E6%B5%9C%E3%82%84%E3%82%8F%E3%82%89%E3%81%8E%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "千里浜温泉郷",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E5%8D%83%E9%87%8C%E6%B5%9C%E6%B8%A9%E6%B3%89%E9%83%B7"
+  },
+  {
+   "name": "協和温泉",
+   "wikidata_id": "Q11407231",
+   "url": "https://ja.wikipedia.org/wiki/%E5%8D%94%E5%92%8C%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "南房総岩井温泉",
+   "wikidata_id": "Q65249947",
+   "url": "https://ja.wikipedia.org/wiki/%E5%8D%97%E6%88%BF%E7%B7%8F%E5%B2%A9%E4%BA%95%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "南房総温泉郷",
+   "wikidata_id": "Q134619079",
+   "url": "https://ja.wikipedia.org/wiki/%E5%8D%97%E6%88%BF%E7%B7%8F%E6%B8%A9%E6%B3%89%E9%83%B7"
+  },
+  {
+   "name": "南田温泉",
+   "wikidata_id": "Q11408252",
+   "url": "https://ja.wikipedia.org/wiki/%E5%8D%97%E7%94%B0%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "南砺市井口体験交流センター ゆ〜ゆうランド・花椿",
+   "wikidata_id": "Q131911100",
+   "url": "https://ja.wikipedia.org/wiki/%E5%8D%97%E7%A0%BA%E5%B8%82%E4%BA%95%E5%8F%A3%E4%BD%93%E9%A8%93%E4%BA%A4%E6%B5%81%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC%20%E3%82%86%E3%80%9C%E3%82%86%E3%81%86%E3%83%A9%E3%83%B3%E3%83%89%E3%83%BB%E8%8A%B1%E6%A4%BF"
+  },
+  {
+   "name": "南郷温泉 (宮崎県)",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E5%8D%97%E9%83%B7%E6%B8%A9%E6%B3%89%20%28%E5%AE%AE%E5%B4%8E%E7%9C%8C%29"
+  },
+  {
+   "name": "博多温泉",
+   "wikidata_id": "Q11408958",
+   "url": "https://ja.wikipedia.org/wiki/%E5%8D%9A%E5%A4%9A%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "原鶴温泉",
+   "wikidata_id": "Q11410091",
+   "url": "https://ja.wikipedia.org/wiki/%E5%8E%9F%E9%B6%B4%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "古洞の森温泉",
+   "wikidata_id": "Q109357547",
+   "url": "https://ja.wikipedia.org/wiki/%E5%8F%A4%E6%B4%9E%E3%81%AE%E6%A3%AE%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "吉井温泉 (群馬県)",
+   "wikidata_id": "Q11412597",
+   "url": "https://ja.wikipedia.org/wiki/%E5%90%89%E4%BA%95%E6%B8%A9%E6%B3%89%20%28%E7%BE%A4%E9%A6%AC%E7%9C%8C%29"
+  },
+  {
+   "name": "吉川温泉 (埼玉県)",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E5%90%89%E5%B7%9D%E6%B8%A9%E6%B3%89%20%28%E5%9F%BC%E7%8E%89%E7%9C%8C%29"
+  },
+  {
+   "name": "君田温泉",
+   "wikidata_id": "Q11416399",
+   "url": "https://ja.wikipedia.org/wiki/%E5%90%9B%E7%94%B0%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "和気鵜飼谷温泉",
+   "wikidata_id": "Q109598503",
+   "url": "https://ja.wikipedia.org/wiki/%E5%92%8C%E6%B0%97%E9%B5%9C%E9%A3%BC%E8%B0%B7%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "和琴温泉",
+   "wikidata_id": "Q11417876",
+   "url": "https://ja.wikipedia.org/wiki/%E5%92%8C%E7%90%B4%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "唐津温泉",
+   "wikidata_id": "Q109598783",
+   "url": "https://ja.wikipedia.org/wiki/%E5%94%90%E6%B4%A5%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "四国高松温泉",
+   "wikidata_id": "Q109600737",
+   "url": "https://ja.wikipedia.org/wiki/%E5%9B%9B%E5%9B%BD%E9%AB%98%E6%9D%BE%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "四季の湯温泉",
+   "wikidata_id": "Q109597092",
+   "url": "https://ja.wikipedia.org/wiki/%E5%9B%9B%E5%AD%A3%E3%81%AE%E6%B9%AF%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "四季美谷温泉",
+   "wikidata_id": "Q109364964",
+   "url": "https://ja.wikipedia.org/wiki/%E5%9B%9B%E5%AD%A3%E7%BE%8E%E8%B0%B7%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "土佐龍温泉",
+   "wikidata_id": "Q109602123",
+   "url": "https://ja.wikipedia.org/wiki/%E5%9C%9F%E4%BD%90%E9%BE%8D%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "坂本温泉 (鹿児島県)",
+   "wikidata_id": "Q11425325",
+   "url": "https://ja.wikipedia.org/wiki/%E5%9D%82%E6%9C%AC%E6%B8%A9%E6%B3%89%20%28%E9%B9%BF%E5%85%90%E5%B3%B6%E7%9C%8C%29"
+  },
+  {
+   "name": "堀田温泉",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E5%A0%80%E7%94%B0%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "塩ノ沢温泉 (福島県)",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E5%A1%A9%E3%83%8E%E6%B2%A2%E6%B8%A9%E6%B3%89%20%28%E7%A6%8F%E5%B3%B6%E7%9C%8C%29"
+  },
+  {
+   "name": "塩ノ沢温泉 (茨城県)",
+   "wikidata_id": "Q11428592",
+   "url": "https://ja.wikipedia.org/wiki/%E5%A1%A9%E3%83%8E%E6%B2%A2%E6%B8%A9%E6%B3%89%20%28%E8%8C%A8%E5%9F%8E%E7%9C%8C%29"
+  },
+  {
+   "name": "塩沢温泉 (岐阜県)",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E5%A1%A9%E6%B2%A2%E6%B8%A9%E6%B3%89%20%28%E5%B2%90%E9%98%9C%E7%9C%8C%29"
+  },
+  {
+   "name": "境鉱泉",
+   "wikidata_id": "Q134893086",
+   "url": "https://ja.wikipedia.org/wiki/%E5%A2%83%E9%89%B1%E6%B3%89"
+  },
+  {
+   "name": "壮瞥温泉",
+   "wikidata_id": "Q11429529",
+   "url": "https://ja.wikipedia.org/wiki/%E5%A3%AE%E7%9E%A5%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "夏油高原温泉郷",
+   "wikidata_id": "Q136652858",
+   "url": "https://ja.wikipedia.org/wiki/%E5%A4%8F%E6%B2%B9%E9%AB%98%E5%8E%9F%E6%B8%A9%E6%B3%89%E9%83%B7"
+  },
+  {
+   "name": "大利根温泉",
+   "wikidata_id": "Q11433045",
+   "url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E5%88%A9%E6%A0%B9%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "大塚温泉",
+   "wikidata_id": "Q97376137",
+   "url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E5%A1%9A%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "大塩温泉 (長野県)",
+   "wikidata_id": "Q11434141",
+   "url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E5%A1%A9%E6%B8%A9%E6%B3%89%20%28%E9%95%B7%E9%87%8E%E7%9C%8C%29"
+  },
+  {
+   "name": "大山伽羅温泉",
+   "wikidata_id": "Q109602473",
+   "url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E5%B1%B1%E4%BC%BD%E7%BE%85%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "大山温泉",
+   "wikidata_id": "Q109602472",
+   "url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E5%B1%B1%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "大岩湯神子温泉",
+   "wikidata_id": "Q97342094",
+   "url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E5%B2%A9%E6%B9%AF%E7%A5%9E%E5%AD%90%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "大沢温泉 (栃木県)",
+   "wikidata_id": "Q11436986",
+   "url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E6%B2%A2%E6%B8%A9%E6%B3%89%20%28%E6%A0%83%E6%9C%A8%E7%9C%8C%29"
+  },
+  {
+   "name": "大洗温泉",
+   "wikidata_id": "Q109599892",
+   "url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E6%B4%97%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "大深度地熱温泉",
+   "wikidata_id": "Q86732491",
+   "url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E6%B7%B1%E5%BA%A6%E5%9C%B0%E7%86%B1%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "大田区の黒湯温泉",
+   "wikidata_id": "Q671405",
+   "url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E7%94%B0%E5%8C%BA%E3%81%AE%E9%BB%92%E6%B9%AF%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "大田原温泉",
+   "wikidata_id": "Q11437897",
+   "url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E7%94%B0%E5%8E%9F%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "大矢部温泉",
+   "wikidata_id": "Q11438134",
+   "url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E7%9F%A2%E9%83%A8%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "大磯温泉",
+   "wikidata_id": "Q97181718",
+   "url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E7%A3%AF%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "大芦高原温泉",
+   "wikidata_id": "Q109597287",
+   "url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E8%8A%A6%E9%AB%98%E5%8E%9F%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "大谷温泉 (島根県)",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E8%B0%B7%E6%B8%A9%E6%B3%89%20%28%E5%B3%B6%E6%A0%B9%E7%9C%8C%29"
+  },
+  {
+   "name": "大金温泉",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E9%87%91%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "天の川温泉",
+   "wikidata_id": "Q11442118",
+   "url": "https://ja.wikipedia.org/wiki/%E5%A4%A9%E3%81%AE%E5%B7%9D%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "天岩戸温泉",
+   "wikidata_id": "Q11442562",
+   "url": "https://ja.wikipedia.org/wiki/%E5%A4%A9%E5%B2%A9%E6%88%B8%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "天然温泉 海王",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E5%A4%A9%E7%84%B6%E6%B8%A9%E6%B3%89%20%E6%B5%B7%E7%8E%8B"
+  },
+  {
+   "name": "天然温泉 風の森",
+   "wikidata_id": "Q131911120",
+   "url": "https://ja.wikipedia.org/wiki/%E5%A4%A9%E7%84%B6%E6%B8%A9%E6%B3%89%20%E9%A2%A8%E3%81%AE%E6%A3%AE"
+  },
+  {
+   "name": "天然温泉御所の郷",
+   "wikidata_id": "Q109595671",
+   "url": "https://ja.wikipedia.org/wiki/%E5%A4%A9%E7%84%B6%E6%B8%A9%E6%B3%89%E5%BE%A1%E6%89%80%E3%81%AE%E9%83%B7"
+  },
+  {
+   "name": "天竺温泉の郷",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E5%A4%A9%E7%AB%BA%E6%B8%A9%E6%B3%89%E3%81%AE%E9%83%B7"
+  },
+  {
+   "name": "太良温泉",
+   "wikidata_id": "Q11444495",
+   "url": "https://ja.wikipedia.org/wiki/%E5%A4%AA%E8%89%AF%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "太閤山天然温泉 太閤の湯",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E5%A4%AA%E9%96%A4%E5%B1%B1%E5%A4%A9%E7%84%B6%E6%B8%A9%E6%B3%89%20%E5%A4%AA%E9%96%A4%E3%81%AE%E6%B9%AF"
+  },
+  {
+   "name": "夷谷温泉",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E5%A4%B7%E8%B0%B7%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "奥久慈温泉郷",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E5%A5%A5%E4%B9%85%E6%85%88%E6%B8%A9%E6%B3%89%E9%83%B7"
+  },
+  {
+   "name": "奥四万十温泉郷",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E5%A5%A5%E5%9B%9B%E4%B8%87%E5%8D%81%E6%B8%A9%E6%B3%89%E9%83%B7"
+  },
+  {
+   "name": "奥山温泉",
+   "wikidata_id": "Q109598414",
+   "url": "https://ja.wikipedia.org/wiki/%E5%A5%A5%E5%B1%B1%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "奥志摩温泉",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E5%A5%A5%E5%BF%97%E6%91%A9%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "奥蓼科温泉郷",
+   "wikidata_id": "Q11446111",
+   "url": "https://ja.wikipedia.org/wiki/%E5%A5%A5%E8%93%BC%E7%A7%91%E6%B8%A9%E6%B3%89%E9%83%B7"
+  },
+  {
+   "name": "奥阿賀温泉郷",
+   "wikidata_id": "Q108599062",
+   "url": "https://ja.wikipedia.org/wiki/%E5%A5%A5%E9%98%BF%E8%B3%80%E6%B8%A9%E6%B3%89%E9%83%B7"
+  },
+  {
+   "name": "奥香落温泉",
+   "wikidata_id": "Q11446181",
+   "url": "https://ja.wikipedia.org/wiki/%E5%A5%A5%E9%A6%99%E8%90%BD%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "女鹿平温泉",
+   "wikidata_id": "Q109601929",
+   "url": "https://ja.wikipedia.org/wiki/%E5%A5%B3%E9%B9%BF%E5%B9%B3%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "奴留湯温泉",
+   "wikidata_id": "Q11446622",
+   "url": "https://ja.wikipedia.org/wiki/%E5%A5%B4%E7%95%99%E6%B9%AF%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "妙高高原温泉郷",
+   "wikidata_id": "Q11447098",
+   "url": "https://ja.wikipedia.org/wiki/%E5%A6%99%E9%AB%98%E9%AB%98%E5%8E%9F%E6%B8%A9%E6%B3%89%E9%83%B7"
+  },
+  {
+   "name": "妹背牛温泉",
+   "wikidata_id": "Q109599890",
+   "url": "https://ja.wikipedia.org/wiki/%E5%A6%B9%E8%83%8C%E7%89%9B%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "嬬恋バラギ温泉",
+   "wikidata_id": "Q11447807",
+   "url": "https://ja.wikipedia.org/wiki/%E5%AC%AC%E6%81%8B%E3%83%90%E3%83%A9%E3%82%AE%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "嬬恋温泉",
+   "wikidata_id": "Q11447809",
+   "url": "https://ja.wikipedia.org/wiki/%E5%AC%AC%E6%81%8B%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "宇津江四十八滝温泉",
+   "wikidata_id": "Q109594803",
+   "url": "https://ja.wikipedia.org/wiki/%E5%AE%87%E6%B4%A5%E6%B1%9F%E5%9B%9B%E5%8D%81%E5%85%AB%E6%BB%9D%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "守実温泉",
+   "wikidata_id": "Q21654969",
+   "url": "https://ja.wikipedia.org/wiki/%E5%AE%88%E5%AE%9F%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "守護陣温泉",
+   "wikidata_id": "Q109598827",
+   "url": "https://ja.wikipedia.org/wiki/%E5%AE%88%E8%AD%B7%E9%99%A3%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "安房温泉",
+   "wikidata_id": "Q109603943",
+   "url": "https://ja.wikipedia.org/wiki/%E5%AE%89%E6%88%BF%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "宍喰温泉",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E5%AE%8D%E5%96%B0%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "室積温泉",
+   "wikidata_id": "Q109358515",
+   "url": "https://ja.wikipedia.org/wiki/%E5%AE%A4%E7%A9%8D%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "宮之城温泉",
+   "wikidata_id": "Q11453232",
+   "url": "https://ja.wikipedia.org/wiki/%E5%AE%AE%E4%B9%8B%E5%9F%8E%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "宮内温泉",
+   "wikidata_id": "Q11453327",
+   "url": "https://ja.wikipedia.org/wiki/%E5%AE%AE%E5%86%85%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "宮古島温泉",
+   "wikidata_id": "Q11453470",
+   "url": "https://ja.wikipedia.org/wiki/%E5%AE%AE%E5%8F%A4%E5%B3%B6%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "宮山温泉",
+   "wikidata_id": "Q109594792",
+   "url": "https://ja.wikipedia.org/wiki/%E5%AE%AE%E5%B1%B1%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "宮崎リゾート温泉",
+   "wikidata_id": "Q11454170",
+   "url": "https://ja.wikipedia.org/wiki/%E5%AE%AE%E5%B4%8E%E3%83%AA%E3%82%BE%E3%83%BC%E3%83%88%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "宮崎温泉",
+   "wikidata_id": "Q11454371",
+   "url": "https://ja.wikipedia.org/wiki/%E5%AE%AE%E5%B4%8E%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "寒河江温泉",
+   "wikidata_id": "Q11457426",
+   "url": "https://ja.wikipedia.org/wiki/%E5%AF%92%E6%B2%B3%E6%B1%9F%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "寝待温泉",
+   "wikidata_id": "Q11457576",
+   "url": "https://ja.wikipedia.org/wiki/%E5%AF%9D%E5%BE%85%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "寶川",
+   "wikidata_id": "Q18989201",
+   "url": "https://ja.wikipedia.org/wiki/%E5%AF%B6%E5%B7%9D"
+  },
+  {
+   "name": "寿都温泉",
+   "wikidata_id": "Q11458364",
+   "url": "https://ja.wikipedia.org/wiki/%E5%AF%BF%E9%83%BD%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "小土肥温泉",
+   "wikidata_id": "Q109595940",
+   "url": "https://ja.wikipedia.org/wiki/%E5%B0%8F%E5%9C%9F%E8%82%A5%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "小城温泉",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E5%B0%8F%E5%9F%8E%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "小川温泉 (栃木県)",
+   "wikidata_id": "Q11460531",
+   "url": "https://ja.wikipedia.org/wiki/%E5%B0%8F%E5%B7%9D%E6%B8%A9%E6%B3%89%20%28%E6%A0%83%E6%9C%A8%E7%9C%8C%29"
+  },
+  {
+   "name": "小森温泉",
+   "wikidata_id": "Q109598167",
+   "url": "https://ja.wikipedia.org/wiki/%E5%B0%8F%E6%A3%AE%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "小泊温泉",
+   "wikidata_id": "Q109596959",
+   "url": "https://ja.wikipedia.org/wiki/%E5%B0%8F%E6%B3%8A%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "小淵沢温泉",
+   "wikidata_id": "Q134621071",
+   "url": "https://ja.wikipedia.org/wiki/%E5%B0%8F%E6%B7%B5%E6%B2%A2%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "小渡温泉",
+   "wikidata_id": "Q11462681",
+   "url": "https://ja.wikipedia.org/wiki/%E5%B0%8F%E6%B8%A1%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "小金湯温泉",
+   "wikidata_id": "Q11464345",
+   "url": "https://ja.wikipedia.org/wiki/%E5%B0%8F%E9%87%91%E6%B9%AF%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "尾上温泉",
+   "wikidata_id": "Q109598811",
+   "url": "https://ja.wikipedia.org/wiki/%E5%B0%BE%E4%B8%8A%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "尾久温泉",
+   "wikidata_id": "Q85879745",
+   "url": "https://ja.wikipedia.org/wiki/%E5%B0%BE%E4%B9%85%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "屈斜路湖畔温泉郷",
+   "wikidata_id": "Q11465623",
+   "url": "https://ja.wikipedia.org/wiki/%E5%B1%88%E6%96%9C%E8%B7%AF%E6%B9%96%E7%95%94%E6%B8%A9%E6%B3%89%E9%83%B7"
+  },
+  {
+   "name": "山の神温泉 (長野県)",
+   "wikidata_id": "Q11465804",
+   "url": "https://ja.wikipedia.org/wiki/%E5%B1%B1%E3%81%AE%E7%A5%9E%E6%B8%A9%E6%B3%89%20%28%E9%95%B7%E9%87%8E%E7%9C%8C%29"
+  },
+  {
+   "name": "山中湖温泉",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E5%B1%B1%E4%B8%AD%E6%B9%96%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "山海の湯",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E5%B1%B1%E6%B5%B7%E3%81%AE%E6%B9%AF"
+  },
+  {
+   "name": "山田温泉 (埼玉県)",
+   "wikidata_id": "Q11470512",
+   "url": "https://ja.wikipedia.org/wiki/%E5%B1%B1%E7%94%B0%E6%B8%A9%E6%B3%89%20%28%E5%9F%BC%E7%8E%89%E7%9C%8C%29"
+  },
+  {
+   "name": "山神温泉",
+   "wikidata_id": "Q109602793",
+   "url": "https://ja.wikipedia.org/wiki/%E5%B1%B1%E7%A5%9E%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "岩井戸温泉 (福島県)",
+   "wikidata_id": "Q11474059",
+   "url": "https://ja.wikipedia.org/wiki/%E5%B2%A9%E4%BA%95%E6%88%B8%E6%B8%A9%E6%B3%89%20%28%E7%A6%8F%E5%B3%B6%E7%9C%8C%29"
+  },
+  {
+   "name": "岩寿温泉",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E5%B2%A9%E5%AF%BF%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "岸本温泉",
+   "wikidata_id": "Q109598396",
+   "url": "https://ja.wikipedia.org/wiki/%E5%B2%B8%E6%9C%AC%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "島田市田代の郷温泉 伊太和里の湯",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E5%B3%B6%E7%94%B0%E5%B8%82%E7%94%B0%E4%BB%A3%E3%81%AE%E9%83%B7%E6%B8%A9%E6%B3%89%20%E4%BC%8A%E5%A4%AA%E5%92%8C%E9%87%8C%E3%81%AE%E6%B9%AF"
+  },
+  {
+   "name": "川場温泉",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E5%B7%9D%E5%A0%B4%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "布引温泉",
+   "wikidata_id": "Q136563021",
+   "url": "https://ja.wikipedia.org/wiki/%E5%B8%83%E5%BC%95%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "常世温泉",
+   "wikidata_id": "Q109598475",
+   "url": "https://ja.wikipedia.org/wiki/%E5%B8%B8%E4%B8%96%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "幌加温泉",
+   "wikidata_id": "Q11481761",
+   "url": "https://ja.wikipedia.org/wiki/%E5%B9%8C%E5%8A%A0%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "幕岩温泉",
+   "wikidata_id": "Q109595580",
+   "url": "https://ja.wikipedia.org/wiki/%E5%B9%95%E5%B2%A9%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "平取温泉",
+   "wikidata_id": "Q11482152",
+   "url": "https://ja.wikipedia.org/wiki/%E5%B9%B3%E5%8F%96%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "平山温泉",
+   "wikidata_id": "Q11482537",
+   "url": "https://ja.wikipedia.org/wiki/%E5%B9%B3%E5%B1%B1%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "平潟港温泉",
+   "wikidata_id": "Q11483237",
+   "url": "https://ja.wikipedia.org/wiki/%E5%B9%B3%E6%BD%9F%E6%B8%AF%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "庄内温泉",
+   "wikidata_id": "Q86734806",
+   "url": "https://ja.wikipedia.org/wiki/%E5%BA%84%E5%86%85%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "庄川峡長崎温泉",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E5%BA%84%E5%B7%9D%E5%B3%A1%E9%95%B7%E5%B4%8E%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "弁景温泉",
+   "wikidata_id": "Q11486941",
+   "url": "https://ja.wikipedia.org/wiki/%E5%BC%81%E6%99%AF%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "式根島温泉・憩の家",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E5%BC%8F%E6%A0%B9%E5%B3%B6%E6%B8%A9%E6%B3%89%E3%83%BB%E6%86%A9%E3%81%AE%E5%AE%B6"
+  },
+  {
+   "name": "弓ヶ浜温泉 (熊本県)",
+   "wikidata_id": "Q11487060",
+   "url": "https://ja.wikipedia.org/wiki/%E5%BC%93%E3%83%B6%E6%B5%9C%E6%B8%A9%E6%B3%89%20%28%E7%86%8A%E6%9C%AC%E7%9C%8C%29"
+  },
+  {
+   "name": "弥彦温泉",
+   "wikidata_id": "Q11487442",
+   "url": "https://ja.wikipedia.org/wiki/%E5%BC%A5%E5%BD%A6%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "御牧乃湯",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E5%BE%A1%E7%89%A7%E4%B9%83%E6%B9%AF"
+  },
+  {
+   "name": "志摩スペイン村天然温泉",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E5%BF%97%E6%91%A9%E3%82%B9%E3%83%9A%E3%82%A4%E3%83%B3%E6%9D%91%E5%A4%A9%E7%84%B6%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "志摩温泉郷",
+   "wikidata_id": "Q11490950",
+   "url": "https://ja.wikipedia.org/wiki/%E5%BF%97%E6%91%A9%E6%B8%A9%E6%B3%89%E9%83%B7"
+  },
+  {
+   "name": "志賀の郷温泉",
+   "wikidata_id": "Q109602426",
+   "url": "https://ja.wikipedia.org/wiki/%E5%BF%97%E8%B3%80%E3%81%AE%E9%83%B7%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "志賀高原ホテル一望閣",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E5%BF%97%E8%B3%80%E9%AB%98%E5%8E%9F%E3%83%9B%E3%83%86%E3%83%AB%E4%B8%80%E6%9C%9B%E9%96%A3"
+  },
+  {
+   "name": "恵庭温泉",
+   "wikidata_id": "Q11492381",
+   "url": "https://ja.wikipedia.org/wiki/%E6%81%B5%E5%BA%AD%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "所田温泉",
+   "wikidata_id": "Q11496803",
+   "url": "https://ja.wikipedia.org/wiki/%E6%89%80%E7%94%B0%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "扉温泉",
+   "wikidata_id": "Q11496876",
+   "url": "https://ja.wikipedia.org/wiki/%E6%89%89%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "手取温泉",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E6%89%8B%E5%8F%96%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "挾間温泉",
+   "wikidata_id": "Q86734809",
+   "url": "https://ja.wikipedia.org/wiki/%E6%8C%BE%E9%96%93%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "接岨峡温泉",
+   "wikidata_id": "Q109597128",
+   "url": "https://ja.wikipedia.org/wiki/%E6%8E%A5%E5%B2%A8%E5%B3%A1%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "政和温泉",
+   "wikidata_id": "Q11499072",
+   "url": "https://ja.wikipedia.org/wiki/%E6%94%BF%E5%92%8C%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "新冠温泉",
+   "wikidata_id": "Q11501421",
+   "url": "https://ja.wikipedia.org/wiki/%E6%96%B0%E5%86%A0%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "新富温泉",
+   "wikidata_id": "Q109603060",
+   "url": "https://ja.wikipedia.org/wiki/%E6%96%B0%E5%AF%8C%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "新胎内温泉",
+   "wikidata_id": "Q109602405",
+   "url": "https://ja.wikipedia.org/wiki/%E6%96%B0%E8%83%8E%E5%86%85%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "日向サンパーク温泉",
+   "wikidata_id": "Q11505096",
+   "url": "https://ja.wikipedia.org/wiki/%E6%97%A5%E5%90%91%E3%82%B5%E3%83%B3%E3%83%91%E3%83%BC%E3%82%AF%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "日方江温泉",
+   "wikidata_id": "Q124301106",
+   "url": "https://ja.wikipedia.org/wiki/%E6%97%A5%E6%96%B9%E6%B1%9F%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "日本海温泉",
+   "wikidata_id": "Q124842184",
+   "url": "https://ja.wikipedia.org/wiki/%E6%97%A5%E6%9C%AC%E6%B5%B7%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "早乙女温泉",
+   "wikidata_id": "Q11511178",
+   "url": "https://ja.wikipedia.org/wiki/%E6%97%A9%E4%B9%99%E5%A5%B3%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "早月川温泉",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E6%97%A9%E6%9C%88%E5%B7%9D%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "旭九十九里温泉",
+   "wikidata_id": "Q65270409",
+   "url": "https://ja.wikipedia.org/wiki/%E6%97%AD%E4%B9%9D%E5%8D%81%E4%B9%9D%E9%87%8C%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "旭湯温泉",
+   "wikidata_id": "Q21652350",
+   "url": "https://ja.wikipedia.org/wiki/%E6%97%AD%E6%B9%AF%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "明宝温泉",
+   "wikidata_id": "Q109595702",
+   "url": "https://ja.wikipedia.org/wiki/%E6%98%8E%E5%AE%9D%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "明治温泉",
+   "wikidata_id": "Q52153468",
+   "url": "https://ja.wikipedia.org/wiki/%E6%98%8E%E6%B2%BB%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "明礬温泉",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E6%98%8E%E7%A4%AC%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "星と森のロマントピアそうま",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E6%98%9F%E3%81%A8%E6%A3%AE%E3%81%AE%E3%83%AD%E3%83%9E%E3%83%B3%E3%83%88%E3%83%94%E3%82%A2%E3%81%9D%E3%81%86%E3%81%BE"
+  },
+  {
+   "name": "曲水温泉",
+   "wikidata_id": "Q11515086",
+   "url": "https://ja.wikipedia.org/wiki/%E6%9B%B2%E6%B0%B4%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "曽原の湯温泉",
+   "wikidata_id": "Q11515251",
+   "url": "https://ja.wikipedia.org/wiki/%E6%9B%BD%E5%8E%9F%E3%81%AE%E6%B9%AF%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "月夜野温泉",
+   "wikidata_id": "Q24864241",
+   "url": "https://ja.wikipedia.org/wiki/%E6%9C%88%E5%A4%9C%E9%87%8E%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "月野瀬温泉",
+   "wikidata_id": "Q11516237",
+   "url": "https://ja.wikipedia.org/wiki/%E6%9C%88%E9%87%8E%E7%80%AC%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "有村温泉",
+   "wikidata_id": "Q11516488",
+   "url": "https://ja.wikipedia.org/wiki/%E6%9C%89%E6%9D%91%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "木城温泉",
+   "wikidata_id": "Q11518255",
+   "url": "https://ja.wikipedia.org/wiki/%E6%9C%A8%E5%9F%8E%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "木戸池温泉",
+   "wikidata_id": "Q11518423",
+   "url": "https://ja.wikipedia.org/wiki/%E6%9C%A8%E6%88%B8%E6%B1%A0%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "木花温泉",
+   "wikidata_id": "Q11519342",
+   "url": "https://ja.wikipedia.org/wiki/%E6%9C%A8%E8%8A%B1%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "札幌温泉",
+   "wikidata_id": "Q28682740",
+   "url": "https://ja.wikipedia.org/wiki/%E6%9C%AD%E5%B9%8C%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "東吉野温泉",
+   "wikidata_id": "Q11526310",
+   "url": "https://ja.wikipedia.org/wiki/%E6%9D%B1%E5%90%89%E9%87%8E%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "東尋坊温泉",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E6%9D%B1%E5%B0%8B%E5%9D%8A%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "東温泉",
+   "wikidata_id": "Q11527997",
+   "url": "https://ja.wikipedia.org/wiki/%E6%9D%B1%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "東道後温泉郷",
+   "wikidata_id": "Q11528419",
+   "url": "https://ja.wikipedia.org/wiki/%E6%9D%B1%E9%81%93%E5%BE%8C%E6%B8%A9%E6%B3%89%E9%83%B7"
+  },
+  {
+   "name": "松が下雅湯",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E3%81%8C%E4%B8%8B%E9%9B%85%E6%B9%AF"
+  },
+  {
+   "name": "松任海浜温泉",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E4%BB%BB%E6%B5%B7%E6%B5%9C%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "松元平野岡体育館",
+   "wikidata_id": "Q11529280",
+   "url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%85%83%E5%B9%B3%E9%87%8E%E5%B2%A1%E4%BD%93%E8%82%B2%E9%A4%A8"
+  },
+  {
+   "name": "松島温泉 (宮城県)",
+   "wikidata_id": "Q11530155",
+   "url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B3%B6%E6%B8%A9%E6%B3%89%20%28%E5%AE%AE%E5%9F%8E%E7%9C%8C%29"
+  },
+  {
+   "name": "松島温泉 (栃木県)",
+   "wikidata_id": "Q11530154",
+   "url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B3%B6%E6%B8%A9%E6%B3%89%20%28%E6%A0%83%E6%9C%A8%E7%9C%8C%29"
+  },
+  {
+   "name": "松島温泉 (熊本県)",
+   "wikidata_id": "Q11530156",
+   "url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B3%B6%E6%B8%A9%E6%B3%89%20%28%E7%86%8A%E6%9C%AC%E7%9C%8C%29"
+  },
+  {
+   "name": "松本あさま温泉",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E6%9C%AC%E3%81%82%E3%81%95%E3%81%BE%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "松葉川温泉",
+   "wikidata_id": "Q109598188",
+   "url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E8%91%89%E5%B7%9D%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "林温泉",
+   "wikidata_id": "Q109598676",
+   "url": "https://ja.wikipedia.org/wiki/%E6%9E%97%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "柳沢温泉 (栃木県)",
+   "wikidata_id": "Q11534412",
+   "url": "https://ja.wikipedia.org/wiki/%E6%9F%B3%E6%B2%A2%E6%B8%A9%E6%B3%89%20%28%E6%A0%83%E6%9C%A8%E7%9C%8C%29"
+  },
+  {
+   "name": "柳田温泉",
+   "wikidata_id": "Q109598867",
+   "url": "https://ja.wikipedia.org/wiki/%E6%9F%B3%E7%94%B0%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "柴山温泉",
+   "wikidata_id": "Q109594808",
+   "url": "https://ja.wikipedia.org/wiki/%E6%9F%B4%E5%B1%B1%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "柴石温泉",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E6%9F%B4%E7%9F%B3%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "柿野温泉",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E6%9F%BF%E9%87%8E%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "栃木温泉 (熊本県)",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E6%A0%83%E6%9C%A8%E6%B8%A9%E6%B3%89%20%28%E7%86%8A%E6%9C%AC%E7%9C%8C%29"
+  },
+  {
+   "name": "根占温泉",
+   "wikidata_id": "Q109600088",
+   "url": "https://ja.wikipedia.org/wiki/%E6%A0%B9%E5%8D%A0%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "根崎温泉",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E6%A0%B9%E5%B4%8E%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "根府川温泉",
+   "wikidata_id": "Q11536345",
+   "url": "https://ja.wikipedia.org/wiki/%E6%A0%B9%E5%BA%9C%E5%B7%9D%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "桑田山温泉",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E6%A1%91%E7%94%B0%E5%B1%B1%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "桜川温泉",
+   "wikidata_id": "Q109602397",
+   "url": "https://ja.wikipedia.org/wiki/%E6%A1%9C%E5%B7%9D%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "梅ヶ島温泉郷",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E6%A2%85%E3%83%B6%E5%B3%B6%E6%B8%A9%E6%B3%89%E9%83%B7"
+  },
+  {
+   "name": "森ヶ崎鉱泉",
+   "wikidata_id": "Q97378561",
+   "url": "https://ja.wikipedia.org/wiki/%E6%A3%AE%E3%83%B6%E5%B4%8E%E9%89%B1%E6%B3%89"
+  },
+  {
+   "name": "植木温泉",
+   "wikidata_id": "Q11540525",
+   "url": "https://ja.wikipedia.org/wiki/%E6%A4%8D%E6%9C%A8%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "椿交流館 椿温泉こまつ",
+   "wikidata_id": "Q131911119",
+   "url": "https://ja.wikipedia.org/wiki/%E6%A4%BF%E4%BA%A4%E6%B5%81%E9%A4%A8%20%E6%A4%BF%E6%B8%A9%E6%B3%89%E3%81%93%E3%81%BE%E3%81%A4"
+  },
+  {
+   "name": "横川温泉",
+   "wikidata_id": "Q11542715",
+   "url": "https://ja.wikipedia.org/wiki/%E6%A8%AA%E5%B7%9D%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "横手駅前温泉",
+   "wikidata_id": "Q109600031",
+   "url": "https://ja.wikipedia.org/wiki/%E6%A8%AA%E6%89%8B%E9%A7%85%E5%89%8D%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "歓喜乃湯 足湯",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E6%AD%93%E5%96%9C%E4%B9%83%E6%B9%AF%20%E8%B6%B3%E6%B9%AF"
+  },
+  {
+   "name": "比田温泉",
+   "wikidata_id": "Q109604694",
+   "url": "https://ja.wikipedia.org/wiki/%E6%AF%94%E7%94%B0%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "水上温泉郷",
+   "wikidata_id": "Q11548229",
+   "url": "https://ja.wikipedia.org/wiki/%E6%B0%B4%E4%B8%8A%E6%B8%A9%E6%B3%89%E9%83%B7"
+  },
+  {
+   "name": "汐ノ宮温泉",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E6%B1%90%E3%83%8E%E5%AE%AE%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "江の島温泉",
+   "wikidata_id": "Q11550566",
+   "url": "https://ja.wikipedia.org/wiki/%E6%B1%9F%E3%81%AE%E5%B3%B6%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "河内温泉",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E6%B2%B3%E5%86%85%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "河北温泉",
+   "wikidata_id": "Q85881841",
+   "url": "https://ja.wikipedia.org/wiki/%E6%B2%B3%E5%8C%97%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "河辺温泉",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E6%B2%B3%E8%BE%BA%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "油山温泉",
+   "wikidata_id": "Q109596972",
+   "url": "https://ja.wikipedia.org/wiki/%E6%B2%B9%E5%B1%B1%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "泉天空温泉",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E6%B3%89%E5%A4%A9%E7%A9%BA%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "洞爺月浦温泉",
+   "wikidata_id": "Q11555855",
+   "url": "https://ja.wikipedia.org/wiki/%E6%B4%9E%E7%88%BA%E6%9C%88%E6%B5%A6%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "洞爺温泉",
+   "wikidata_id": "Q11555854",
+   "url": "https://ja.wikipedia.org/wiki/%E6%B4%9E%E7%88%BA%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "浜島温泉",
+   "wikidata_id": "Q11557659",
+   "url": "https://ja.wikipedia.org/wiki/%E6%B5%9C%E5%B3%B6%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "浜益温泉",
+   "wikidata_id": "Q11558035",
+   "url": "https://ja.wikipedia.org/wiki/%E6%B5%9C%E7%9B%8A%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "海潟温泉",
+   "wikidata_id": "Q11559051",
+   "url": "https://ja.wikipedia.org/wiki/%E6%B5%B7%E6%BD%9F%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "淀江ゆめ温泉",
+   "wikidata_id": "Q109598389",
+   "url": "https://ja.wikipedia.org/wiki/%E6%B7%80%E6%B1%9F%E3%82%86%E3%82%81%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "深谷温泉",
+   "wikidata_id": "Q11560308",
+   "url": "https://ja.wikipedia.org/wiki/%E6%B7%B1%E8%B0%B7%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "添沢温泉",
+   "wikidata_id": "Q11560423",
+   "url": "https://ja.wikipedia.org/wiki/%E6%B7%BB%E6%B2%A2%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "清里温泉 (山梨県)",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E6%B8%85%E9%87%8C%E6%B8%A9%E6%B3%89%20%28%E5%B1%B1%E6%A2%A8%E7%9C%8C%29"
+  },
+  {
+   "name": "温川温泉 (群馬県)",
+   "wikidata_id": "Q11562907",
+   "url": "https://ja.wikipedia.org/wiki/%E6%B8%A9%E5%B7%9D%E6%B8%A9%E6%B3%89%20%28%E7%BE%A4%E9%A6%AC%E7%9C%8C%29"
+  },
+  {
+   "name": "温泉バルコニーKing&Queen",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E6%B8%A9%E6%B3%89%E3%83%90%E3%83%AB%E3%82%B3%E3%83%8B%E3%83%BCKing%26Queen"
+  },
+  {
+   "name": "湯の平温泉",
+   "wikidata_id": "Q11563420",
+   "url": "https://ja.wikipedia.org/wiki/%E6%B9%AF%E3%81%AE%E5%B9%B3%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "湯の洞温泉",
+   "wikidata_id": "Q136733744",
+   "url": "https://ja.wikipedia.org/wiki/%E6%B9%AF%E3%81%AE%E6%B4%9E%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "湯の瀬温泉 (山形県)",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E6%B9%AF%E3%81%AE%E7%80%AC%E6%B8%A9%E6%B3%89%20%28%E5%B1%B1%E5%BD%A2%E7%9C%8C%29"
+  },
+  {
+   "name": "湯ノ口温泉",
+   "wikidata_id": "Q11563435",
+   "url": "https://ja.wikipedia.org/wiki/%E6%B9%AF%E3%83%8E%E5%8F%A3%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "湯坂温泉郷",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E6%B9%AF%E5%9D%82%E6%B8%A9%E6%B3%89%E9%83%B7"
+  },
+  {
+   "name": "湯巡り万華郷",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E6%B9%AF%E5%B7%A1%E3%82%8A%E4%B8%87%E8%8F%AF%E9%83%B7"
+  },
+  {
+   "name": "湯布院温泉郷",
+   "wikidata_id": "Q86732501",
+   "url": "https://ja.wikipedia.org/wiki/%E6%B9%AF%E5%B8%83%E9%99%A2%E6%B8%A9%E6%B3%89%E9%83%B7"
+  },
+  {
+   "name": "湯沢温泉 (山梨県)",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E6%B9%AF%E6%B2%A2%E6%B8%A9%E6%B3%89%20%28%E5%B1%B1%E6%A2%A8%E7%9C%8C%29"
+  },
+  {
+   "name": "湯泊温泉 (小宝島)",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E6%B9%AF%E6%B3%8A%E6%B8%A9%E6%B3%89%20%28%E5%B0%8F%E5%AE%9D%E5%B3%B6%29"
+  },
+  {
+   "name": "湯泊温泉 (悪石島)",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E6%B9%AF%E6%B3%8A%E6%B8%A9%E6%B3%89%20%28%E6%82%AA%E7%9F%B3%E5%B3%B6%29"
+  },
+  {
+   "name": "湯端温泉",
+   "wikidata_id": "Q21655089",
+   "url": "https://ja.wikipedia.org/wiki/%E6%B9%AF%E7%AB%AF%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "湯迫温泉",
+   "wikidata_id": "Q109598479",
+   "url": "https://ja.wikipedia.org/wiki/%E6%B9%AF%E8%BF%AB%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "満天望温泉",
+   "wikidata_id": "Q11563860",
+   "url": "https://ja.wikipedia.org/wiki/%E6%BA%80%E5%A4%A9%E6%9C%9B%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "満願寺温泉",
+   "wikidata_id": "Q11563966",
+   "url": "https://ja.wikipedia.org/wiki/%E6%BA%80%E9%A1%98%E5%AF%BA%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "滝原温泉 ほたるの湯",
+   "wikidata_id": "Q97342229",
+   "url": "https://ja.wikipedia.org/wiki/%E6%BB%9D%E5%8E%9F%E6%B8%A9%E6%B3%89%20%E3%81%BB%E3%81%9F%E3%82%8B%E3%81%AE%E6%B9%AF"
+  },
+  {
+   "name": "潮原温泉",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E6%BD%AE%E5%8E%9F%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "瀬田温泉",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E7%80%AC%E7%94%B0%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "火の谷温泉",
+   "wikidata_id": "Q11566843",
+   "url": "https://ja.wikipedia.org/wiki/%E7%81%AB%E3%81%AE%E8%B0%B7%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "熊の湯温泉",
+   "wikidata_id": "Q11567809",
+   "url": "https://ja.wikipedia.org/wiki/%E7%86%8A%E3%81%AE%E6%B9%AF%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "片倉温泉 (福島県)",
+   "wikidata_id": "Q11569535",
+   "url": "https://ja.wikipedia.org/wiki/%E7%89%87%E5%80%89%E6%B8%A9%E6%B3%89%20%28%E7%A6%8F%E5%B3%B6%E7%9C%8C%29"
+  },
+  {
+   "name": "牛岳温泉",
+   "wikidata_id": "Q109602467",
+   "url": "https://ja.wikipedia.org/wiki/%E7%89%9B%E5%B2%B3%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "犀川峡温泉",
+   "wikidata_id": "Q109595622",
+   "url": "https://ja.wikipedia.org/wiki/%E7%8A%80%E5%B7%9D%E5%B3%A1%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "犬山温泉",
+   "wikidata_id": "Q109598984",
+   "url": "https://ja.wikipedia.org/wiki/%E7%8A%AC%E5%B1%B1%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "猫魔温泉",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E7%8C%AB%E9%AD%94%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "玉山温泉",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E7%8E%89%E5%B1%B1%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "王喜温泉",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E7%8E%8B%E5%96%9C%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "珊内ぬくもり温泉",
+   "wikidata_id": "Q109598246",
+   "url": "https://ja.wikipedia.org/wiki/%E7%8F%8A%E5%86%85%E3%81%AC%E3%81%8F%E3%82%82%E3%82%8A%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "珠洲温泉",
+   "wikidata_id": "Q126004396",
+   "url": "https://ja.wikipedia.org/wiki/%E7%8F%A0%E6%B4%B2%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "琴乃湯",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E7%90%B4%E4%B9%83%E6%B9%AF"
+  },
+  {
+   "name": "瓜島温泉",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E7%93%9C%E5%B3%B6%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "田代新湯",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E7%94%B0%E4%BB%A3%E6%96%B0%E6%B9%AF"
+  },
+  {
+   "name": "田鶴浜温泉つるの湯",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E7%94%B0%E9%B6%B4%E6%B5%9C%E6%B8%A9%E6%B3%89%E3%81%A4%E3%82%8B%E3%81%AE%E6%B9%AF"
+  },
+  {
+   "name": "由宇温泉",
+   "wikidata_id": "Q109357916",
+   "url": "https://ja.wikipedia.org/wiki/%E7%94%B1%E5%AE%87%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "甲府盆地中西部の温泉",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E7%94%B2%E5%BA%9C%E7%9B%86%E5%9C%B0%E4%B8%AD%E8%A5%BF%E9%83%A8%E3%81%AE%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "甲斐大泉温泉",
+   "wikidata_id": "Q11577876",
+   "url": "https://ja.wikipedia.org/wiki/%E7%94%B2%E6%96%90%E5%A4%A7%E6%B3%89%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "留寿都温泉",
+   "wikidata_id": "Q11578537",
+   "url": "https://ja.wikipedia.org/wiki/%E7%95%99%E5%AF%BF%E9%83%BD%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "白久温泉",
+   "wikidata_id": "Q11579315",
+   "url": "https://ja.wikipedia.org/wiki/%E7%99%BD%E4%B9%85%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "白子温泉",
+   "wikidata_id": "Q11579517",
+   "url": "https://ja.wikipedia.org/wiki/%E7%99%BD%E5%AD%90%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "白寿の湯",
+   "wikidata_id": "Q11579528",
+   "url": "https://ja.wikipedia.org/wiki/%E7%99%BD%E5%AF%BF%E3%81%AE%E6%B9%AF"
+  },
+  {
+   "name": "白峰温泉",
+   "wikidata_id": "Q11579659",
+   "url": "https://ja.wikipedia.org/wiki/%E7%99%BD%E5%B3%B0%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "白峰温泉 ニューサンピア坂出",
+   "wikidata_id": "Q97169809",
+   "url": "https://ja.wikipedia.org/wiki/%E7%99%BD%E5%B3%B0%E6%B8%A9%E6%B3%89%20%E3%83%8B%E3%83%A5%E3%83%BC%E3%82%B5%E3%83%B3%E3%83%94%E3%82%A2%E5%9D%82%E5%87%BA"
+  },
+  {
+   "name": "白川温泉 (岐阜県)",
+   "wikidata_id": "Q11579735",
+   "url": "https://ja.wikipedia.org/wiki/%E7%99%BD%E5%B7%9D%E6%B8%A9%E6%B3%89%20%28%E5%B2%90%E9%98%9C%E7%9C%8C%29"
+  },
+  {
+   "name": "白川郷の湯",
+   "wikidata_id": "Q11579751",
+   "url": "https://ja.wikipedia.org/wiki/%E7%99%BD%E5%B7%9D%E9%83%B7%E3%81%AE%E6%B9%AF"
+  },
+  {
+   "name": "白狐温泉",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E7%99%BD%E7%8B%90%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "白糸の湯",
+   "wikidata_id": "Q42581593",
+   "url": "https://ja.wikipedia.org/wiki/%E7%99%BD%E7%B3%B8%E3%81%AE%E6%B9%AF"
+  },
+  {
+   "name": "白馬塩の道温泉",
+   "wikidata_id": "Q11580466",
+   "url": "https://ja.wikipedia.org/wiki/%E7%99%BD%E9%A6%AC%E5%A1%A9%E3%81%AE%E9%81%93%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "白鳥温泉",
+   "wikidata_id": "Q109594740",
+   "url": "https://ja.wikipedia.org/wiki/%E7%99%BD%E9%B3%A5%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "白鳥路温泉",
+   "wikidata_id": "Q109602369",
+   "url": "https://ja.wikipedia.org/wiki/%E7%99%BD%E9%B3%A5%E8%B7%AF%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "百穴温泉",
+   "wikidata_id": "Q11580838",
+   "url": "https://ja.wikipedia.org/wiki/%E7%99%BE%E7%A9%B4%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "相間川温泉",
+   "wikidata_id": "Q11582459",
+   "url": "https://ja.wikipedia.org/wiki/%E7%9B%B8%E9%96%93%E5%B7%9D%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "相馬松川浦温泉",
+   "wikidata_id": "Q109598287",
+   "url": "https://ja.wikipedia.org/wiki/%E7%9B%B8%E9%A6%AC%E6%9D%BE%E5%B7%9D%E6%B5%A6%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "真木温泉",
+   "wikidata_id": "Q109605885",
+   "url": "https://ja.wikipedia.org/wiki/%E7%9C%9F%E6%9C%A8%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "真狩温泉",
+   "wikidata_id": "Q11583310",
+   "url": "https://ja.wikipedia.org/wiki/%E7%9C%9F%E7%8B%A9%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "碓氷温泉",
+   "wikidata_id": "Q97383629",
+   "url": "https://ja.wikipedia.org/wiki/%E7%A2%93%E6%B0%B7%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "磯原温泉",
+   "wikidata_id": "Q109594758",
+   "url": "https://ja.wikipedia.org/wiki/%E7%A3%AF%E5%8E%9F%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "磯部わたかの温泉",
+   "wikidata_id": "Q109601900",
+   "url": "https://ja.wikipedia.org/wiki/%E7%A3%AF%E9%83%A8%E3%82%8F%E3%81%9F%E3%81%8B%E3%81%AE%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "祝子川温泉",
+   "wikidata_id": "Q11588584",
+   "url": "https://ja.wikipedia.org/wiki/%E7%A5%9D%E5%AD%90%E5%B7%9D%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "神の湯温泉",
+   "wikidata_id": "Q109602414",
+   "url": "https://ja.wikipedia.org/wiki/%E7%A5%9E%E3%81%AE%E6%B9%AF%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "神恵内温泉",
+   "wikidata_id": "Q11589701",
+   "url": "https://ja.wikipedia.org/wiki/%E7%A5%9E%E6%81%B5%E5%86%85%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "神明温泉",
+   "wikidata_id": "Q109600009",
+   "url": "https://ja.wikipedia.org/wiki/%E7%A5%9E%E6%98%8E%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "神白温泉",
+   "wikidata_id": "Q109599852",
+   "url": "https://ja.wikipedia.org/wiki/%E7%A5%9E%E7%99%BD%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "神通温泉",
+   "wikidata_id": "Q11590914",
+   "url": "https://ja.wikipedia.org/wiki/%E7%A5%9E%E9%80%9A%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "神野温泉",
+   "wikidata_id": "Q11590977",
+   "url": "https://ja.wikipedia.org/wiki/%E7%A5%9E%E9%87%8E%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "福光温泉",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E7%A6%8F%E5%85%89%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "福知山温泉",
+   "wikidata_id": "Q109598256",
+   "url": "https://ja.wikipedia.org/wiki/%E7%A6%8F%E7%9F%A5%E5%B1%B1%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "福祉のひろば冨士の湯",
+   "wikidata_id": "Q109599339",
+   "url": "https://ja.wikipedia.org/wiki/%E7%A6%8F%E7%A5%89%E3%81%AE%E3%81%B2%E3%82%8D%E3%81%B0%E5%86%A8%E5%A3%AB%E3%81%AE%E6%B9%AF"
+  },
+  {
+   "name": "秋穂温泉",
+   "wikidata_id": "Q109358514",
+   "url": "https://ja.wikipedia.org/wiki/%E7%A7%8B%E7%A9%82%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "秦野温泉",
+   "wikidata_id": "Q11596088",
+   "url": "https://ja.wikipedia.org/wiki/%E7%A7%A6%E9%87%8E%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "秩父七湯",
+   "wikidata_id": "Q11596107",
+   "url": "https://ja.wikipedia.org/wiki/%E7%A7%A9%E7%88%B6%E4%B8%83%E6%B9%AF"
+  },
+  {
+   "name": "秩父温泉",
+   "wikidata_id": "Q21653571",
+   "url": "https://ja.wikipedia.org/wiki/%E7%A7%A9%E7%88%B6%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "稲子川温泉",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E7%A8%B2%E5%AD%90%E5%B7%9D%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "稲武夏焼温泉",
+   "wikidata_id": "Q11596680",
+   "url": "https://ja.wikipedia.org/wiki/%E7%A8%B2%E6%AD%A6%E5%A4%8F%E7%84%BC%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "稲武温泉",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E7%A8%B2%E6%AD%A6%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "稲荷温泉",
+   "wikidata_id": "Q141287152",
+   "url": "https://ja.wikipedia.org/wiki/%E7%A8%B2%E8%8D%B7%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "積丹温泉",
+   "wikidata_id": "Q11597126",
+   "url": "https://ja.wikipedia.org/wiki/%E7%A9%8D%E4%B8%B9%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "穴山温泉",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E7%A9%B4%E5%B1%B1%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "立山山麓温泉",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E7%AB%8B%E5%B1%B1%E5%B1%B1%E9%BA%93%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "立岩海底温泉",
+   "wikidata_id": "Q109598018",
+   "url": "https://ja.wikipedia.org/wiki/%E7%AB%8B%E5%B2%A9%E6%B5%B7%E5%BA%95%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "競輪温泉",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E7%AB%B6%E8%BC%AA%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "竹田温泉群",
+   "wikidata_id": "Q30922458",
+   "url": "https://ja.wikipedia.org/wiki/%E7%AB%B9%E7%94%B0%E6%B8%A9%E6%B3%89%E7%BE%A4"
+  },
+  {
+   "name": "笠置温泉",
+   "wikidata_id": "Q134621075",
+   "url": "https://ja.wikipedia.org/wiki/%E7%AC%A0%E7%BD%AE%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "笹戸温泉",
+   "wikidata_id": "Q11602593",
+   "url": "https://ja.wikipedia.org/wiki/%E7%AC%B9%E6%88%B8%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "糸根温泉",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E7%B3%B8%E6%A0%B9%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "紀州黒潮温泉",
+   "wikidata_id": "Q111219521",
+   "url": "https://ja.wikipedia.org/wiki/%E7%B4%80%E5%B7%9E%E9%BB%92%E6%BD%AE%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "紫尾温泉",
+   "wikidata_id": "Q11605708",
+   "url": "https://ja.wikipedia.org/wiki/%E7%B4%AB%E5%B0%BE%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "綾温泉",
+   "wikidata_id": "Q11607316",
+   "url": "https://ja.wikipedia.org/wiki/%E7%B6%BE%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "美やま温泉",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E7%BE%8E%E3%82%84%E3%81%BE%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "美合温泉",
+   "wikidata_id": "Q109598457",
+   "url": "https://ja.wikipedia.org/wiki/%E7%BE%8E%E5%90%88%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "美杉温泉",
+   "wikidata_id": "Q11609120",
+   "url": "https://ja.wikipedia.org/wiki/%E7%BE%8E%E6%9D%89%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "美榛温泉",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E7%BE%8E%E6%A6%9B%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "羽幌温泉",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E7%BE%BD%E5%B9%8C%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "胡桃島温泉",
+   "wikidata_id": "Q109600901",
+   "url": "https://ja.wikipedia.org/wiki/%E8%83%A1%E6%A1%83%E5%B3%B6%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "能勢温泉",
+   "wikidata_id": "Q109602410",
+   "url": "https://ja.wikipedia.org/wiki/%E8%83%BD%E5%8B%A2%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "舟橋・立山天然温泉 湯めごこち",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E8%88%9F%E6%A9%8B%E3%83%BB%E7%AB%8B%E5%B1%B1%E5%A4%A9%E7%84%B6%E6%B8%A9%E6%B3%89%20%E6%B9%AF%E3%82%81%E3%81%94%E3%81%93%E3%81%A1"
+  },
+  {
+   "name": "般若寺温泉",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E8%88%AC%E8%8B%A5%E5%AF%BA%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "花山温泉",
+   "wikidata_id": "Q11615278",
+   "url": "https://ja.wikipedia.org/wiki/%E8%8A%B1%E5%B1%B1%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "花巻温泉郷",
+   "wikidata_id": "Q11615378",
+   "url": "https://ja.wikipedia.org/wiki/%E8%8A%B1%E5%B7%BB%E6%B8%A9%E6%B3%89%E9%83%B7"
+  },
+  {
+   "name": "花白温泉",
+   "wikidata_id": "Q109602796",
+   "url": "https://ja.wikipedia.org/wiki/%E8%8A%B1%E7%99%BD%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "若栗温泉",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E8%8B%A5%E6%A0%97%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "苫前温泉",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E8%8B%AB%E5%89%8D%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "荒川峡温泉郷",
+   "wikidata_id": "Q11618557",
+   "url": "https://ja.wikipedia.org/wiki/%E8%8D%92%E5%B7%9D%E5%B3%A1%E6%B8%A9%E6%B3%89%E9%83%B7"
+  },
+  {
+   "name": "荒川温泉 (長崎県)",
+   "wikidata_id": "Q11618597",
+   "url": "https://ja.wikipedia.org/wiki/%E8%8D%92%E5%B7%9D%E6%B8%A9%E6%B3%89%20%28%E9%95%B7%E5%B4%8E%E7%9C%8C%29"
+  },
+  {
+   "name": "荻の里温泉",
+   "wikidata_id": "Q11618945",
+   "url": "https://ja.wikipedia.org/wiki/%E8%8D%BB%E3%81%AE%E9%87%8C%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "華咲の湯",
+   "wikidata_id": "Q11620051",
+   "url": "https://ja.wikipedia.org/wiki/%E8%8F%AF%E5%92%B2%E3%81%AE%E6%B9%AF"
+  },
+  {
+   "name": "萩の湯温泉",
+   "wikidata_id": "Q131983810",
+   "url": "https://ja.wikipedia.org/wiki/%E8%90%A9%E3%81%AE%E6%B9%AF%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "葭之池温泉",
+   "wikidata_id": "Q109597031",
+   "url": "https://ja.wikipedia.org/wiki/%E8%91%AD%E4%B9%8B%E6%B1%A0%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "蒲原温泉",
+   "wikidata_id": "Q11621275",
+   "url": "https://ja.wikipedia.org/wiki/%E8%92%B2%E5%8E%9F%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "蓼科温泉郷",
+   "wikidata_id": "Q111426459",
+   "url": "https://ja.wikipedia.org/wiki/%E8%93%BC%E7%A7%91%E6%B8%A9%E6%B3%89%E9%83%B7"
+  },
+  {
+   "name": "蔵王開拓温泉",
+   "wikidata_id": "Q11621955",
+   "url": "https://ja.wikipedia.org/wiki/%E8%94%B5%E7%8E%8B%E9%96%8B%E6%8B%93%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "薄別温泉",
+   "wikidata_id": "Q11622150",
+   "url": "https://ja.wikipedia.org/wiki/%E8%96%84%E5%88%A5%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "薬師湯温泉",
+   "wikidata_id": "Q109600053",
+   "url": "https://ja.wikipedia.org/wiki/%E8%96%AC%E5%B8%AB%E6%B9%AF%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "藤和那須リゾート",
+   "wikidata_id": "Q11623683",
+   "url": "https://ja.wikipedia.org/wiki/%E8%97%A4%E5%92%8C%E9%82%A3%E9%A0%88%E3%83%AA%E3%82%BE%E3%83%BC%E3%83%88"
+  },
+  {
+   "name": "虎杖浜温泉",
+   "wikidata_id": "Q11625293",
+   "url": "https://ja.wikipedia.org/wiki/%E8%99%8E%E6%9D%96%E6%B5%9C%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "蟠渓温泉",
+   "wikidata_id": "Q11625850",
+   "url": "https://ja.wikipedia.org/wiki/%E8%9F%A0%E6%B8%93%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "衣浦温泉",
+   "wikidata_id": "Q110608832",
+   "url": "https://ja.wikipedia.org/wiki/%E8%A1%A3%E6%B5%A6%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "裾花峡温泉",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E8%A3%BE%E8%8A%B1%E5%B3%A1%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "西吉野温泉",
+   "wikidata_id": "Q11627408",
+   "url": "https://ja.wikipedia.org/wiki/%E8%A5%BF%E5%90%89%E9%87%8E%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "計石温泉",
+   "wikidata_id": "Q109594752",
+   "url": "https://ja.wikipedia.org/wiki/%E8%A8%88%E7%9F%B3%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "諏訪山温泉",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E8%AB%8F%E8%A8%AA%E5%B1%B1%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "豊平峡温泉",
+   "wikidata_id": "Q11633673",
+   "url": "https://ja.wikipedia.org/wiki/%E8%B1%8A%E5%B9%B3%E5%B3%A1%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "豊浦温泉",
+   "wikidata_id": "Q11633942",
+   "url": "https://ja.wikipedia.org/wiki/%E8%B1%8A%E6%B5%A6%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "豊科温泉",
+   "wikidata_id": "Q11634189",
+   "url": "https://ja.wikipedia.org/wiki/%E8%B1%8A%E7%A7%91%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "象潟温泉",
+   "wikidata_id": "Q11634367",
+   "url": "https://ja.wikipedia.org/wiki/%E8%B1%A1%E6%BD%9F%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "財田温泉",
+   "wikidata_id": "Q11634635",
+   "url": "https://ja.wikipedia.org/wiki/%E8%B2%A1%E7%94%B0%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "赤川温泉",
+   "wikidata_id": "Q11635581",
+   "url": "https://ja.wikipedia.org/wiki/%E8%B5%A4%E5%B7%9D%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "赤川温泉 (秋田県)",
+   "wikidata_id": "Q11635580",
+   "url": "https://ja.wikipedia.org/wiki/%E8%B5%A4%E5%B7%9D%E6%B8%A9%E6%B3%89%20%28%E7%A7%8B%E7%94%B0%E7%9C%8C%29"
+  },
+  {
+   "name": "赤見温泉",
+   "wikidata_id": "Q30929264",
+   "url": "https://ja.wikipedia.org/wiki/%E8%B5%A4%E8%A6%8B%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "越中八尾温泉",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E8%B6%8A%E4%B8%AD%E5%85%AB%E5%B0%BE%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "越谷温泉",
+   "wikidata_id": "Q109599962",
+   "url": "https://ja.wikipedia.org/wiki/%E8%B6%8A%E8%B0%B7%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "足付海中温泉",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E8%B6%B3%E4%BB%98%E6%B5%B7%E4%B8%AD%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "足付温泉",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E8%B6%B3%E4%BB%98%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "足尾温泉",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E8%B6%B3%E5%B0%BE%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "輪島温泉",
+   "wikidata_id": "Q11637711",
+   "url": "https://ja.wikipedia.org/wiki/%E8%BC%AA%E5%B3%B6%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "近江温泉",
+   "wikidata_id": "Q11638500",
+   "url": "https://ja.wikipedia.org/wiki/%E8%BF%91%E6%B1%9F%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "道後温泉郷",
+   "wikidata_id": "Q11641714",
+   "url": "https://ja.wikipedia.org/wiki/%E9%81%93%E5%BE%8C%E6%B8%A9%E6%B3%89%E9%83%B7"
+  },
+  {
+   "name": "那須五峰の湯",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E9%82%A3%E9%A0%88%E4%BA%94%E5%B3%B0%E3%81%AE%E6%B9%AF"
+  },
+  {
+   "name": "郡上温泉",
+   "wikidata_id": "Q109594798",
+   "url": "https://ja.wikipedia.org/wiki/%E9%83%A1%E4%B8%8A%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "郡山市内の温泉",
+   "wikidata_id": "Q11643189",
+   "url": "https://ja.wikipedia.org/wiki/%E9%83%A1%E5%B1%B1%E5%B8%82%E5%86%85%E3%81%AE%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "重富温泉",
+   "wikidata_id": "Q11644745",
+   "url": "https://ja.wikipedia.org/wiki/%E9%87%8D%E5%AF%8C%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "野迫川温泉",
+   "wikidata_id": "Q109600741",
+   "url": "https://ja.wikipedia.org/wiki/%E9%87%8E%E8%BF%AB%E5%B7%9D%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "釜戸温泉",
+   "wikidata_id": "Q109595707",
+   "url": "https://ja.wikipedia.org/wiki/%E9%87%9C%E6%88%B8%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "鈍川せせらぎ交流館",
+   "wikidata_id": "Q131911082",
+   "url": "https://ja.wikipedia.org/wiki/%E9%88%8D%E5%B7%9D%E3%81%9B%E3%81%9B%E3%82%89%E3%81%8E%E4%BA%A4%E6%B5%81%E9%A4%A8"
+  },
+  {
+   "name": "鈴鹿さつき温泉",
+   "wikidata_id": "Q11649467",
+   "url": "https://ja.wikipedia.org/wiki/%E9%88%B4%E9%B9%BF%E3%81%95%E3%81%A4%E3%81%8D%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "鈴鹿サーキット温泉",
+   "wikidata_id": "Q11649473",
+   "url": "https://ja.wikipedia.org/wiki/%E9%88%B4%E9%B9%BF%E3%82%B5%E3%83%BC%E3%82%AD%E3%83%83%E3%83%88%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "鉄輪むし湯",
+   "wikidata_id": "Q11649634",
+   "url": "https://ja.wikipedia.org/wiki/%E9%89%84%E8%BC%AA%E3%82%80%E3%81%97%E6%B9%AF"
+  },
+  {
+   "name": "銀鱗荘",
+   "wikidata_id": "Q48752243",
+   "url": "https://ja.wikipedia.org/wiki/%E9%8A%80%E9%B1%97%E8%8D%98"
+  },
+  {
+   "name": "銭がめ温泉",
+   "wikidata_id": "Q11650243",
+   "url": "https://ja.wikipedia.org/wiki/%E9%8A%AD%E3%81%8C%E3%82%81%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "鍋田川温泉",
+   "wikidata_id": "Q11650722",
+   "url": "https://ja.wikipedia.org/wiki/%E9%8D%8B%E7%94%B0%E5%B7%9D%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "鎌田温泉",
+   "wikidata_id": "Q120360794",
+   "url": "https://ja.wikipedia.org/wiki/%E9%8E%8C%E7%94%B0%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "長門峡温泉",
+   "wikidata_id": "Q109363824",
+   "url": "https://ja.wikipedia.org/wiki/%E9%95%B7%E9%96%80%E5%B3%A1%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "門別温泉",
+   "wikidata_id": "Q11654951",
+   "url": "https://ja.wikipedia.org/wiki/%E9%96%80%E5%88%A5%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "関谷温泉",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E9%96%A2%E8%B0%B7%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "防長四湯",
+   "wikidata_id": "Q65291872",
+   "url": "https://ja.wikipedia.org/wiki/%E9%98%B2%E9%95%B7%E5%9B%9B%E6%B9%AF"
+  },
+  {
+   "name": "阿久根温泉",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E9%98%BF%E4%B9%85%E6%A0%B9%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "阿児温泉",
+   "wikidata_id": "Q11657265",
+   "url": "https://ja.wikipedia.org/wiki/%E9%98%BF%E5%85%90%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "阿知須温泉",
+   "wikidata_id": "Q124692187",
+   "url": "https://ja.wikipedia.org/wiki/%E9%98%BF%E7%9F%A5%E9%A0%88%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "阿蘇下田城ふれあい温泉駅",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E9%98%BF%E8%98%87%E4%B8%8B%E7%94%B0%E5%9F%8E%E3%81%B5%E3%82%8C%E3%81%82%E3%81%84%E6%B8%A9%E6%B3%89%E9%A7%85"
+  },
+  {
+   "name": "阿蘇温泉郷",
+   "wikidata_id": "Q11657655",
+   "url": "https://ja.wikipedia.org/wiki/%E9%98%BF%E8%98%87%E6%B8%A9%E6%B3%89%E9%83%B7"
+  },
+  {
+   "name": "雨晴温泉",
+   "wikidata_id": "Q131904158",
+   "url": "https://ja.wikipedia.org/wiki/%E9%9B%A8%E6%99%B4%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "霧島神宮温泉",
+   "wikidata_id": "Q11660898",
+   "url": "https://ja.wikipedia.org/wiki/%E9%9C%A7%E5%B3%B6%E7%A5%9E%E5%AE%AE%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "青梅石神温泉",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E9%9D%92%E6%A2%85%E7%9F%B3%E7%A5%9E%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "静内温泉",
+   "wikidata_id": "Q11662877",
+   "url": "https://ja.wikipedia.org/wiki/%E9%9D%99%E5%86%85%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "静岡県のその他温泉一覧",
+   "wikidata_id": "Q118726376",
+   "url": "https://ja.wikipedia.org/wiki/%E9%9D%99%E5%B2%A1%E7%9C%8C%E3%81%AE%E3%81%9D%E3%81%AE%E4%BB%96%E6%B8%A9%E6%B3%89%E4%B8%80%E8%A6%A7"
+  },
+  {
+   "name": "鞆の浦温泉",
+   "wikidata_id": "Q11663863",
+   "url": "https://ja.wikipedia.org/wiki/%E9%9E%86%E3%81%AE%E6%B5%A6%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "音戸温泉",
+   "wikidata_id": "Q109596958",
+   "url": "https://ja.wikipedia.org/wiki/%E9%9F%B3%E6%88%B8%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "須坂温泉",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E9%A0%88%E5%9D%82%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "風の国温泉",
+   "wikidata_id": "Q11665331",
+   "url": "https://ja.wikipedia.org/wiki/%E9%A2%A8%E3%81%AE%E5%9B%BD%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "飛騨にゅうかわ温泉",
+   "wikidata_id": "Q109594806",
+   "url": "https://ja.wikipedia.org/wiki/%E9%A3%9B%E9%A8%A8%E3%81%AB%E3%82%85%E3%81%86%E3%81%8B%E3%82%8F%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "飛騨古川桃源郷温泉",
+   "wikidata_id": "Q109598477",
+   "url": "https://ja.wikipedia.org/wiki/%E9%A3%9B%E9%A8%A8%E5%8F%A4%E5%B7%9D%E6%A1%83%E6%BA%90%E9%83%B7%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "飛騨高山温泉",
+   "wikidata_id": "Q109600658",
+   "url": "https://ja.wikipedia.org/wiki/%E9%A3%9B%E9%A8%A8%E9%AB%98%E5%B1%B1%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "飯岡温泉",
+   "wikidata_id": "Q109597241",
+   "url": "https://ja.wikipedia.org/wiki/%E9%A3%AF%E5%B2%A1%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "養老温泉 (尾道市)",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E9%A4%8A%E8%80%81%E6%B8%A9%E6%B3%89%20%28%E5%B0%BE%E9%81%93%E5%B8%82%29"
+  },
+  {
+   "name": "香住温泉",
+   "wikidata_id": "Q11667139",
+   "url": "https://ja.wikipedia.org/wiki/%E9%A6%99%E4%BD%8F%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "香椎温泉",
+   "wikidata_id": "Q11667649",
+   "url": "https://ja.wikipedia.org/wiki/%E9%A6%99%E6%A4%8E%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "馬狩・地球の聲温泉",
+   "wikidata_id": "Q109595700",
+   "url": "https://ja.wikipedia.org/wiki/%E9%A6%AC%E7%8B%A9%E3%83%BB%E5%9C%B0%E7%90%83%E3%81%AE%E8%81%B2%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "馬頭温泉郷",
+   "wikidata_id": "Q11668118",
+   "url": "https://ja.wikipedia.org/wiki/%E9%A6%AC%E9%A0%AD%E6%B8%A9%E6%B3%89%E9%83%B7"
+  },
+  {
+   "name": "高千穂温泉",
+   "wikidata_id": "Q11668883",
+   "url": "https://ja.wikipedia.org/wiki/%E9%AB%98%E5%8D%83%E7%A9%82%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "高屋温泉",
+   "wikidata_id": "Q109594739",
+   "url": "https://ja.wikipedia.org/wiki/%E9%AB%98%E5%B1%8B%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "高根沢温泉",
+   "wikidata_id": "Q11670646",
+   "url": "https://ja.wikipedia.org/wiki/%E9%AB%98%E6%A0%B9%E6%B2%A2%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "高田温泉",
+   "wikidata_id": "Q109598468",
+   "url": "https://ja.wikipedia.org/wiki/%E9%AB%98%E7%94%B0%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "高野温泉",
+   "wikidata_id": "Q11673112",
+   "url": "https://ja.wikipedia.org/wiki/%E9%AB%98%E9%87%8E%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "高鍋温泉",
+   "wikidata_id": "Q11673176",
+   "url": "https://ja.wikipedia.org/wiki/%E9%AB%98%E9%8D%8B%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "鬼岩温泉",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E9%AC%BC%E5%B2%A9%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "鬼押温泉",
+   "wikidata_id": "Q109594754",
+   "url": "https://ja.wikipedia.org/wiki/%E9%AC%BC%E6%8A%BC%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "鮎美の湯",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E9%AE%8E%E7%BE%8E%E3%81%AE%E6%B9%AF"
+  },
+  {
+   "name": "鰹乃國の湯宿 黒潮本陣",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E9%B0%B9%E4%B9%83%E5%9C%8B%E3%81%AE%E6%B9%AF%E5%AE%BF%20%E9%BB%92%E6%BD%AE%E6%9C%AC%E9%99%A3"
+  },
+  {
+   "name": "鳥羽シーサイド温泉",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E9%B3%A5%E7%BE%BD%E3%82%B7%E3%83%BC%E3%82%B5%E3%82%A4%E3%83%89%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "鳩の湯温泉",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E9%B3%A9%E3%81%AE%E6%B9%AF%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "鳴き砂温泉",
+   "wikidata_id": "Q109299456",
+   "url": "https://ja.wikipedia.org/wiki/%E9%B3%B4%E3%81%8D%E7%A0%82%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "鳴子温泉郷",
+   "wikidata_id": "Q11675322",
+   "url": "https://ja.wikipedia.org/wiki/%E9%B3%B4%E5%AD%90%E6%B8%A9%E6%B3%89%E9%83%B7"
+  },
+  {
+   "name": "鴨川温泉郷",
+   "wikidata_id": "Q60996529",
+   "url": "https://ja.wikipedia.org/wiki/%E9%B4%A8%E5%B7%9D%E6%B8%A9%E6%B3%89%E9%83%B7"
+  },
+  {
+   "name": "鹿之湯温泉",
+   "wikidata_id": "Q109603317",
+   "url": "https://ja.wikipedia.org/wiki/%E9%B9%BF%E4%B9%8B%E6%B9%AF%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "鹿児島市街地の温泉",
+   "wikidata_id": "Q11676679",
+   "url": "https://ja.wikipedia.org/wiki/%E9%B9%BF%E5%85%90%E5%B3%B6%E5%B8%82%E8%A1%97%E5%9C%B0%E3%81%AE%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "麻布十番温泉",
+   "wikidata_id": "Q11677478",
+   "url": "https://ja.wikipedia.org/wiki/%E9%BA%BB%E5%B8%83%E5%8D%81%E7%95%AA%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "麻布黒美水温泉",
+   "wikidata_id": null,
+   "url": "https://ja.wikipedia.org/wiki/%E9%BA%BB%E5%B8%83%E9%BB%92%E7%BE%8E%E6%B0%B4%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "黒石温泉郷",
+   "wikidata_id": "Q11678747",
+   "url": "https://ja.wikipedia.org/wiki/%E9%BB%92%E7%9F%B3%E6%B8%A9%E6%B3%89%E9%83%B7"
+  },
+  {
+   "name": "黒部川明日温泉",
+   "wikidata_id": "Q97342137",
+   "url": "https://ja.wikipedia.org/wiki/%E9%BB%92%E9%83%A8%E5%B7%9D%E6%98%8E%E6%97%A5%E6%B8%A9%E6%B3%89"
+  },
+  {
+   "name": "龍河温泉",
+   "wikidata_id": "Q109598420",
+   "url": "https://ja.wikipedia.org/wiki/%E9%BE%8D%E6%B2%B3%E6%B8%A9%E6%B3%89"
+  }
+ ],
+ "wikidata": [
+  {
+   "name": "Kaniyu Onsen",
+   "wikidata_id": "Q6363334",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "あらたまの湯",
+   "wikidata_id": "Q54824316",
+   "admin": "静岡県",
+   "classes": [
+    "温泉",
+    "炭酸水素塩泉"
+   ]
+  },
+  {
+   "name": "いい湯だな",
+   "wikidata_id": "Q11259008",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "いぶきの湯",
+   "wikidata_id": "Q11259952",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "うすずみ温泉",
+   "wikidata_id": "Q11260412",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "うめの湯",
+   "wikidata_id": "Q54837440",
+   "admin": "愛知県",
+   "classes": [
+    "温泉",
+    "単純温泉"
+   ]
+  },
+  {
+   "name": "かご岩温泉",
+   "wikidata_id": "Q11603848",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "きいながしま古里温泉",
+   "wikidata_id": "Q11264706",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "きつねうち温泉",
+   "wikidata_id": "Q109597148",
+   "admin": "白河市",
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "きのえ温泉",
+   "wikidata_id": "Q109598511",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "くすのき温泉",
+   "wikidata_id": "Q60997562",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "くにさき六郷温泉",
+   "wikidata_id": "Q28688040",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "さいごう温泉",
+   "wikidata_id": "Q109603068",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "さいと温泉",
+   "wikidata_id": "Q11267557",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "さるふつ温泉",
+   "wikidata_id": "Q11268478",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "さわらびの湯",
+   "wikidata_id": "Q11268515",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "せら温泉",
+   "wikidata_id": "Q11270127",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "たてやま温泉郷",
+   "wikidata_id": "Q65235114",
+   "admin": "館山市",
+   "classes": [
+    "温泉郷"
+   ]
+  },
+  {
+   "name": "つま恋温泉",
+   "wikidata_id": "Q11272483",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "とうえい温泉 花まつりの湯",
+   "wikidata_id": "Q54824443",
+   "admin": "愛知県",
+   "classes": [
+    "温泉",
+    "塩化物泉"
+   ]
+  },
+  {
+   "name": "とりごえ温泉",
+   "wikidata_id": "Q109601271",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "のりくら温泉郷",
+   "wikidata_id": "Q11275251",
+   "admin": "松本市",
+   "classes": [
+    "温泉郷"
+   ]
+  },
+  {
+   "name": "ひょっこり温泉 島の湯",
+   "wikidata_id": "Q133819944",
+   "admin": "七尾市",
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "ふるっぷ温泉",
+   "wikidata_id": "Q17230936",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "べふ峡温泉",
+   "wikidata_id": "Q109598186",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "みやぎ蔵王温泉郷",
+   "wikidata_id": "Q28692399",
+   "admin": null,
+   "classes": [
+    "温泉郷"
+   ]
+  },
+  {
+   "name": "むかわ温泉",
+   "wikidata_id": "Q11279536",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "よさこい温泉",
+   "wikidata_id": "Q109598235",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "カンパネルラの湯",
+   "wikidata_id": "Q109598269",
+   "admin": "南風見",
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "ガラメキ温泉",
+   "wikidata_id": "Q11296241",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "コタン温泉",
+   "wikidata_id": "Q11302192",
+   "admin": "弟子屈町",
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "サイボク天然温泉",
+   "wikidata_id": "Q11304209",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "シギラ温泉",
+   "wikidata_id": "Q11307080",
+   "admin": "宮古島市",
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "ピラミッド温泉",
+   "wikidata_id": "Q85873202",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "フォッサマグナ糸魚川温泉",
+   "wikidata_id": "Q17230030",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "モッタ海岸温泉",
+   "wikidata_id": "Q11344356",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "一関温泉郷",
+   "wikidata_id": "Q11353265",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "七里田温泉",
+   "wikidata_id": "Q11353716",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "三加和温泉",
+   "wikidata_id": "Q11354484",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "三富温泉",
+   "wikidata_id": "Q114797433",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "三峰温泉",
+   "wikidata_id": "Q109597187",
+   "admin": "可児市",
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "三石温泉",
+   "wikidata_id": "Q11356835",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "三福温泉",
+   "wikidata_id": "Q11356870",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "三船温泉",
+   "wikidata_id": "Q11356967",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "三香温泉",
+   "wikidata_id": "Q11358317",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "上北温泉郷",
+   "wikidata_id": "Q11358525",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "上小野温泉",
+   "wikidata_id": "Q11358810",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "上河内温泉",
+   "wikidata_id": "Q11359508",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "下里瀬温泉",
+   "wikidata_id": "Q109598550",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "下関つくの温泉",
+   "wikidata_id": "Q60997706",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "不動の湯",
+   "wikidata_id": "Q109597277",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "中三依温泉",
+   "wikidata_id": "Q24870034",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "中乃湯温泉",
+   "wikidata_id": "Q11362850",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "中京温泉",
+   "wikidata_id": "Q28691999",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "中原温泉",
+   "wikidata_id": "Q109365247",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "串原温泉",
+   "wikidata_id": "Q109595715",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "串間温泉",
+   "wikidata_id": "Q11367921",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "久住高原温泉",
+   "wikidata_id": "Q11368942",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "久住高原温泉郷",
+   "wikidata_id": "Q30922879",
+   "admin": null,
+   "classes": [
+    "温泉郷"
+   ]
+  },
+  {
+   "name": "久瀬温泉",
+   "wikidata_id": "Q109602791",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "久米之癒",
+   "wikidata_id": "Q11369575",
+   "admin": "松山市",
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "九重九湯",
+   "wikidata_id": "Q11370455",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "二口温泉",
+   "wikidata_id": "Q11371419",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "五味温泉",
+   "wikidata_id": "Q11372253",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "五戸まきば温泉",
+   "wikidata_id": "Q11372374",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "五浦元湯温泉",
+   "wikidata_id": "Q11372541",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "京都桂温泉",
+   "wikidata_id": "Q65248517",
+   "admin": "西京区",
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "京都竹の郷温泉",
+   "wikidata_id": "Q30933995",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "付知峡倉屋温泉おんぽいの湯",
+   "wikidata_id": "Q21653627",
+   "admin": "付知町",
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "仙石原温泉",
+   "wikidata_id": "Q138028148",
+   "admin": "仙石原",
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "仲洞爺温泉",
+   "wikidata_id": "Q11378562",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "伊達温泉",
+   "wikidata_id": "Q11380839",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "伏尾温泉",
+   "wikidata_id": "Q11381036",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "伏目温泉",
+   "wikidata_id": "Q11381056",
+   "admin": "指宿市",
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "佐久山温泉",
+   "wikidata_id": "Q11382605",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "作州武蔵温泉",
+   "wikidata_id": "Q109600092",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "信州高山温泉郷",
+   "wikidata_id": "Q11386117",
+   "admin": "高山村",
+   "classes": [
+    "温泉郷"
+   ]
+  },
+  {
+   "name": "別府八湯",
+   "wikidata_id": "Q135237107",
+   "admin": "別府市",
+   "classes": [
+    "熱水泉",
+    "名数8"
+   ]
+  },
+  {
+   "name": "別府八湯温泉道",
+   "wikidata_id": "Q11396699",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "加賀三谷温泉",
+   "wikidata_id": "Q11399649",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "加賀温泉郷",
+   "wikidata_id": "Q11399702",
+   "admin": "加賀市",
+   "classes": [
+    "温泉郷"
+   ]
+  },
+  {
+   "name": "北志賀温泉",
+   "wikidata_id": "Q11401722",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "北郷温泉",
+   "wikidata_id": "Q11404208",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "十津川温泉郷",
+   "wikidata_id": "Q28689091",
+   "admin": "十津川村",
+   "classes": [
+    "温泉郷"
+   ]
+  },
+  {
+   "name": "千倉温泉",
+   "wikidata_id": "Q65249608",
+   "admin": "南房総市",
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "千春楽温泉",
+   "wikidata_id": "Q11405562",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "千走川温泉",
+   "wikidata_id": "Q11406823",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "千里浜やわらぎ温泉",
+   "wikidata_id": "Q109598873",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "協和温泉",
+   "wikidata_id": "Q11407231",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "南幌温泉",
+   "wikidata_id": "Q109594667",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "南房総岩井温泉",
+   "wikidata_id": "Q65249947",
+   "admin": "南房総市",
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "南田温泉",
+   "wikidata_id": "Q11408252",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "博多温泉",
+   "wikidata_id": "Q11408958",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "原鶴温泉",
+   "wikidata_id": "Q11410091",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "古岩屋温泉",
+   "wikidata_id": "Q115114426",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "古洞の森温泉",
+   "wikidata_id": "Q109357547",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "吉井温泉 (群馬県)",
+   "wikidata_id": "Q11412597",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "吉田温泉",
+   "wikidata_id": "Q60997210",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "名湯百選",
+   "wikidata_id": "Q11415495",
+   "admin": null,
+   "classes": [
+    "温泉",
+    "日本の百選"
+   ]
+  },
+  {
+   "name": "君田温泉",
+   "wikidata_id": "Q11416399",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "和気鵜飼谷温泉",
+   "wikidata_id": "Q109598503",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "和琴温泉",
+   "wikidata_id": "Q11417876",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "唐津温泉",
+   "wikidata_id": "Q109598783",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "四国高松温泉",
+   "wikidata_id": "Q109600737",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "四季の湯温泉",
+   "wikidata_id": "Q109597092",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "四季美谷温泉",
+   "wikidata_id": "Q109364964",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "国民保養温泉地",
+   "wikidata_id": "Q11421080",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "土佐龍温泉",
+   "wikidata_id": "Q109602123",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "坂本温泉",
+   "wikidata_id": "Q11425325",
+   "admin": "三島村",
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "堂ヶ島温泉",
+   "wikidata_id": "Q138028172",
+   "admin": "箱根町",
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "塔ノ沢温泉",
+   "wikidata_id": "Q138028141",
+   "admin": "塔之澤",
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "塩ノ沢温泉 (茨城県)　閉業",
+   "wikidata_id": "Q11428592",
+   "admin": null,
+   "classes": [
+    "温泉",
+    "炭酸水素塩泉"
+   ]
+  },
+  {
+   "name": "壮瞥温泉",
+   "wikidata_id": "Q11429529",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "大利根温泉",
+   "wikidata_id": "Q11433045",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "大塚温泉",
+   "wikidata_id": "Q97376137",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "大塩温泉 (長野県)",
+   "wikidata_id": "Q11434141",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "大山伽羅温泉",
+   "wikidata_id": "Q109602473",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "大山温泉",
+   "wikidata_id": "Q109602472",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "大岩湯神子温泉",
+   "wikidata_id": "Q97342094",
+   "admin": "上市町",
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "大沢温泉 (栃木県)　閉業",
+   "wikidata_id": "Q11436986",
+   "admin": null,
+   "classes": [
+    "温泉",
+    "硫酸塩泉"
+   ]
+  },
+  {
+   "name": "大洗温泉",
+   "wikidata_id": "Q109599892",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "大田区の黒湯温泉",
+   "wikidata_id": "Q671405",
+   "admin": "大田区",
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "大田原温泉",
+   "wikidata_id": "Q11437897",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "大矢部温泉",
+   "wikidata_id": "Q11438134",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "大磯温泉",
+   "wikidata_id": "Q97181718",
+   "admin": "大磯町",
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "大芦高原温泉",
+   "wikidata_id": "Q109597287",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "天の川温泉",
+   "wikidata_id": "Q11442118",
+   "admin": "天川村",
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "天塩川温泉",
+   "wikidata_id": "Q11442485",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "天塩温泉",
+   "wikidata_id": "Q11442489",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "天岩戸温泉",
+   "wikidata_id": "Q11442562",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "太良温泉",
+   "wikidata_id": "Q11444495",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "奥山温泉",
+   "wikidata_id": "Q109598414",
+   "admin": "南部町",
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "奥蓼科温泉郷",
+   "wikidata_id": "Q11446111",
+   "admin": "茅野市",
+   "classes": [
+    "温泉郷"
+   ]
+  },
+  {
+   "name": "奥香落温泉",
+   "wikidata_id": "Q11446181",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "女鹿平温泉",
+   "wikidata_id": "Q109601929",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "奴留湯温泉",
+   "wikidata_id": "Q11446622",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "妙高高原温泉郷",
+   "wikidata_id": "Q11447098",
+   "admin": "妙高市",
+   "classes": [
+    "温泉郷"
+   ]
+  },
+  {
+   "name": "妹背牛温泉",
+   "wikidata_id": "Q109599890",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "嬬恋バラギ温泉",
+   "wikidata_id": "Q11447807",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "嬬恋温泉",
+   "wikidata_id": "Q11447809",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "宇津江四十八滝温泉",
+   "wikidata_id": "Q109594803",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "守実温泉",
+   "wikidata_id": "Q21654969",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "守護陣温泉",
+   "wikidata_id": "Q109598827",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "安房温泉",
+   "wikidata_id": "Q109603943",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "室積温泉",
+   "wikidata_id": "Q109358515",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "宮之城温泉",
+   "wikidata_id": "Q11453232",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "宮内温泉",
+   "wikidata_id": "Q11453327",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "宮古島温泉",
+   "wikidata_id": "Q11453470",
+   "admin": "宮古島市",
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "宮山温泉",
+   "wikidata_id": "Q109594792",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "宮崎リゾート温泉",
+   "wikidata_id": "Q11454170",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "宮崎温泉",
+   "wikidata_id": "Q11454371",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "宮野温泉",
+   "wikidata_id": "Q11455326",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "寒河江温泉",
+   "wikidata_id": "Q11457426",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "寝待温泉",
+   "wikidata_id": "Q11457576",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "寿都温泉",
+   "wikidata_id": "Q11458364",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "小土肥温泉",
+   "wikidata_id": "Q109595940",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "小天橋温泉",
+   "wikidata_id": "Q11459582",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "小川温泉 (栃木県)",
+   "wikidata_id": "Q11460531",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "小森温泉",
+   "wikidata_id": "Q109598167",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "小泊温泉",
+   "wikidata_id": "Q109596959",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "小渡温泉",
+   "wikidata_id": "Q11462681",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "小野上温泉",
+   "wikidata_id": "Q65263941",
+   "admin": "渋川市",
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "小金湯温泉",
+   "wikidata_id": "Q11464345",
+   "admin": "小金湯",
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "尾上温泉",
+   "wikidata_id": "Q109598811",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "尾久温泉",
+   "wikidata_id": "Q85879745",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "屈斜路湖畔温泉郷",
+   "wikidata_id": "Q11465623",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "山の神温泉 (長野県)",
+   "wikidata_id": "Q11465804",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "山中湖温泉",
+   "wikidata_id": "Q108702377",
+   "admin": "南都留郡",
+   "classes": [
+    "温泉街",
+    "単純温泉"
+   ]
+  },
+  {
+   "name": "山田温泉 (埼玉県)",
+   "wikidata_id": "Q11470512",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "山神温泉",
+   "wikidata_id": "Q109602793",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "山香温泉",
+   "wikidata_id": "Q109599311",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "岩井戸温泉 (福島県)",
+   "wikidata_id": "Q11474059",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "岸本温泉",
+   "wikidata_id": "Q109598396",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "峐の湯温泉",
+   "wikidata_id": "Q11275389",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "川崎有馬温泉",
+   "wikidata_id": "Q109600772",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "布引温泉",
+   "wikidata_id": "Q136563021",
+   "admin": "小諸市",
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "布施温泉",
+   "wikidata_id": "Q109595950",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "常世温泉",
+   "wikidata_id": "Q109598475",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "幌加温泉",
+   "wikidata_id": "Q11481761",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "幕岩温泉",
+   "wikidata_id": "Q109595580",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "平取温泉",
+   "wikidata_id": "Q11482152",
+   "admin": "二風谷",
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "平山温泉",
+   "wikidata_id": "Q11482537",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "平潟港温泉",
+   "wikidata_id": "Q11483237",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "庄内温泉",
+   "wikidata_id": "Q86734806",
+   "admin": "由布市",
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "弁景温泉",
+   "wikidata_id": "Q11486941",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "弓ヶ浜温泉 (熊本県)",
+   "wikidata_id": "Q11487060",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "弥彦温泉",
+   "wikidata_id": "Q11487442",
+   "admin": "弥彦村",
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "強羅温泉",
+   "wikidata_id": "Q138028152",
+   "admin": "強羅",
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "志摩温泉郷",
+   "wikidata_id": "Q11490950",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "志賀の郷温泉",
+   "wikidata_id": "Q109602426",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "恵庭温泉",
+   "wikidata_id": "Q11492381",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "所田温泉",
+   "wikidata_id": "Q11496803",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "扉温泉",
+   "wikidata_id": "Q11496876",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "挾間温泉",
+   "wikidata_id": "Q86734809",
+   "admin": "由布市",
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "接岨峡温泉",
+   "wikidata_id": "Q109597128",
+   "admin": "川根本町",
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "政和温泉",
+   "wikidata_id": "Q11499072",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "敦賀トンネル温泉",
+   "wikidata_id": "Q11499531",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "新五箇山温泉",
+   "wikidata_id": "Q112624883",
+   "admin": "南砺市",
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "新冠温泉",
+   "wikidata_id": "Q11501421",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "新富温泉",
+   "wikidata_id": "Q109603060",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "新胎内温泉",
+   "wikidata_id": "Q109602405",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "於福温泉",
+   "wikidata_id": "Q11504401",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "日の出温泉",
+   "wikidata_id": "Q17225282",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "日乃出温泉",
+   "wikidata_id": "Q60997209",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "日向サンパーク温泉",
+   "wikidata_id": "Q11505096",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "日方江温泉",
+   "wikidata_id": "Q124301106",
+   "admin": "富山県",
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "日本三古湯",
+   "wikidata_id": "Q11507101",
+   "admin": null,
+   "classes": [
+    "温泉",
+    "名数3"
+   ]
+  },
+  {
+   "name": "日本三大美肌の湯",
+   "wikidata_id": "Q11507114",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "日本温泉地域学会",
+   "wikidata_id": "Q17214848",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "日田温泉",
+   "wikidata_id": "Q11509920",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "早乙女温泉",
+   "wikidata_id": "Q11511178",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "旭九十九里温泉",
+   "wikidata_id": "Q65270409",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "旭湯温泉",
+   "wikidata_id": "Q21652350",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "明宝温泉",
+   "wikidata_id": "Q109595702",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "明治温泉",
+   "wikidata_id": "Q52153468",
+   "admin": "茅野市",
+   "classes": [
+    "温泉",
+    "カーリービート"
+   ]
+  },
+  {
+   "name": "時間湯",
+   "wikidata_id": "Q11514485",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "曲水温泉",
+   "wikidata_id": "Q11515086",
+   "admin": "金沢市",
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "曽原の湯温泉",
+   "wikidata_id": "Q11515251",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "月夜野温泉",
+   "wikidata_id": "Q24864241",
+   "admin": "みなかみ町",
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "月野瀬温泉",
+   "wikidata_id": "Q11516237",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "有村温泉",
+   "wikidata_id": "Q11516488",
+   "admin": "有村町",
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "木城温泉",
+   "wikidata_id": "Q11518255",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "木戸池温泉",
+   "wikidata_id": "Q11518423",
+   "admin": "山ノ内町",
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "木花温泉",
+   "wikidata_id": "Q11519342",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "木賀温泉",
+   "wikidata_id": "Q138028157",
+   "admin": "箱根町",
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "本浦温泉",
+   "wikidata_id": "Q109602409",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "札幌温泉",
+   "wikidata_id": "Q28682740",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "東吉野温泉",
+   "wikidata_id": "Q11526310",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "東尋坊三国温泉",
+   "wikidata_id": "Q11354763",
+   "admin": "坂井市",
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "東温泉",
+   "wikidata_id": "Q11527997",
+   "admin": "三島村",
+   "classes": [
+    "温泉",
+    "野湯"
+   ]
+  },
+  {
+   "name": "東道後温泉郷",
+   "wikidata_id": "Q11528419",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "東郷温泉ゆったり館",
+   "wikidata_id": "Q11528537",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "松元平野岡体育館",
+   "wikidata_id": "Q11529280",
+   "admin": "鹿児島市",
+   "classes": [
+    "温泉",
+    "単純温泉"
+   ]
+  },
+  {
+   "name": "松島温泉",
+   "wikidata_id": "Q11530155",
+   "admin": "宮城県",
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "松島温泉 (栃木県)",
+   "wikidata_id": "Q11530154",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "松島温泉 (熊本県)",
+   "wikidata_id": "Q11530156",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "松葉川温泉",
+   "wikidata_id": "Q109598188",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "林温泉",
+   "wikidata_id": "Q109598676",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "柳沢温泉 (栃木県)",
+   "wikidata_id": "Q11534412",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "柳田温泉",
+   "wikidata_id": "Q109598867",
+   "admin": "能登町",
+   "classes": [
+    "温泉",
+    "硫酸塩泉"
+   ]
+  },
+  {
+   "name": "柴山温泉",
+   "wikidata_id": "Q109594808",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "根占温泉",
+   "wikidata_id": "Q109600088",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "根府川温泉",
+   "wikidata_id": "Q11536345",
+   "admin": "小田原市",
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "桜川温泉",
+   "wikidata_id": "Q109602397",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "植木温泉",
+   "wikidata_id": "Q11540525",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "楠温泉",
+   "wikidata_id": "Q11541245",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "横川温泉",
+   "wikidata_id": "Q11542715",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "横手駅前温泉",
+   "wikidata_id": "Q109600031",
+   "admin": "横手市",
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "比田温泉",
+   "wikidata_id": "Q109604694",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "水上温泉郷",
+   "wikidata_id": "Q11548229",
+   "admin": "みなかみ町",
+   "classes": [
+    "温泉郷"
+   ]
+  },
+  {
+   "name": "水橋温泉",
+   "wikidata_id": "Q86737582",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "氷見温泉郷",
+   "wikidata_id": "Q56348423",
+   "admin": "氷見市",
+   "classes": [
+    "温泉郷"
+   ]
+  },
+  {
+   "name": "江の島温泉",
+   "wikidata_id": "Q11550566",
+   "admin": "藤沢市",
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "河北温泉",
+   "wikidata_id": "Q85881841",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "油山温泉",
+   "wikidata_id": "Q109596972",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "洞爺月浦温泉",
+   "wikidata_id": "Q11555855",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "洞爺温泉",
+   "wikidata_id": "Q11555854",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "流山温泉",
+   "wikidata_id": "Q11556665",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "浜島温泉",
+   "wikidata_id": "Q11557659",
+   "admin": "浜島町浜島",
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "浜益温泉",
+   "wikidata_id": "Q11558035",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "浜頓別温泉",
+   "wikidata_id": "Q11558087",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "海潟温泉",
+   "wikidata_id": "Q11559051",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "淀江ゆめ温泉",
+   "wikidata_id": "Q109598389",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "深谷温泉",
+   "wikidata_id": "Q11560308",
+   "admin": "金沢市",
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "添沢温泉",
+   "wikidata_id": "Q11560423",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "温川温泉 (群馬県)",
+   "wikidata_id": "Q11562907",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "温泉および鉱泉の泉源",
+   "wikidata_id": "Q140447384",
+   "admin": null,
+   "classes": [
+    "熱水泉"
+   ]
+  },
+  {
+   "name": "温泉利用プログラム型健康増進施設",
+   "wikidata_id": "Q140447385",
+   "admin": null,
+   "classes": [
+    "熱水泉"
+   ]
+  },
+  {
+   "name": "湯ったり温泉",
+   "wikidata_id": "Q11563404",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "湯の島温泉",
+   "wikidata_id": "Q54824528",
+   "admin": "愛知県",
+   "classes": [
+    "温泉",
+    "炭酸水素塩泉"
+   ]
+  },
+  {
+   "name": "湯の平温泉（群馬県）　閉業",
+   "wikidata_id": "Q11563420",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "湯の洞温泉",
+   "wikidata_id": "Q136733744",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "湯ノ口温泉",
+   "wikidata_id": "Q11563435",
+   "admin": "熊野市",
+   "classes": [
+    "温泉",
+    "塩化物泉"
+   ]
+  },
+  {
+   "name": "湯ノ峠温泉",
+   "wikidata_id": "Q65272561",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "湯坂温泉",
+   "wikidata_id": "Q30934430",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "湯布院温泉郷",
+   "wikidata_id": "Q86732501",
+   "admin": "由布市",
+   "classes": [
+    "温泉郷"
+   ]
+  },
+  {
+   "name": "湯田中渋温泉郷",
+   "wikidata_id": "Q11563752",
+   "admin": "山ノ内町",
+   "classes": [
+    "温泉郷"
+   ]
+  },
+  {
+   "name": "湯端温泉",
+   "wikidata_id": "Q21655089",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "湯迫温泉",
+   "wikidata_id": "Q109598479",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "湯野温泉",
+   "wikidata_id": "Q11563807",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "満天望温泉",
+   "wikidata_id": "Q11563860",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "満願寺温泉",
+   "wikidata_id": "Q11563966",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "火の谷温泉",
+   "wikidata_id": "Q11566843",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "熊の湯温泉",
+   "wikidata_id": "Q11567809",
+   "admin": "山ノ内町",
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "熊入温泉",
+   "wikidata_id": "Q11567841",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "片倉温泉 (福島県)",
+   "wikidata_id": "Q11569535",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "牛岳温泉",
+   "wikidata_id": "Q109602467",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "犀川峡温泉",
+   "wikidata_id": "Q109595622",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "犬山温泉",
+   "wikidata_id": "Q109598984",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "猫鼻温泉",
+   "wikidata_id": "Q11572057",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "珊内ぬくもり温泉",
+   "wikidata_id": "Q109598246",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "珠洲温泉",
+   "wikidata_id": "Q126004396",
+   "admin": "珠洲市",
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "由宇温泉",
+   "wikidata_id": "Q109357916",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "甲斐大泉温泉",
+   "wikidata_id": "Q11577876",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "留寿都温泉",
+   "wikidata_id": "Q11578537",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "白久温泉",
+   "wikidata_id": "Q11579315",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "白子温泉",
+   "wikidata_id": "Q11579517",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "白寿の湯",
+   "wikidata_id": "Q11579528",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "白峰温泉",
+   "wikidata_id": "Q11579659",
+   "admin": "白山市",
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "白川温泉 (岐阜県)",
+   "wikidata_id": "Q11579735",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "白馬塩の道温泉",
+   "wikidata_id": "Q11580466",
+   "admin": "白馬村",
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "白鳥温泉",
+   "wikidata_id": "Q109594740",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "白鳥路温泉",
+   "wikidata_id": "Q109602369",
+   "admin": "金沢市",
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "百穴温泉",
+   "wikidata_id": "Q11580838",
+   "admin": "吉見町",
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "益子温泉",
+   "wikidata_id": "Q11581186",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "相間川温泉",
+   "wikidata_id": "Q11582459",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "相馬松川浦温泉",
+   "wikidata_id": "Q109598287",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "真木温泉",
+   "wikidata_id": "Q109605885",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "真狩温泉",
+   "wikidata_id": "Q11583310",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "碓氷温泉",
+   "wikidata_id": "Q97383629",
+   "admin": "安中市",
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "磯原温泉",
+   "wikidata_id": "Q109594758",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "磯部わたかの温泉",
+   "wikidata_id": "Q109601900",
+   "admin": "志摩市",
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "祝子川温泉",
+   "wikidata_id": "Q11588584",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "神の湯温泉",
+   "wikidata_id": "Q109602414",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "神恵内温泉",
+   "wikidata_id": "Q11589701",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "神明温泉",
+   "wikidata_id": "Q109600009",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "神白温泉",
+   "wikidata_id": "Q109599852",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "神通温泉",
+   "wikidata_id": "Q11590914",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "神野温泉",
+   "wikidata_id": "Q11590977",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "神鍋温泉",
+   "wikidata_id": "Q17209709",
+   "admin": "豊岡市",
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "福知山温泉",
+   "wikidata_id": "Q109598256",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "秋穂温泉",
+   "wikidata_id": "Q109358514",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "秦野温泉",
+   "wikidata_id": "Q11596088",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "秩父七湯",
+   "wikidata_id": "Q11596107",
+   "admin": null,
+   "classes": [
+    "温泉",
+    "名数7"
+   ]
+  },
+  {
+   "name": "秩父温泉",
+   "wikidata_id": "Q21653571",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "稲武夏焼温泉",
+   "wikidata_id": "Q11596680",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "積丹温泉",
+   "wikidata_id": "Q11597126",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "立岩海底温泉",
+   "wikidata_id": "Q109598018",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "竹田温泉群",
+   "wikidata_id": "Q30922458",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "笹戸温泉",
+   "wikidata_id": "Q11602593",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "箱根湯本温泉",
+   "wikidata_id": "Q138028130",
+   "admin": "湯本",
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "紀州黒潮温泉",
+   "wikidata_id": "Q111219521",
+   "admin": "和歌山市",
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "紫尾温泉",
+   "wikidata_id": "Q11605708",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "綾温泉",
+   "wikidata_id": "Q11607316",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "美利河温泉",
+   "wikidata_id": "Q10479777",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "美合温泉",
+   "wikidata_id": "Q109598457",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "美杉温泉",
+   "wikidata_id": "Q11609120",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "胡桃島温泉",
+   "wikidata_id": "Q109600901",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "能勢温泉",
+   "wikidata_id": "Q109602410",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "船原温泉",
+   "wikidata_id": "Q109596811",
+   "admin": "伊豆市",
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "芦ノ湖温泉",
+   "wikidata_id": "Q138028161",
+   "admin": "箱根町",
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "花山温泉",
+   "wikidata_id": "Q11615278",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "花巻温泉郷",
+   "wikidata_id": "Q11615378",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "花白温泉",
+   "wikidata_id": "Q109602796",
+   "admin": "恵那市",
+   "classes": [
+    "温泉",
+    "日帰り入浴施設"
+   ]
+  },
+  {
+   "name": "苫田温泉",
+   "wikidata_id": "Q11616848",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "荒川峡温泉郷",
+   "wikidata_id": "Q11618557",
+   "admin": "関川村",
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "荒川温泉 (長崎県)",
+   "wikidata_id": "Q11618597",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "荒湯 (湯村温泉)",
+   "wikidata_id": "Q138571594",
+   "admin": "新温泉町",
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "荻の里温泉",
+   "wikidata_id": "Q11618945",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "華咲の湯",
+   "wikidata_id": "Q11620051",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "葭之池温泉",
+   "wikidata_id": "Q109597031",
+   "admin": "富士吉田市",
+   "classes": [
+    "温泉",
+    "日帰り入浴施設"
+   ]
+  },
+  {
+   "name": "蒲原温泉",
+   "wikidata_id": "Q11621275",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "蓼科温泉郷",
+   "wikidata_id": "Q111426459",
+   "admin": "茅野市",
+   "classes": [
+    "温泉郷"
+   ]
+  },
+  {
+   "name": "蔵王開拓温泉",
+   "wikidata_id": "Q11621955",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "薄別温泉",
+   "wikidata_id": "Q11622150",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "薬師湯温泉",
+   "wikidata_id": "Q109600053",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "藤和那須リゾート",
+   "wikidata_id": "Q11623683",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "虎杖浜温泉",
+   "wikidata_id": "Q11625293",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "蛇王鉱泉 咲乃湯",
+   "wikidata_id": "Q54824300",
+   "admin": "長野県",
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "蟠渓温泉",
+   "wikidata_id": "Q11625850",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "西吉野温泉",
+   "wikidata_id": "Q11627408",
+   "admin": "五條市",
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "西表島温泉",
+   "wikidata_id": "Q11629495",
+   "admin": "高那",
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "計石温泉",
+   "wikidata_id": "Q109594752",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "谷地頭温泉",
+   "wikidata_id": "Q11632789",
+   "admin": "函館市",
+   "classes": [
+    "温泉",
+    "日帰り入浴施設"
+   ]
+  },
+  {
+   "name": "豊平峡温泉",
+   "wikidata_id": "Q11633673",
+   "admin": "南区",
+   "classes": [
+    "温泉",
+    "露天風呂",
+    "日帰り入浴施設"
+   ]
+  },
+  {
+   "name": "豊浦温泉",
+   "wikidata_id": "Q11633942",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "豊科温泉",
+   "wikidata_id": "Q11634189",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "象潟温泉",
+   "wikidata_id": "Q11634367",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "財田温泉",
+   "wikidata_id": "Q11634635",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "赤川温泉",
+   "wikidata_id": "Q11635581",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "赤川温泉 (秋田県)",
+   "wikidata_id": "Q11635580",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "赤見温泉",
+   "wikidata_id": "Q30929264",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "越谷温泉",
+   "wikidata_id": "Q109599962",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "足尾温泉",
+   "wikidata_id": "Q54824276",
+   "admin": "栃木県",
+   "classes": [
+    "温泉",
+    "単純温泉"
+   ]
+  },
+  {
+   "name": "輪島温泉",
+   "wikidata_id": "Q11637711",
+   "admin": "輪島市",
+   "classes": [
+    "温泉郷"
+   ]
+  },
+  {
+   "name": "近江温泉",
+   "wikidata_id": "Q11638500",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "道後温泉郷",
+   "wikidata_id": "Q11641714",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "郡上温泉",
+   "wikidata_id": "Q109594798",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "郡山温泉",
+   "wikidata_id": "Q11643189",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "重富温泉",
+   "wikidata_id": "Q11644745",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "野迫川温泉",
+   "wikidata_id": "Q109600741",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "釜戸温泉",
+   "wikidata_id": "Q109595707",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "鈴鹿さつき温泉",
+   "wikidata_id": "Q11649467",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "鈴鹿サーキット温泉",
+   "wikidata_id": "Q11649473",
+   "admin": "鈴鹿市",
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "銭がめ温泉",
+   "wikidata_id": "Q11650243",
+   "admin": "金沢市",
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "鍋田川温泉",
+   "wikidata_id": "Q11650722",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "長万部温泉",
+   "wikidata_id": "Q11651392",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "長嶺温泉",
+   "wikidata_id": "Q86744065",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "長門峡温泉",
+   "wikidata_id": "Q109363824",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "門別温泉",
+   "wikidata_id": "Q11654951",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "阿児温泉",
+   "wikidata_id": "Q11657265",
+   "admin": "志摩市",
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "阿尾の浦温泉",
+   "wikidata_id": "Q109597089",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "阿知須温泉",
+   "wikidata_id": "Q124692187",
+   "admin": "山口県",
+   "classes": [
+    "温泉",
+    "地理的位置"
+   ]
+  },
+  {
+   "name": "阿蘇温泉郷",
+   "wikidata_id": "Q11657655",
+   "admin": "熊本県",
+   "classes": [
+    "温泉",
+    "硫酸塩泉",
+    "硫黄泉"
+   ]
+  },
+  {
+   "name": "霧島神宮温泉",
+   "wikidata_id": "Q11660898",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "静内温泉",
+   "wikidata_id": "Q11662877",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "鞆の浦温泉",
+   "wikidata_id": "Q11663863",
+   "admin": "福山市",
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "音戸温泉",
+   "wikidata_id": "Q109596958",
+   "admin": null,
+   "classes": [
+    "塩化物泉"
+   ]
+  },
+  {
+   "name": "風の国温泉",
+   "wikidata_id": "Q11665331",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "飛島温泉",
+   "wikidata_id": "Q11665769",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "飛騨にゅうかわ温泉",
+   "wikidata_id": "Q109594806",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "飛騨古川桃源郷温泉",
+   "wikidata_id": "Q109598477",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "飛騨高山温泉",
+   "wikidata_id": "Q109600658",
+   "admin": "高山市",
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "飯岡温泉",
+   "wikidata_id": "Q109597241",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "香住温泉",
+   "wikidata_id": "Q11667139",
+   "admin": "美方郡",
+   "classes": [
+    "温泉",
+    "単純温泉"
+   ]
+  },
+  {
+   "name": "香椎温泉",
+   "wikidata_id": "Q11667649",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "馬狩・地球の聲温泉",
+   "wikidata_id": "Q109595700",
+   "admin": "白川村",
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "馬頭温泉郷",
+   "wikidata_id": "Q11668118",
+   "admin": "那珂川町",
+   "classes": [
+    "温泉",
+    "単純温泉"
+   ]
+  },
+  {
+   "name": "高千穂温泉",
+   "wikidata_id": "Q11668883",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "高屋温泉",
+   "wikidata_id": "Q109594739",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "高根沢温泉",
+   "wikidata_id": "Q11670646",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "高槻樫田温泉",
+   "wikidata_id": "Q11670835",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "高田温泉",
+   "wikidata_id": "Q109598468",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "高窪温泉",
+   "wikidata_id": "Q109366021",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "高野温泉",
+   "wikidata_id": "Q11673112",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "高鍋温泉",
+   "wikidata_id": "Q11673176",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "鬼押温泉",
+   "wikidata_id": "Q109594754",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "鰻温泉",
+   "wikidata_id": "Q11674343",
+   "admin": "山川成川",
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "鳳来ゆーゆーありーな",
+   "wikidata_id": "Q54838598",
+   "admin": "愛知県",
+   "classes": [
+    "温泉",
+    "塩化物泉"
+   ]
+  },
+  {
+   "name": "鳴き砂温泉",
+   "wikidata_id": "Q109299456",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "鳴子温泉郷",
+   "wikidata_id": "Q11675322",
+   "admin": "宮城県",
+   "classes": [
+    "温泉郷"
+   ]
+  },
+  {
+   "name": "鳴滝温泉",
+   "wikidata_id": "Q11675392",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "鴨川温泉郷",
+   "wikidata_id": "Q60996529",
+   "admin": "鴨川市",
+   "classes": [
+    "温泉郷"
+   ]
+  },
+  {
+   "name": "鶴ヶ浜温泉",
+   "wikidata_id": "Q11675887",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "鶴舞温泉",
+   "wikidata_id": "Q56347393",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "鹿之湯温泉",
+   "wikidata_id": "Q109603317",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "鹿児島市街地の温泉",
+   "wikidata_id": "Q11676679",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "麻布十番温泉",
+   "wikidata_id": "Q11677478",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "黄波戸温泉",
+   "wikidata_id": "Q11677789",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "黒石温泉郷",
+   "wikidata_id": "Q11678747",
+   "admin": null,
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "黒部川明日温泉",
+   "wikidata_id": "Q97342137",
+   "admin": "入善町",
+   "classes": [
+    "温泉"
+   ]
+  },
+  {
+   "name": "龍河温泉",
+   "wikidata_id": "Q109598420",
+   "admin": "香美市",
+   "classes": [
+    "温泉"
+   ]
+  }
+ ],
+ "wikidata_classes": {
+  "温泉": 410,
+  "温泉郷": 17,
+  "単純温泉": 6,
+  "塩化物泉": 4,
+  "日帰り入浴施設": 4,
+  "炭酸水素塩泉": 3,
+  "熱水泉": 3,
+  "硫酸塩泉": 3,
+  "名数8": 1,
+  "日本の百選": 1,
+  "温泉街": 1,
+  "名数3": 1,
+  "カーリービート": 1,
+  "野湯": 1,
+  "名数7": 1,
+  "露天風呂": 1,
+  "地理的位置": 1,
+  "硫黄泉": 1
+ }
+}

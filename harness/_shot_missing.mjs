@@ -1,0 +1,20 @@
+import { chromium } from 'playwright';
+import { createServer } from 'node:http';
+import { readFile } from 'node:fs/promises';
+import { extname, join } from 'node:path';
+const T={'.html':'text/html','.js':'text/javascript','.css':'text/css','.json':'application/json','.geojson':'application/json','.png':'image/png','.svg':'image/svg+xml','.ico':'image/x-icon','.txt':'text/plain'};
+const server=createServer(async(req,res)=>{try{let p=decodeURIComponent(new URL(req.url,'http://x').pathname);if(p.endsWith('/'))p+='index.html';const b=await readFile(join('out',p));res.writeHead(200,{'content-type':T[extname(p)]??'application/octet-stream'});res.end(b);}catch{res.writeHead(404);res.end('x');}});
+await new Promise(r=>server.listen(0,'127.0.0.1',r));
+const base=`http://127.0.0.1:${server.address().port}`;
+const b=await chromium.launch();
+const page=await b.newPage({viewport:{width:1280,height:1000}});
+await page.goto(base+'/missing/',{waitUntil:'domcontentloaded'});
+await page.waitForTimeout(800);
+await page.screenshot({path:'harness/shots/missing_top.png'});
+// 一覧の途中も見る
+await page.evaluate(()=>window.scrollTo(0,1400));
+await page.waitForTimeout(300);
+await page.screenshot({path:'harness/shots/missing_list.png'});
+const m=await page.evaluate(()=>({h:document.documentElement.scrollHeight, li:document.querySelectorAll('.name-list li').length}));
+console.log('高さ', m.h, 'px / 名前', m.li);
+await b.close(); server.close();
