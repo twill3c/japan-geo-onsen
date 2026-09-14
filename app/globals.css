@@ -261,6 +261,30 @@ main {
 .name-list li { break-inside: avoid; margin: 0 0 2px; }
 .name-list .hint { font-size: 11px; color: var(--muted); }
 
+/* 地域比較(設計書 §58)。地域を列に並べる。割合は数字と単色の棒で出す(色の区分に頼らない) */
+.prose.wide { max-width: 1100px; }
+.region-controls { display: flex; gap: 16px; flex-wrap: wrap; margin: 12px 0; font-size: 13px; }
+.region-controls select { font: inherit; font-size: 13px; padding: 1px 4px; }
+.region-table { font-size: 12.5px; }
+.region-table th, .region-table td { padding: 4px 8px; }
+.region-table thead th { white-space: nowrap; }
+.region-table tbody th { font-weight: 500; color: var(--muted); white-space: nowrap; }
+.region-table .num { text-align: right; font-variant-numeric: tabular-nums; }
+.region-table .small { font-size: 11px; color: var(--muted); }
+.region-table tr.group th { background: #efece5; color: var(--ink); font-weight: 600; text-align: left; }
+/* 狭い画面では表を横にスクロールする。行見出しの列を固定しないと、右の地域を見るときに
+   何の行か分からなくなる(390px で撮影して確認)。区切りの行は固定しない(全幅のため) */
+.region-table tbody tr:not(.group) th,
+.region-table thead th:first-child {
+  position: sticky; left: 0; z-index: 1; background: var(--bg);
+  box-shadow: 1px 0 0 var(--line);
+}
+.region-table .remove {
+  border: none; background: none; color: var(--muted); cursor: pointer; font-size: 13px; margin-left: 4px;
+}
+.region-bar { display: block; height: 4px; background: #ece7dd; border-radius: 2px; margin-top: 2px; }
+.region-bar > span { display: block; height: 100%; background: var(--accent); border-radius: 2px; }
+
 /* ---- 図と統計 ---- */
 .prose h3 { font-size: 13.5px; margin: 18px 0 4px; }
 .prose .hint { font-size: 12px; color: var(--muted); margin: 4px 0; }

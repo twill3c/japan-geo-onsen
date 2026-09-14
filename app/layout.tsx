@@ -19,6 +19,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <a href="/">地図</a>
             <a href="/stats/">温泉と地理環境</a>
             <a href="/onsen-stats/">温泉の統計</a>
+            <a href="/regions/">地域を比べる</a>
             <a href="/missing/">地図に出せない温泉</a>
             <a href="/about/">データと出典</a>
           </nav>

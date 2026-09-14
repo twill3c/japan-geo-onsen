@@ -450,6 +450,31 @@ async function main() {
     if (wantShots) await page.screenshot({ path: 'harness/shots/onsen-stats.png', fullPage: true });
 
     /* ---------- 出典画面 ---------- */
+    // 地域比較(設計書 §58)。表は regions.json を読んでから出るので、出るまで待つ
+    await page.goto(`${base}/regions/`, { waitUntil: 'domcontentloaded' });
+    let regionTable = false;
+    try {
+      await page.waitForSelector('.region-table', { timeout: 20000 });
+      regionTable = true;
+    } catch { /* 下の check で不合格になる */ }
+    check(regionTable, '地域比較の表が出る');
+    if (regionTable) {
+      const heads = await page.locator('.region-table thead th').allInnerTexts();
+      const want = ['八ヶ岳', '富士山', '箱根', '草津', '別府'];
+      check(want.every((w) => heads.some((h) => h.includes(w))), '設計書の 5 地域が列に並ぶ', heads.join('/'));
+      const rt = await page.locator('main').innerText();
+      check(/境界を定めていません/.test(rt), '地域の境界を推測しないと書かれている');
+      check(/円が重なっている組があります/.test(rt), '円の重なりを注記している');
+      check(/足していません/.test(rt), '出所ごとの点を足さないと書かれている');
+      // 気象庁の火山を足すと列が 1 つ増える
+      const before = heads.length;
+      await page.locator('.region-controls select').nth(1).selectOption({ index: 1 });
+      const after = await page.locator('.region-table thead th').count();
+      check(after === before + 1, `活火山を基準点に足すと列が増える(${before - 1} → ${after - 1})`);
+      bad = await overflowing(page);
+      check(bad.length === 0, '地域比較の画面に横のはみ出しが無い', bad.join(' / '));
+    }
+
     // 地図に出せない温泉の一覧(名前は分かるが位置が公開データに無いもの)
     await page.goto(`${base}/missing/`, { waitUntil: 'domcontentloaded' });
     const ms = await page.locator('main').innerText();
