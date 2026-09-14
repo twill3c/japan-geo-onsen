@@ -1,0 +1,81 @@
+{
+ "note": "P12 に登録された地点が温泉の分類かどうかを当てるための表。負例は『温泉が無い場所』ではない(設計書 §33)",
+ "rows": 2640,
+ "positives": 1320,
+ "negatives": 1320,
+ "columns": [
+  {
+   "name": "point_id",
+   "description": ""
+  },
+  {
+   "name": "label",
+   "description": "1 = P12 の温泉 / 0 = P12 の温泉以外の観光資源(温泉が無い場所ではない)"
+  },
+  {
+   "name": "prefecture",
+   "description": "都道府県(特徴量ではなく検証の分割に使う群)"
+  },
+  {
+   "name": "elevation_m",
+   "description": "標高 m(国土地理院 標高タイル z14)"
+  },
+  {
+   "name": "slope_deg",
+   "description": "傾斜 度(Horn 法)"
+  },
+  {
+   "name": "local_relief_m",
+   "description": "局所起伏 m(±16 画素の最大−最小)"
+  },
+  {
+   "name": "distance_to_volcano_km",
+   "description": "最寄りの活火山までの距離 km(気象庁 111)"
+  },
+  {
+   "name": "distance_to_river_km",
+   "description": "最寄りの河川までの距離 km(国土数値情報 W05 全区間)"
+  },
+  {
+   "name": "distance_to_lake_km",
+   "description": "最寄りの湖沼までの距離 km(国土数値情報 W09)"
+  },
+  {
+   "name": "vegetation_naturalness",
+   "description": "植生自然度 1〜10(環境省 第5回基礎調査。98/99/00 は欠測)"
+  },
+  {
+   "name": "geology_group",
+   "description": "地質の大区分(産総研 シームレス地質図V2)"
+  }
+ ],
+ "missing": {
+  "elevation_m": 11,
+  "slope_deg": 20,
+  "local_relief_m": 11,
+  "distance_to_volcano_km": 0,
+  "distance_to_river_km": 0,
+  "distance_to_lake_km": 4,
+  "vegetation_naturalness": 171,
+  "geology_group": 74
+ },
+ "excluded_as_leaky": [
+  "address",
+  "category_code",
+  "city_code",
+  "kind_name",
+  "matched_by",
+  "name",
+  "name_has_onsen",
+  "onsen_id",
+  "prefecture",
+  "prefecture_code",
+  "provenance",
+  "source_id",
+  "surroundings"
+ ],
+ "not_available": [
+  "断層(未取り込み)",
+  "泉温・湧出量・泉質(地点別の公開データが無い)"
+ ]
+}

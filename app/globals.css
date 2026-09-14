@@ -43,7 +43,10 @@ a { color: var(--accent); }
   background: var(--panel);
 }
 .site-header h1 { font-size: 16px; margin: 0; letter-spacing: .02em; }
-.site-header nav { display: flex; gap: 12px; font-size: 13px; }
+.site-header nav { display: flex; flex-wrap: wrap; gap: 4px 12px; font-size: 13px; }
+/* 項目が増えて 390px で「温泉と地/理環境」のように語の途中で折れた(撮影で確認)。
+   リンクの中では折らず、リンク単位で次の行へ送る */
+.site-header nav a { white-space: nowrap; }
 .site-header .sub { color: var(--muted); font-size: 12px; }
 
 .disclaimer {
@@ -284,6 +287,21 @@ main {
 }
 .region-bar { display: block; height: 4px; background: #ece7dd; border-radius: 2px; margin-top: 2px; }
 .region-bar > span { display: block; height: 100%; background: var(--accent); border-radius: 2px; }
+
+/* AI の結果(設計書 §31/§35/§36)。免責は目立たせて上下に置く */
+.ai-disclaimer {
+  border: 1px solid #f0d9c0; background: #fff7ed; color: #7c3a12;
+  padding: 8px 12px; border-radius: 4px; font-size: 13px; font-weight: 600;
+}
+.ai-table { font-size: 12.5px; }
+.ai-table .num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.ai-table .small { font-size: 11px; color: var(--muted); }
+.ai-table tr.best td { background: #fbf6ee; }
+.ai-table th { white-space: nowrap; font-weight: 500; }
+.ai-table .bar-cell { width: 40%; min-width: 80px; }
+/* 390px で「通過」「G-22a」「都道府県分割」が 1 字ずつ縦に折れた。短い欄は折らない */
+.ai-gates td:first-child, .ai-gates td:nth-child(3), .ai-gates td:last-child { white-space: nowrap; }
+.ai-table td:nth-child(2) { white-space: nowrap; }
 
 /* ---- 図と統計 ---- */
 .prose h3 { font-size: 13.5px; margin: 18px 0 4px; }

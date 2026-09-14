@@ -1,0 +1,181 @@
+{
+ "question": "P12 に登録された地点が『温泉』の分類か、温泉以外の観光資源か(負例は温泉が無い場所ではない)",
+ "preregistration": "docs/ai_preregistration.md",
+ "preregistration_sha256": "129877d8f36b85b702957e29160680e92180eff45bb0248c4dd1479aa01d7e69",
+ "seed": 20260915,
+ "n_splits": 5,
+ "rows": 2640,
+ "positives": 1320,
+ "negatives": 1320,
+ "prefectures": 37,
+ "features": [
+  "elevation_m",
+  "slope_deg",
+  "local_relief_m",
+  "distance_to_volcano_km",
+  "distance_to_river_km",
+  "distance_to_lake_km",
+  "vegetation_naturalness",
+  "geology_group"
+ ],
+ "versions": {
+  "scikit-learn": "1.9.1",
+  "xgboost": "3.4.1",
+  "numpy": "2.5.3"
+ },
+ "models": {
+  "logistic": {
+   "label": "Logistic Regression",
+   "grouped": {
+    "accuracy": 0.621969696969697,
+    "precision": 0.6269716088328076,
+    "recall": 0.6022727272727273,
+    "f1": 0.6143740340030912,
+    "roc_auc": 0.6496570821854913,
+    "pr_auc": 0.6295948479056086
+   },
+   "random": {
+    "accuracy": 0.6208333333333333,
+    "precision": 0.6291497975708502,
+    "recall": 0.5886363636363636,
+    "f1": 0.6082191780821918,
+    "roc_auc": 0.6574185032139577,
+    "pr_auc": 0.6383146567182933
+   },
+   "hyperparameters": {
+    "max_iter": 2000,
+    "C": 1.0,
+    "standardize": true
+   }
+  },
+  "random_forest": {
+   "label": "Random Forest",
+   "grouped": {
+    "accuracy": 0.6397727272727273,
+    "precision": 0.6513535684987695,
+    "recall": 0.6015151515151516,
+    "f1": 0.6254430878298542,
+    "roc_auc": 0.6863122704315885,
+    "pr_auc": 0.6709977545255705
+   },
+   "random": {
+    "accuracy": 0.6636363636363637,
+    "precision": 0.6682242990654206,
+    "recall": 0.65,
+    "f1": 0.6589861751152074,
+    "roc_auc": 0.7166632231404958,
+    "pr_auc": 0.706612244739635
+   },
+   "hyperparameters": {
+    "n_estimators": 500,
+    "min_samples_leaf": 2,
+    "random_state": 20260915
+   }
+  },
+  "xgboost": {
+   "label": "XGBoost",
+   "grouped": {
+    "accuracy": 0.6272727272727273,
+    "precision": 0.6302325581395349,
+    "recall": 0.615909090909091,
+    "f1": 0.6229885057471264,
+    "roc_auc": 0.6770767332415059,
+    "pr_auc": 0.6650861722398982
+   },
+   "random": {
+    "accuracy": 0.6541666666666667,
+    "precision": 0.6547528517110266,
+    "recall": 0.6522727272727272,
+    "f1": 0.6535104364326376,
+    "roc_auc": 0.7051492194674013,
+    "pr_auc": 0.694357789438547
+   },
+   "hyperparameters": {
+    "n_estimators": 400,
+    "max_depth": 4,
+    "learning_rate": 0.05,
+    "subsample": 0.8,
+    "colsample_bytree": 0.8,
+    "random_state": 20260915
+   }
+  }
+ },
+ "best_model": "random_forest",
+ "baselines": {
+  "constant": {
+   "grouped_roc_auc": 0.5
+  },
+  "single_feature": {
+   "elevation_m": 0.5738039485766759,
+   "slope_deg": 0.5899939738292012,
+   "local_relief_m": 0.6240183080808082,
+   "distance_to_volcano_km": 0.5347856404958677,
+   "distance_to_river_km": 0.6202806473829201,
+   "distance_to_lake_km": 0.5215782828282828,
+   "vegetation_naturalness": 0.5903879706152434
+  },
+  "best_single_feature": {
+   "feature": "local_relief_m",
+   "grouped_roc_auc": 0.6240183080808082
+  }
+ },
+ "negative_control": {
+  "method": "都道府県の中でラベルを無作為に入れ替えて同じ手順で学習",
+  "roc_auc": 0.4752794995408632
+ },
+ "gates": {
+  "G-22a": {
+   "rule": "最良モデルの都道府県分割 ROC-AUC ≥ 0.65",
+   "value": 0.6863122704315885,
+   "passed": true
+  },
+  "G-22b": {
+   "rule": "最強の 1 変数ベースラインより +0.02 以上",
+   "value": 0.06229396235078033,
+   "passed": true
+  },
+  "G-22c": {
+   "rule": "陰性対照の ROC-AUC が 0.45〜0.55",
+   "value": 0.4752794995408632,
+   "passed": true
+  }
+ },
+ "permutation_importance": {
+  "model": "random_forest",
+  "metric": "ROC-AUC の落ち幅(都道府県分割の検証側・5 回)",
+  "features": {
+   "elevation_m": {
+    "mean": 0.008002563128161135,
+    "sd": 0.008416818899279081
+   },
+   "slope_deg": {
+    "mean": 0.013261840828768374,
+    "sd": 0.006680513358717039
+   },
+   "local_relief_m": {
+    "mean": 0.0652990582003744,
+    "sd": 0.016258111100360226
+   },
+   "distance_to_volcano_km": {
+    "mean": 0.00833472837344674,
+    "sd": 0.008147216693057877
+   },
+   "distance_to_river_km": {
+    "mean": 0.08041693218543124,
+    "sd": 0.02612869964618491
+   },
+   "distance_to_lake_km": {
+    "mean": -0.0036044977861811535,
+    "sd": 0.006820610701302399
+   },
+   "vegetation_naturalness": {
+    "mean": 0.02509914037922621,
+    "sd": 0.010862282295835865
+   },
+   "geology_group": {
+    "mean": 0.004009679734654461,
+    "sd": 0.006127246356760748
+   }
+  }
+ }
+}

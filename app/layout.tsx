@@ -21,6 +21,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <a href="/onsen-stats/">温泉の統計</a>
             <a href="/regions/">地域を比べる</a>
             <a href="/missing/">地図に出せない温泉</a>
+            <a href="/ai/">AI</a>
             <a href="/about/">データと出典</a>
           </nav>
           <span className="sub">地形・地質・火山・水・温泉を重ねて読む</span>

@@ -475,6 +475,20 @@ async function main() {
       check(bad.length === 0, '地域比較の画面に横のはみ出しが無い', bad.join(' / '));
     }
 
+    // AI(設計書 Phase 4〜5)。免責(§36)の文言がそのまま出て、禁じた表現を使っていないこと
+    await page.goto(`${base}/ai/`, { waitUntil: 'domcontentloaded' });
+    const at = await page.locator('main').innerText();
+    check(at.includes('この結果は公開データから学習した統計モデルによる推定です。温泉の存在・泉質・湧出量を保証するものではありません。'),
+      'AI の免責(設計書 §36)が文言どおり出ている');
+    check(!/掘れば/.test(at), 'AI の画面で「掘れば」という表現を使っていない');
+    check(/温泉が湧くか」ではなく/.test(at), 'AI が当てているのは温泉の存在ではないと書かれている');
+    const gateRows = await page.locator('main table').first().locator('tbody tr').count();
+    check(gateRows === 3, `事前登録した合否が 3 行並ぶ(${gateRows})`);
+    check(/Logistic Regression/.test(at) && /Random Forest/.test(at) && /XGBoost/.test(at), '3 つのモデルが並ぶ');
+    check(/陰性対照/.test(at), '陰性対照の結果が書かれている');
+    bad = await overflowing(page);
+    check(bad.length === 0, 'AI の画面に横のはみ出しが無い', bad.join(' / '));
+
     // 地図に出せない温泉の一覧(名前は分かるが位置が公開データに無いもの)
     await page.goto(`${base}/missing/`, { waitUntil: 'domcontentloaded' });
     const ms = await page.locator('main').innerText();
