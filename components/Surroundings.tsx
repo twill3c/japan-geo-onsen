@@ -9,13 +9,13 @@
  */
 import { useEffect, useState } from 'react';
 
-type Doc = {
+export type Doc = {
   radii_km: number[];
   columns: string[];
   rows: Record<string, number[][]>;
 };
 
-const FILE_OF: Record<string, string> = {
+export const FILE_OF: Record<string, string> = {
   'ksj-p12': 'onsen',
   wikidata: 'onsen_wikidata',
   'wikidata-facility': 'onsen_facility',
@@ -24,7 +24,7 @@ const FILE_OF: Record<string, string> = {
 
 const cache = new Map<string, Promise<Doc | null>>();
 
-function load(name: string): Promise<Doc | null> {
+export function load(name: string): Promise<Doc | null> {
   let p = cache.get(name);
   if (!p) {
     p = fetch(`/data/surroundings/${name}.json`)

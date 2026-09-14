@@ -255,6 +255,52 @@ async function main() {
       }
     }
 
+    // 温泉比較(設計書 §57)。詳細から「比べる」を押し、別の温泉をクリックして表が出るまで見る
+    const cmpBtn = page.getByText('この温泉を別の温泉と比べる');
+    const hasCmp = (await cmpBtn.count()) > 0;
+    check(hasCmp, '温泉の詳細に「比べる」がある');
+    if (hasCmp) {
+      await cmpBtn.first().click();
+      const picked = await page.evaluate(() => {
+        const m = window.__map;
+        const a = document.querySelector('.compare-panel')?.textContent ?? '';
+        const fs = m.queryRenderedFeatures({ layers: ['onsen'] });
+        // A と違う名前の点を B に選ぶ
+        const f = fs.find((x) => x.properties?.name && !a.includes(String(x.properties.name)));
+        if (!f) return false;
+        const p = m.project(f.geometry.coordinates);
+        const r = m.getCanvas().getBoundingClientRect();
+        m.getCanvas().dispatchEvent(new MouseEvent('click', { bubbles: true, clientX: p.x + r.left, clientY: p.y + r.top }));
+        return true;
+      });
+      let shown = false;
+      if (picked) {
+        try {
+          await page.waitForSelector('.compare-panel .compare-table', { timeout: 15000 });
+          shown = true;
+        } catch { /* 下の check で不合格になる */ }
+      }
+      check(shown, '別の温泉をクリックすると比較表が出る');
+      if (shown) {
+        const ct = await page.locator('.compare-panel').innerText();
+        // 設計書の表の行が並び、泉温などは両列とも「公開データに無い」
+        check(/標高/.test(ct) && /火山距離/.test(ct) && /河川距離/.test(ct), '比較表に設計書の行が並ぶ');
+        // 無い行は A・B をまたぐ 1 欄にまとめてある。行の名前ごとに確かめる
+        const naRows = await page.evaluate(() => [...document.querySelectorAll('.compare-table tr.unavailable')]
+          .map((tr) => `${tr.querySelector('th')?.textContent}:${tr.querySelector('td')?.textContent}`));
+        const wantNa = ['泉温', '湧出量', 'pH', '泉質'];
+        check(wantNa.every((k) => naRows.some((r) => r.startsWith(`${k}:`) && r.includes('公開データに無い'))),
+          `泉温・湧出量・pH・泉質が A・B とも「公開データに無い」(${naRows.length} 行)`);
+        check(/この温泉の値ではありません/.test(ct), '都道府県の集計を参考として分けている');
+        const over = await page.evaluate(() => {
+          const el = document.querySelector('.compare-panel');
+          return el ? el.scrollWidth > el.clientWidth + 1 : true;
+        });
+        check(!over, '比較パネルに横のはみ出しが無い');
+      }
+      await page.locator('.compare-panel .close').click().catch(() => {});
+    }
+
     // 入浴施設の層(第三の層)。全国 108 点しかないので、**その場所へ寄ってから**数える。
     // 発端になった「ほったらかし温泉」が実際に出ることを、名前で確かめる。
     const fac = await page.evaluate(async () => {

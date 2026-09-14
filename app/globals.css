@@ -223,6 +223,22 @@ main {
 .surroundings details { margin-top: 6px; font-size: 12px; }
 .surroundings summary { cursor: pointer; color: var(--accent); }
 
+/* 温泉比較(設計書 §57)。2 列を並べるので詳細パネルより広く取る */
+.compare-panel { width: 460px; }
+.compare-table { font-size: 12px; }
+.compare-table th, .compare-table td { padding: 3px 5px; }
+.compare-panel .compare-table th { width: auto; }
+.compare-table thead th { color: var(--ink); font-weight: 600; }
+.compare-table tbody th { color: var(--muted); font-weight: 500; white-space: nowrap; }
+.compare-table .num { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.compare-table tr.unavailable td { color: #a09a90; }
+.compare-actions { margin: 0 0 8px; }
+.compare-actions button {
+  font: inherit; font-size: 12px; padding: 3px 10px; cursor: pointer;
+  border: 1px solid var(--line); border-radius: 4px; background: #faf8f4; color: var(--accent);
+}
+.compare-actions button:hover { background: #f3eee6; }
+
 @media (max-width: 760px) {
   /* 画面が狭いときは縦に積んでページごとスクロールさせる */
   body.map-mode { height: auto; overflow: visible; }

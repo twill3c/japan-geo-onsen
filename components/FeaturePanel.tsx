@@ -33,13 +33,20 @@ function Row({ label, value, unit }: { label: string; value: unknown; unit?: str
   );
 }
 
-export default function FeaturePanel({ selection, onClose }: { selection: Selection | null; onClose: () => void }) {
+export default function FeaturePanel({
+  selection, onClose, onCompare,
+}: { selection: Selection | null; onClose: () => void; onCompare?: (p: Record<string, unknown>) => void }) {
   if (!selection) return null;
   const p = selection.properties;
 
   return (
     <div className="feature-panel">
       <button className="close" onClick={onClose} aria-label="閉じる">×</button>
+      {selection.kind === 'onsen' && onCompare && (
+        <p className="compare-actions">
+          <button type="button" onClick={() => onCompare(p)}>この温泉を別の温泉と比べる</button>
+        </p>
+      )}
 
       {selection.kind === 'onsen' && (
         <>

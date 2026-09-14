@@ -38,6 +38,7 @@ const checks = [
   ['地図に出せない温泉の一覧', '/missing/', '架空のデータを作ること'],
   ['山中湖温泉が一覧に載っている', '/missing/', '山中湖温泉'],
   ['周辺環境分析の説明(about)', '/about/', 'まわり 5・10・25・50 km にあるもの'],
+  ['温泉比較の説明(about)', '/about/', '比べる画面でも値を作っていません'],
 ];
 for (const [label, path, needle] of checks) {
   await page.goto(url + path, { waitUntil: 'domcontentloaded' });

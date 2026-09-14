@@ -12,6 +12,7 @@ import { buildProfile } from '@/lib/profile';
 import FeaturePanel, { type Selection } from '@/components/FeaturePanel';
 import LayerControl from '@/components/LayerControl';
 import ProfilePanel, { type ProfileState } from '@/components/ProfilePanel';
+import ComparePanel from '@/components/ComparePanel';
 
 /** 初期表示は八ヶ岳周辺(設計書 §59 の実証地域)。 */
 const INITIAL = { center: [138.35, 35.98] as [number, number], zoom: 9.2 };
@@ -75,6 +76,9 @@ export default function MapView() {
   const [contourNote, setContourNote] = useState('');
   const [onsenNameOnly, setOnsenNameOnly] = useState(false);
   const [selection, setSelection] = useState<Selection | null>(null);
+  // 温泉比較(設計書 §57)。A を選ぶと、次に地図でクリックした温泉が B になる
+  const [compareA, setCompareA] = useState<Record<string, unknown> | null>(null);
+  const [compareB, setCompareB] = useState<Record<string, unknown> | null>(null);
   const [tileError, setTileError] = useState<string | null>(null);
   const contourRun = useRef(0);
 
@@ -421,8 +425,14 @@ export default function MapView() {
       const hits = m.queryRenderedFeatures(e.point, { layers: [...onsenIds, 'volcano'] });
       if (hits.length > 0) {
         const f = hits[0];
+        const isOnsen = onsenIds.includes(f.layer.id);
+        // 比較の相手を選んでいる間は、温泉のクリックを B にする(詳細パネルは開かない)
+        if (compareA && isOnsen) {
+          setCompareB(f.properties ?? {});
+          return;
+        }
         setSelection({
-          kind: onsenIds.includes(f.layer.id) ? 'onsen' : 'volcano',
+          kind: isOnsen ? 'onsen' : 'volcano',
           properties: f.properties ?? {},
         });
         return;
@@ -443,7 +453,7 @@ export default function MapView() {
     };
     m.on('click', onClick);
     return () => { m.off('click', onClick); };
-  }, [ready, visible.geology, profileOn, pickProfilePoint]);
+  }, [ready, visible.geology, profileOn, pickProfilePoint, compareA]);
 
   const profileNote =
     profile.phase === 'picking' ? '始点 A を置きました。終点 B をクリックしてください'
@@ -473,7 +483,22 @@ export default function MapView() {
       <div className="map-area">
         <div ref={holder} className="map-canvas" />
         {tileError && <div className="map-toast">{tileError}</div>}
-        <FeaturePanel selection={selection} onClose={() => setSelection(null)} />
+        {/* 比べている間は詳細パネルを出さない(同じ場所に重なるため) */}
+        {!compareA && (
+          <FeaturePanel
+            selection={selection}
+            onClose={() => setSelection(null)}
+            onCompare={(p) => { setCompareA(p); setCompareB(null); setSelection(null); }}
+          />
+        )}
+        {compareA && (
+          <ComparePanel
+            a={compareA}
+            b={compareB}
+            onClose={() => { setCompareA(null); setCompareB(null); }}
+            onReset={() => { setCompareA(null); setCompareB(null); }}
+          />
+        )}
         {profileOn && (
           <ProfilePanel state={profile} onClose={() => setProfileOn(false)} />
         )}
