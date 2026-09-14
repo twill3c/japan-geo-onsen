@@ -215,6 +215,14 @@ main {
   color: var(--muted); cursor: pointer;
 }
 
+/* 周辺環境分析(温泉の詳細パネルの中の表)。数は右揃えで桁を揃える */
+.surroundings table { font-size: 12px; }
+.surroundings th, .surroundings td { padding: 2px 4px; }
+.surroundings .num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.surroundings thead th { color: var(--muted); font-weight: 500; }
+.surroundings details { margin-top: 6px; font-size: 12px; }
+.surroundings summary { cursor: pointer; color: var(--accent); }
+
 @media (max-width: 760px) {
   /* 画面が狭いときは縦に積んでページごとスクロールさせる */
   body.map-mode { height: auto; overflow: visible; }

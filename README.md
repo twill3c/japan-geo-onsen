@@ -42,6 +42,9 @@ marching squares で引いている。
   名前も座標も無い。だから 2,839 そのものを点にすることはできない。
   被覆を広げるため **Wikidata(CC0)の温泉 1,477 件**を第二の層として足した
   （重複を除いた地点 **2,455**＝温泉地の 86%）。ただし悉皆調査ではないので**統計には使わない**。
+- **周辺環境分析(5/10/25/50km)は数え切れるものだけ数える。** 火山・温泉・湖沼(縁まで)・植生自然度。
+  河川と標高の起伏は計算量の理由で数えない。候補の絞り込みは総当たりと完全一致を確かめてある。
+  数は点ファイルに入れず、点を開いたときに読む `surroundings/<層>.json` に分けた(起動時の取得を増やさない)。
 - **辿れない理由は三つある。** ①分類が違う(ほったらかし温泉: 日帰り入浴施設)、
   ②**座標が無い**(大田区の黒湯温泉: 分類は温泉だが P625 が無い)、
   ③記事と項目が紐付いていない(山中湖温泉: 項目は在るがサイトリンクが無い)。
@@ -84,6 +87,7 @@ npm install
 ./.venv/Scripts/python.exe etl/parse_onsen_stats.py  # 環境省 PDF(都道府県別)
 ./.venv/Scripts/python.exe etl/build_onsen_facility.py # 入浴施設(第三の層・Wikidata)
 ./.venv/Scripts/python.exe etl/build_onsen_wikipedia.py # 温泉記事(第四の層)と未掲載一覧
+./.venv/Scripts/python.exe etl/build_surroundings.py    # まわり 5/10/25/50km の数(全 4 層)
 ./.venv/Scripts/python.exe etl/build_vegetation.py    # 植生(下記の lzh が要る)
 ./.venv/Scripts/python.exe etl/make_profile_fixture.py  # 断面の二実装照合フィクスチャ
 ./.venv/Scripts/python.exe etl/check_elevation.py      # 標高を地理院 標高 API と突き合わせる

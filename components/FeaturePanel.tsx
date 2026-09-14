@@ -1,5 +1,7 @@
 'use client';
 
+import Surroundings from '@/components/Surroundings';
+
 export type Selection = {
   kind: 'onsen' | 'volcano' | 'geology';
   properties: Record<string, unknown>;
@@ -117,6 +119,9 @@ export default function FeaturePanel({ selection, onClose }: { selection: Select
             河川の距離は全 286,437 区間から測っています（地図に描いているのは 1 級河川の直轄区間だけです）。
             植生は約 1 km のメッシュの代表値で、調査は 1992〜1996 年のものです。
           </p>
+
+          <h4>まわり 5・10・25・50 km にあるもの</h4>
+          <Surroundings provenance={p.provenance} onsenId={p.onsen_id} />
 
           <h4>この点の出所</h4>
           {p.provenance === 'wikipedia' ? (

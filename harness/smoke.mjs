@@ -233,6 +233,25 @@ async function main() {
         const t = await page.locator('.feature-panel').innerText();
         check(/公開データに無い/.test(t), '無い項目が「公開データに無い」と書かれている');
         check(/植生自然度/.test(t), '温泉詳細に植生自然度が出ている');
+        // 周辺環境分析(設計書 §56)。数は点を開いてから別ファイルで読むので、出るまで待つ
+        let surr = false;
+        try {
+          await page.waitForFunction(
+            () => !!document.querySelector('.feature-panel .surroundings table'),
+            null, { timeout: 20000 },
+          );
+          surr = true;
+        } catch { /* 下の check で不合格になる */ }
+        check(surr, '温泉詳細にまわり 5〜50km の表が出る');
+        if (surr) {
+          const st = await page.locator('.feature-panel .surroundings').innerText();
+          check(/50 km/.test(st) && /活火山/.test(st) && /湖沼/.test(st), '周辺の表に半径と対象が並ぶ');
+          check(/河川と標高の起伏は数えていません/.test(st), '数えていないものが書かれている');
+          // 内訳の表(details の中)も thead を持つので、最初の表だけを数える。
+          // 両方を数えていて「列 9」と出ていた(合格はするが報告の数が嘘になる)
+          const cols = await page.locator('.feature-panel .surroundings > table thead th').count();
+          check(cols === 5, `周辺の表に 4 つの半径の列がある(${cols - 1})`);
+        }
       }
     }
 
