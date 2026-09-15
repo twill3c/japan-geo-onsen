@@ -42,6 +42,8 @@ marching squares で引いている。
   名前も座標も無い。だから 2,839 そのものを点にすることはできない。
   被覆を広げるため **Wikidata(CC0)の温泉 1,477 件**を第二の層として足した
   （重複を除いた地点 **2,455**＝温泉地の 86%）。ただし悉皆調査ではないので**統計には使わない**。
+- **AI の説明(§35)は、その点を学習していないモデルで出す。** 学習に使ったモデルだと RF は点を覚えて 1 に近い値を出す。
+  出力は確率と呼ばない。SHAP の加法性と、分割外 ROC-AUC が合否のモデルと一致することをテストで押さえる。
 - **AI(Phase 4〜5)は合否を学習の前に書いた。** 当てる問いは「P12 に登録された地点が温泉の分類か」(温泉の存在ではない)。
   都道府県分割で検証(無作為分割は空間の漏れで高く出る)。全国ポテンシャル地図は §36 の読まれ方を招くので塗らない。
 - **地域比較(§58)は境界を描かない。** 基準点(Wikidata の項目・気象庁の活火山)+ 半径 10/25 km の円で定める。
@@ -97,6 +99,7 @@ npm install
 ./.venv/Scripts/python.exe etl/build_regions.py         # 地域比較(5 地域 + 活火山 111 を基準点に)
 ./.venv/Scripts/python.exe etl/build_ai_dataset.py      # AI のデータセット(P12 温泉 × 対照)
 ./.venv/Scripts/python.exe etl/train_baselines.py       # LR・RF・XGBoost の比較(ローカルで学習・合否は docs/ai_preregistration.md)
+./.venv/Scripts/python.exe etl/explain_ai.py            # 温泉ごとの見立て(分割外の出力 + SHAP の寄与)
 ./.venv/Scripts/python.exe etl/build_vegetation.py    # 植生(下記の lzh が要る)
 ./.venv/Scripts/python.exe etl/make_profile_fixture.py  # 断面の二実装照合フィクスチャ
 ./.venv/Scripts/python.exe etl/check_elevation.py      # 標高を地理院 標高 API と突き合わせる

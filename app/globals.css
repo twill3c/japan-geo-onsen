@@ -242,6 +242,19 @@ main {
 }
 .compare-actions button:hover { background: #f3eee6; }
 
+/* 温泉ごとの AI の見立て(設計書 §35)。出力は単色の棒、寄与は符号の文字と向きで示す(色だけに頼らない) */
+.ai-explain .ai-question { font-size: 12px; margin: 0 0 4px; }
+.ai-explain h5 { margin: 8px 0 2px; font-size: 11.5px; color: var(--muted); font-weight: 600; }
+.ai-score { display: inline-block; width: 110px; height: 6px; margin-left: 8px; background: #ece7dd; border-radius: 3px; vertical-align: middle; }
+.ai-score > span { display: block; height: 100%; background: var(--accent); border-radius: 3px; }
+.ai-contrib th { width: 38%; }
+.ai-contrib .num { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; width: 20%; }
+.ai-contrib .bar { width: 42%; }
+.ai-contrib .bar span { display: block; height: 6px; border-radius: 3px; }
+.ai-contrib .bar .up { background: var(--accent); }
+.ai-contrib .bar .down { background: #6d675e; }
+.ai-disclaimer.small { font-size: 11px; padding: 6px 8px; margin-top: 8px; }
+
 @media (max-width: 760px) {
   /* 画面が狭いときは縦に積んでページごとスクロールさせる */
   body.map-mode { height: auto; overflow: visible; }

@@ -1,6 +1,7 @@
 'use client';
 
 import Surroundings from '@/components/Surroundings';
+import AiExplanation from '@/components/AiExplanation';
 
 export type Selection = {
   kind: 'onsen' | 'volcano' | 'geology';
@@ -129,6 +130,9 @@ export default function FeaturePanel({
 
           <h4>まわり 5・10・25・50 km にあるもの</h4>
           <Surroundings provenance={p.provenance} onsenId={p.onsen_id} />
+
+          <h4>AI の見立て</h4>
+          <AiExplanation provenance={p.provenance} onsenId={p.onsen_id} />
 
           <h4>この点の出所</h4>
           {p.provenance === 'wikipedia' ? (

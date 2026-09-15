@@ -217,7 +217,14 @@ async function main() {
     const clicked = await page.evaluate(() => {
       const m = window.__map;
       if (!m) return false;
-      const f = m.queryRenderedFeatures({ layers: ['onsen'] })[0];
+      // 他の層の点が同じ位置に重なっていない P12 の点を選ぶ。重なっていると、クリックは
+      // 上に描かれた層(Wikidata など)の点を選び、P12 にしか無い表示(AI の見立て)が出ない。
+      // 最初は「P12 の先頭の点」を選んでいて、実装は正しいのに検品だけが落ちた
+      const onsenLayers = ['onsen', 'onsen-wd', 'onsen-fac', 'onsen-wp'].filter((id) => m.getLayer(id));
+      const f = m.queryRenderedFeatures({ layers: ['onsen'] }).find((c) => {
+        const px = m.project(c.geometry.coordinates);
+        return m.queryRenderedFeatures(px, { layers: onsenLayers }).length === 1;
+      });
       if (!f) return false;
       const p = m.project(f.geometry.coordinates);
       m.getCanvas().dispatchEvent(new MouseEvent('click', {
@@ -243,6 +250,30 @@ async function main() {
           surr = true;
         } catch { /* 下の check で不合格になる */ }
         check(surr, '温泉詳細にまわり 5〜50km の表が出る');
+        // AI の見立て(設計書 §35)。確率と呼ばず、何を当てたモデルかと免責を必ず添える
+        let aiShown = false;
+        try {
+          await page.waitForFunction(
+            () => !!document.querySelector('.feature-panel .ai-explain .ai-contrib'),
+            null, { timeout: 20000 },
+          );
+          aiShown = true;
+        } catch { /* 下の check で不合格になる */ }
+        const aiSection = aiShown ? '' : await page.evaluate(() => {
+          const t = document.querySelector('.feature-panel')?.innerText ?? '(パネル無し)';
+          const i = t.indexOf('AI の見立て');
+          return i < 0 ? '(節が無い)' : t.slice(i, i + 80).replace(/\s+/g, ' ');
+        });
+        check(aiShown, '温泉詳細に AI の見立て(寄与の表)が出る', aiSection);
+        if (aiShown) {
+          const ai = await page.locator('.feature-panel .ai-explain').innerText();
+          check(/確率ではありません/.test(ai), 'AI の出力を確率と呼ばないと書かれている');
+          check(/学習に使っていないモデル/.test(ai), 'その都道府県を学習に使っていないモデルの出力だと書かれている');
+          check(ai.includes('この結果は公開データから学習した統計モデルによる推定です。'), '温泉詳細の AI にも免責が出る');
+          check(!/%/.test(ai.split('\n').filter((l) => /出力/.test(l)).join('')), 'AI の出力を % で出していない');
+          const rows = await page.locator('.feature-panel .ai-contrib tr').count();
+          check(rows === 4, `寄与の大きい特徴量が 4 つ並ぶ(${rows})`);
+        }
         if (surr) {
           const st = await page.locator('.feature-panel .surroundings').innerText();
           check(/50 km/.test(st) && /活火山/.test(st) && /湖沼/.test(st), '周辺の表に半径と対象が並ぶ');
