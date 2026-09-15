@@ -296,8 +296,11 @@ async function main() {
         const m = window.__map;
         const a = document.querySelector('.compare-panel')?.textContent ?? '';
         const fs = m.queryRenderedFeatures({ layers: ['onsen'] });
-        // A と違う名前の点を B に選ぶ
-        const f = fs.find((x) => x.properties?.name && !a.includes(String(x.properties.name)));
+        // A と違う名前で、他の層と重ならない点を B に選ぶ(重なっていると選択肢の一覧が出る。
+        // 一覧から選ぶ経路は下で別に確かめる)
+        const layers = ['onsen', 'onsen-wd', 'onsen-fac', 'onsen-wp'].filter((id) => m.getLayer(id));
+        const f = fs.find((x) => x.properties?.name && !a.includes(String(x.properties.name))
+          && m.queryRenderedFeatures(m.project(x.geometry.coordinates), { layers }).length === 1);
         if (!f) return false;
         const p = m.project(f.geometry.coordinates);
         const r = m.getCanvas().getBoundingClientRect();
@@ -330,6 +333,58 @@ async function main() {
         check(!over, '比較パネルに横のはみ出しが無い');
       }
       await page.locator('.compare-panel .close').click().catch(() => {});
+    }
+
+    // 重なった点を選べる(SPEC F-21)。P12 の点に他の層の点が重なっている位置を探して押し、
+    // 一覧から P12 の点を選ぶと、P12 にしか無い AI の見立てまで届くことを確かめる。
+    // 以前は画素 1 点で上の層の点だけを開いており、この位置の P12 の点には届かなかった
+    const overlapPx = await page.evaluate(() => {
+      const m = window.__map;
+      if (!m) return null;
+      const layers = ['onsen', 'onsen-wd', 'onsen-fac', 'onsen-wp'].filter((id) => m.getLayer(id));
+      for (const f of m.queryRenderedFeatures({ layers: ['onsen'] })) {
+        const p = m.project(f.geometry.coordinates);
+        const hits = m.queryRenderedFeatures(p, { layers });
+        if (hits.length >= 2 && hits.some((h) => h.layer.id !== 'onsen')) {
+          return { x: p.x, y: p.y, name: f.properties.name };
+        }
+      }
+      return null;
+    });
+    check(overlapPx !== null, '初期表示に P12 と他の層が重なった点がある(検品の前提)');
+    if (overlapPx) {
+      await page.evaluate(({ x, y }) => {
+        const c = window.__map.getCanvas();
+        const r = c.getBoundingClientRect();
+        c.dispatchEvent(new MouseEvent('click', { bubbles: true, clientX: x + r.left, clientY: y + r.top }));
+      }, overlapPx);
+      let chooser = false;
+      try {
+        await page.waitForSelector('.feature-panel .point-chooser li', { timeout: 10000 });
+        chooser = true;
+      } catch { /* 下の check で不合格になる */ }
+      const items = chooser ? await page.locator('.feature-panel .point-chooser li').allInnerTexts() : [];
+      check(chooser && items.length >= 2, `重なった位置を押すと選択肢の一覧が出る(${items.length} 件)`);
+      const ksj = page.locator('.feature-panel .point-chooser li', { hasText: '温泉（国土数値情報）' }).first();
+      if (chooser && (await ksj.count()) > 0) {
+        await ksj.locator('button').click();
+        let reached = false;
+        try {
+          await page.waitForSelector('.feature-panel .ai-explain .ai-contrib', { timeout: 20000 });
+          reached = true;
+        } catch { /* 下の check で不合格になる */ }
+        check(reached, '一覧から国土数値情報の点を選ぶと AI の見立てまで届く');
+        const back = page.getByText(/重なっている \d+ 件の一覧に戻る/);
+        check((await back.count()) > 0, '選んだ点の詳細から一覧に戻れる');
+        if ((await back.count()) > 0) {
+          await back.first().click();
+          const again = await page.locator('.feature-panel .point-chooser li').count();
+          check(again === items.length, `一覧に戻ると同じ候補が並ぶ(${again} 件)`);
+        }
+      } else {
+        check(false, '選択肢に国土数値情報の点がある', items.join(' / '));
+      }
+      await page.locator('.feature-panel .close').click().catch(() => {});
     }
 
     // 入浴施設の層(第三の層)。全国 108 点しかないので、**その場所へ寄ってから**数える。

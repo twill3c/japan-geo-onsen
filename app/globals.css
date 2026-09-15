@@ -255,6 +255,20 @@ main {
 .ai-contrib .bar .down { background: #6d675e; }
 .ai-disclaimer.small { font-size: 11px; padding: 6px 8px; margin-top: 8px; }
 
+/* 重なった点の選択肢(SPEC F-21)。層の色の丸・点の名前・層の名前を 1 行に並べる */
+.point-chooser ul { list-style: none; margin: 6px 0; padding: 0; }
+.point-chooser li { margin: 0 0 4px; }
+.point-chooser button {
+  display: flex; align-items: baseline; gap: 6px; width: 100%; text-align: left;
+  font: inherit; font-size: 13px; padding: 5px 8px; cursor: pointer;
+  border: 1px solid var(--line); border-radius: 4px; background: #faf8f4; color: var(--ink);
+}
+.point-chooser button:hover, .point-chooser button:focus-visible { background: #f3eee6; border-color: var(--accent); }
+.point-chooser .dot { flex: 0 0 auto; }
+.point-chooser .name { font-weight: 600; }
+.point-chooser .layer { margin-left: auto; font-size: 11px; color: var(--muted); white-space: nowrap; }
+.compare-actions .back { color: var(--muted); }
+
 @media (max-width: 760px) {
   /* 画面が狭いときは縦に積んでページごとスクロールさせる */
   body.map-mode { height: auto; overflow: visible; }

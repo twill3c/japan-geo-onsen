@@ -13,9 +13,13 @@ import FeaturePanel, { type Selection } from '@/components/FeaturePanel';
 import LayerControl from '@/components/LayerControl';
 import ProfilePanel, { type ProfileState } from '@/components/ProfilePanel';
 import ComparePanel from '@/components/ComparePanel';
+import { needsChooser, pickCandidates, radiusExpression, type Candidate, type RawHit } from '@/lib/pick';
 
 /** 初期表示は八ヶ岳周辺(設計書 §59 の実証地域)。 */
 const INITIAL = { center: [138.35, 35.98] as [number, number], zoom: 9.2 };
+
+/** クリックの周りで候補を集める箱の半幅(px)。点の半径(2.4〜7px)と押し損ねの幅を見込む */
+const PICK_BOX_PX = 6;
 
 type OnsenLayerDef = (typeof ONSEN_LAYERS)[number];
 
@@ -31,7 +35,8 @@ function addOnsenLayer(m: maplibregl.Map, o: OnsenLayerDef): void {
   m.addLayer({
     id: o.id, type: 'circle', source: o.id,
     paint: {
-      'circle-radius': ['interpolate', ['linear'], ['zoom'], 5, 2.4, 10, 4.6, 14, 7],
+      // 半径の段はクリックの「下にあるか」の判定と同じ定義から作る(lib/pick.ts の RADIUS_STOPS)
+      'circle-radius': radiusExpression('onsen') as maplibregl.ExpressionSpecification,
       'circle-color': o.color,
       'circle-stroke-color': '#ffffff',
       'circle-stroke-width': 0.8,
@@ -79,6 +84,8 @@ export default function MapView() {
   // 温泉比較(設計書 §57)。A を選ぶと、次に地図でクリックした温泉が B になる
   const [compareA, setCompareA] = useState<Record<string, unknown> | null>(null);
   const [compareB, setCompareB] = useState<Record<string, unknown> | null>(null);
+  // B を選ぶクリックの位置に温泉の点が重なっていたときの候補
+  const [compareChoices, setCompareChoices] = useState<Candidate[] | null>(null);
   const [tileError, setTileError] = useState<string | null>(null);
   const contourRun = useRef(0);
 
@@ -192,7 +199,8 @@ export default function MapView() {
       m.addLayer({
         id: 'volcano', type: 'circle', source: 'volcano',
         paint: {
-          'circle-radius': ['interpolate', ['linear'], ['zoom'], 5, 3.2, 10, 6.5, 14, 9],
+          // 半径の段はクリックの「下にあるか」の判定と同じ定義から作る(lib/pick.ts の RADIUS_STOPS)
+          'circle-radius': radiusExpression('volcano') as maplibregl.ExpressionSpecification,
           // 火山の色は温泉と衝突していた(#b45309 と #c2410c は 2 型色覚で ΔE00 0.1)。
           // 色覚型を変えた色差で選び直した組(全組・3 視型の最小 ΔE00 が 0.1 → 17.4)。
           // 判定は tests/test_palette.py が実ファイルの値を読んで行う(HC-257)
@@ -422,19 +430,43 @@ export default function MapView() {
       }
       // まだ足していない層を渡すと queryRenderedFeatures は例外を投げる
       const onsenIds = ONSEN_LAYERS.map((o) => o.id).filter((id) => m.getLayer(id));
-      const hits = m.queryRenderedFeatures(e.point, { layers: [...onsenIds, 'volcano'] });
-      if (hits.length > 0) {
-        const f = hits[0];
-        const isOnsen = onsenIds.includes(f.layer.id);
+      // 画素 1 点ではなく、クリックの周りの小さな箱で候補を集める。
+      // 1 点だと、重なった点は上に描かれた層しか選べず、下の層(国土数値情報の温泉など)に届かなかった。
+      // 小さな点を押し損ねにくくする意味もある
+      const layers = [...onsenIds, 'volcano'];
+      const toHits = (fs: maplibregl.MapGeoJSONFeature[]): RawHit[] => fs.map((f) => {
+        const q = m.project((f.geometry as GeoJSON.Point).coordinates as [number, number]);
+        return { layerId: f.layer.id, properties: f.properties ?? {}, px: [q.x, q.y] };
+      });
+      // 「下にある」かは描画系に問う(画素 1 点の問い合わせの全件)。自前で半径を計算すると
+      // 描画の当たり判定と 1px 前後ずれ、重ならない点を押しても一覧が出た(実測 40 点中 10 点)
+      const under = toHits(m.queryRenderedFeatures(e.point, { layers }));
+      // 押し損ねを許す箱は、下に何も無いときだけ引く
+      const box: [maplibregl.PointLike, maplibregl.PointLike] = [
+        [e.point.x - PICK_BOX_PX, e.point.y - PICK_BOX_PX],
+        [e.point.x + PICK_BOX_PX, e.point.y + PICK_BOX_PX],
+      ];
+      const near = under.length > 0 ? [] : toHits(m.queryRenderedFeatures(box, { layers }));
+      // 箱に掛かった円の中心は、箱の端から点の半径ぶん外にありうる
+      const cands = pickCandidates(under, near, [e.point.x, e.point.y], PICK_BOX_PX + 10);
+      if (cands.length > 0) {
         // 比較の相手を選んでいる間は、温泉のクリックを B にする(詳細パネルは開かない)
-        if (compareA && isOnsen) {
-          setCompareB(f.properties ?? {});
+        if (compareA) {
+          const onsenCands = cands.filter((c) => c.layerId !== 'volcano');
+          if (onsenCands.length === 1) {
+            setCompareChoices(null);
+            setCompareB(onsenCands[0].properties);
+          } else if (onsenCands.length > 1) {
+            setCompareChoices(onsenCands);
+          }
           return;
         }
-        setSelection({
-          kind: isOnsen ? 'onsen' : 'volcano',
-          properties: f.properties ?? {},
-        });
+        if (needsChooser(cands)) {
+          setSelection({ kind: 'choose', properties: {}, candidates: cands });
+        } else {
+          const c = cands[0];
+          setSelection({ kind: c.layerId === 'volcano' ? 'volcano' : 'onsen', properties: c.properties });
+        }
         return;
       }
       if (!visible.geology) { setSelection(null); return; }
@@ -488,15 +520,18 @@ export default function MapView() {
           <FeaturePanel
             selection={selection}
             onClose={() => setSelection(null)}
-            onCompare={(p) => { setCompareA(p); setCompareB(null); setSelection(null); }}
+            onCompare={(p) => { setCompareA(p); setCompareB(null); setCompareChoices(null); setSelection(null); }}
+            onSelect={setSelection}
           />
         )}
         {compareA && (
           <ComparePanel
             a={compareA}
             b={compareB}
-            onClose={() => { setCompareA(null); setCompareB(null); }}
-            onReset={() => { setCompareA(null); setCompareB(null); }}
+            choices={compareChoices}
+            onChoose={(c) => { setCompareB(c.properties); setCompareChoices(null); }}
+            onClose={() => { setCompareA(null); setCompareB(null); setCompareChoices(null); }}
+            onReset={() => { setCompareA(null); setCompareB(null); setCompareChoices(null); }}
           />
         )}
         {profileOn && (

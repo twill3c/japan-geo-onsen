@@ -10,6 +10,8 @@
 import { useEffect, useState } from 'react';
 import { compareRows, prefectureReference, type PrefStats } from '@/lib/compare';
 import { FILE_OF, load as loadSurroundings, type Doc } from '@/components/Surroundings';
+import PointChooser from '@/components/PointChooser';
+import type { Candidate } from '@/lib/pick';
 
 type Props = Record<string, unknown>;
 
@@ -51,8 +53,16 @@ function useSurroundings(p: Props | null): { doc: Doc | null; row: number[] | nu
 }
 
 export default function ComparePanel({
-  a, b, onClose, onReset,
-}: { a: Props; b: Props | null; onClose: () => void; onReset: () => void }) {
+  a, b, onClose, onReset, choices, onChoose,
+}: {
+  a: Props;
+  b: Props | null;
+  onClose: () => void;
+  onReset: () => void;
+  /** B を選ぶクリックの位置に点が重なっていたときの候補 */
+  choices?: Candidate[] | null;
+  onChoose?: (c: Candidate) => void;
+}) {
   const [stats, setStats] = useState<PrefStats | null>(null);
   useEffect(() => { loadStats().then(setStats); }, []);
   const sa = useSurroundings(a);
@@ -65,7 +75,10 @@ export default function ComparePanel({
       <button className="close" onClick={onClose} aria-label="比較を閉じる">×</button>
       <h3>温泉を比べる</h3>
 
-      {!b && (
+      {choices && choices.length > 1 && onChoose && (
+        <PointChooser candidates={choices} onChoose={onChoose} lead="比べる相手の位置に点が重なっています。" />
+      )}
+      {!b && !(choices && choices.length > 1) && (
         <p className="status">
           「{name(a)}」を A にしました。<strong>比べる相手の温泉を地図でクリック</strong>してください。
         </p>

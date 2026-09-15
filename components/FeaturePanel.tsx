@@ -2,13 +2,20 @@
 
 import Surroundings from '@/components/Surroundings';
 import AiExplanation from '@/components/AiExplanation';
+import PointChooser from '@/components/PointChooser';
+import type { Candidate } from '@/lib/pick';
 
 export type Selection = {
-  kind: 'onsen' | 'volcano' | 'geology';
+  /** choose = クリック位置に点が重なっていて、どれかを選んでもらう */
+  kind: 'onsen' | 'volcano' | 'geology' | 'choose';
   properties: Record<string, unknown>;
   loading?: boolean;
   error?: string;
   lngLat?: [number, number];
+  /** kind が choose のときの候補 */
+  candidates?: Candidate[];
+  /** 一覧から選んだとき、その一覧(「一覧に戻る」のため) */
+  from?: Candidate[];
 };
 
 /** 公開データに無い項目。値を作らず、無い理由ごと見せる(SPEC G-03 / 設計書 §72)。 */
@@ -35,14 +42,50 @@ function Row({ label, value, unit }: { label: string; value: unknown; unit?: str
 }
 
 export default function FeaturePanel({
-  selection, onClose, onCompare,
-}: { selection: Selection | null; onClose: () => void; onCompare?: (p: Record<string, unknown>) => void }) {
+  selection, onClose, onCompare, onSelect,
+}: {
+  selection: Selection | null;
+  onClose: () => void;
+  onCompare?: (p: Record<string, unknown>) => void;
+  /** 一覧から選ぶ・一覧に戻る */
+  onSelect?: (s: Selection) => void;
+}) {
   if (!selection) return null;
   const p = selection.properties;
+
+  // クリック位置に点が重なっているときは、まず選んでもらう(どの層も優先しない)
+  if (selection.kind === 'choose') {
+    const cands = selection.candidates ?? [];
+    return (
+      <div className="feature-panel">
+        <button className="close" onClick={onClose} aria-label="閉じる">×</button>
+        <h3>重なっている点</h3>
+        <PointChooser
+          candidates={cands}
+          onChoose={(c) => onSelect?.({
+            kind: c.layerId === 'volcano' ? 'volcano' : 'onsen',
+            properties: c.properties,
+            from: cands,
+          })}
+        />
+      </div>
+    );
+  }
 
   return (
     <div className="feature-panel">
       <button className="close" onClick={onClose} aria-label="閉じる">×</button>
+      {selection.from && selection.from.length > 1 && onSelect && (
+        <p className="compare-actions">
+          <button
+            type="button"
+            className="back"
+            onClick={() => onSelect({ kind: 'choose', properties: {}, candidates: selection.from })}
+          >
+            ← 重なっている {selection.from.length} 件の一覧に戻る
+          </button>
+        </p>
+      )}
       {selection.kind === 'onsen' && onCompare && (
         <p className="compare-actions">
           <button type="button" onClick={() => onCompare(p)}>この温泉を別の温泉と比べる</button>
